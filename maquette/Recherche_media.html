@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="css\Recherche_media.css">
+	<link rel="stylesheet" href="bootstrap\css\bootstrap.css">
+	
+	<!-- Optional theme -->	
+	<link rel="stylesheet" href="bootstrap\css\bootstrap-theme.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	
+	<script src="bootstrap\js\bootstrap.js" crossorigin="anonymous"></script>		
+</head>
+<body>
+<div id="wrap">		
+	<div class="container">
+		<header>
+			<nav class="navbar navbar-default">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#">Biblio</a>
+			    </div>
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">        
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Media<span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">Recherche</a></li>
+			            <li><a href="#">Ajout</a></li>
+			          </ul>
+			        </li>
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adherent<span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">Recherche</a></li>
+			            <li><a href="#">Ajout</a></li>
+			          </ul>
+			        </li>        
+			      </ul>
+			      <ul class="nav navbar-nav navbar-right">        
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">Deconnexion</a></li>
+			          </ul>
+			        </li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			 
+			</nav>
+		</header>
+		<div>
+			<form id="form">
+				<div class="form-group">
+			      <div class="col-xs-3">
+			        <input class="form-control" id="ex1" type="text" placeholder="Recherche par titre">
+			      </div>
+			      <div class="col-xs-3">
+			        <input class="form-control" id="ex2" type="text" placeholder="Reherche par nom d'auteur">
+			      </div>
+			      <div class="col-xs-3">
+			       <!-- Single button -->
+					<div class="btn-group">
+					  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    Livre<span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu">
+					    <li><a href="#">CD</a></li>
+					    <li><a href="#">Livre</a></li>
+					    <li><a href="#">DVD</a></li>
+					   </ul>
+					</div>
+
+			      </div>
+			      <div class="col-xs-3">
+			        <button type="button" class="btn btn-info">Rechercher</button>
+			      </div>
+	    		</div>
+	    	</form>
+    	</div>
+    	<div class="dropup">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    Trie
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+		    <li><a href="#">Titre média</a></li>
+		    <li><a href="#">nom d'auteur</a></li>
+		    <li><a href="#">Type média</a></li>
+		     
+		  </ul>
+		</div>
+    		<div id="table">
+				<table class="table table-hover">
+					<tr>
+						<td><label>Titre du média</label></td>
+						<td><label>Type du média</label></td>
+						<td><label>Auteur du média</label></td>
+						<td><label>Emprunteur</label></td>
+						<td><label>Date de retour prévu</label></td>
+					</tr>
+					<tr>
+						<td>Don Quichotte </td>
+						<td>Livre</td>
+						<td>Miguel de Cervantes  </td>
+						<td>Germain</td>
+						<td>08/08/2016</td>
+						
+					</tr>
+						<tr>
+						<td>Fables </td>
+						<td>Livre</td>
+						<td>Ésope </td>
+						<td>Hela</td>
+						<td>19/07/2016</td>
+						
+					</tr>
+					<tr>
+						<td>Fables de Jean de la Fontaine  </td>
+						<td>Livre</td>
+						<td>Jean de La Fontaine  </td>
+						<td>Natanael</td>
+						<td>08/07/2016</td>
+						
+					</tr>
+					<tr>
+						<td>Les métamorphoses </td>
+						<td>Livre</td>
+						<td>Ovide </td>
+						<td>Jocelyn</td>
+						<td>08/08/2016</td>
+					</tr>
+					<tr>
+						<td>Les voyages de Gulliver</td>
+						<td>Livre</td>
+						<td>Jonathan Swift  </td>
+						<td>Yanis</td>
+						<td>01/08/2016</td>
+						
+					</tr>
+				</table>
+			</div>
+			<div id="pagination">
+				<nav>
+					  <ul class="pagination">
+					    <li class="disabled">
+					      <span>
+					        <span aria-hidden="true">&laquo;</span>
+					      </span>
+					    </li>
+					    <li>
+					      <span>1 <span class="sr-only">(current)</span></span>
+					    </li>
+					     <li>
+					      <span>2<span class="sr-only">(current)</span></span>
+					    </li>
+					     <li>
+					      <span>2 <span class="sr-only">(current)</span></span>
+					    </li>
+					     <li>
+					      <span>3 <span class="sr-only">(current)</span></span>
+					    </li>
+					     <li class="active">
+					      <span>4<span class="sr-only">(current)</span></span>
+					    </li>
+					     <li>
+					      <span>...<span class="sr-only">(current)</span></span>
+					    </li>
+					     <li>
+					      <span>8<span class="sr-only">(current)</span></span>
+					    </li>
+					  </ul>
+				</nav>
+			</div>
+		
+		
+		
+	</div>		
+</div>
+
+</body>
+</html>
