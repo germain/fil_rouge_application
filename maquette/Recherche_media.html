@@ -12,7 +12,20 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 	
-	<script src="bootstrap\js\bootstrap.js" crossorigin="anonymous"></script>		
+	<script src="bootstrap\js\bootstrap.js" crossorigin="anonymous"></script>	
+	<script>
+	$(function(){
+	    $('#orderModal').modal({
+	        keyboard: true,
+	        backdrop: "static",
+	        show:false,
+	        
+	    }).on('show', function(){
+	          var getIdFromRow = $(event.target).closest('tr').data('id');
+	        //make your ajax call populate items or what even you need
+	        $(this).find('#orderDetails').html($('<b> Order Id selected: ' + getIdFromRow  + '</b>'))
+	    });
+	</script>	
 </head>
 <body>
 <div id="wrap">		
@@ -109,7 +122,7 @@
 						<td><label>Emprunteur</label></td>
 						<td><label>Date de retour prévu</label></td>
 					</tr>
-					<tr>
+					<tr data-toggle="modal" data-target="#myModal">
 						<td>Don Quichotte </td>
 						<td>Livre</td>
 						<td>Miguel de Cervantes  </td>
@@ -150,6 +163,40 @@
 					</tr>
 				</table>
 			</div>
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Détail Livre</h4>
+			      </div>
+			      <div class="modal-body">
+			       	<div class="row">
+					  <div class="col-sm-6 col-md-4">
+					    <div class="thumbnail">
+					      <img src="img/livre-don quichotte.jpg">
+					      <div class="caption">
+					        <h3>Don Quichotte</h3> &nbsp;
+					        <label>Type: </label>  Livre
+					        <label>Auteur: </label> &nbsp; Miguel de Cervantes 
+					        
+					        <p>...</p>
+					        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-primary">Save changes</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
 			<div class="row">
 				<div class="col-md-6 col-md-offset-4">
 					<nav>
