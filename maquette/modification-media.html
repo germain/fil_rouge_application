@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Insert title here</title>
+	
+	<link rel="stylesheet" href="bootstrap\css\bootstrap.css">
+	
+	<!-- Optional theme -->	
+	<link rel="stylesheet" href="bootstrap\css\bootstrap-theme.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	
+	<script src="bootstrap\js\bootstrap.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="css/commun.css">		
+</head>
+<body>
+<div id="wrap">		
+	<div class="container">
+		<header>
+			<nav class="navbar navbar-default">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#">Biblio</a>
+			    </div>
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">        
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Media<span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="recherche-media.html">Recherche</a></li>
+			            <li><a href="creation-media.html">Ajout</a></li>
+			          </ul>
+			        </li>
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adherent<span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="recherche-adherent.html">Recherche</a></li>
+			            <li><a href="creation-adherent.html">Ajout</a></li>
+			          </ul>
+			        </li>        
+			      </ul>
+			      <ul class="nav navbar-nav navbar-right">        
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">Deconnexion</a></li>
+			          </ul>
+			        </li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->			 
+			</nav>
+		</header>
+		<div class="page-header">
+  			<h1>Modification de media</h1>
+		</div>
+		<div class="row">		  
+			<div class="col-md-6 col-md-offset-3">
+			  	<div class="panel panel-default">
+					  <div class="panel-body">
+					    <form action="" method="GET">
+						  <div class="form-group">
+						    <label for="Titre" class="Gras">Titre <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
+						    <input type="text" class="form-control" id="Titre" placeholder="Titre" required>
+						  </div>
+						  <div class="form-group">
+						    <label for="Auteur" class="Gras">Auteur <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
+						    <input type="text" class="form-control" id="Auteur" placeholder="Auteur" required>
+						  </div>
+							<div class="form-group">
+						      <label for="type" class="Gras">Type <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
+						      <select class="form-control" id="type" required>
+						      	<option value="">Sélectionner un type</option>
+						        <option value="livre">Livre</option>
+						        <option value="cd">CD</option>
+						        <option value="dvd">DVD</option>
+						      </select>
+						     </div>
+						  <div class="row">
+						  	<div class="center">		  										
+						  		<div>
+						  			<button type="submit" class="btn btn-default">Enregistrer</button>
+						  		</div>		  							  		
+						  	</div>
+						  </div>						  						  
+						</form>
+					  </div>					  
+				</div>
+			</div>	
+		</div>
+	</div>		
+</div>
+
+</body>
+</html>
