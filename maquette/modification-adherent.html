@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Creation adherent</title>
+	
+	<link rel="stylesheet" href="bootstrap\css\bootstrap.css">
+	
+	<!-- Optional theme -->	
+	<link rel="stylesheet" href="bootstrap\css\bootstrap-theme.css">
+	
+	<link rel="stylesheet" href="css\creation-utilisateur.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	
+	<script src="bootstrap\js\bootstrap.js" crossorigin="anonymous"></script>		
+</head>
+<body>
+<div id="wrap">		
+	<div class="container">
+		<header>
+			<nav class="navbar navbar-default">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#">Biblio</a>
+			    </div>
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">        
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Media<span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">Recherche</a></li>
+			            <li><a href="#">Ajout</a></li>
+			          </ul>
+			        </li>
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adherent<span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">Recherche</a></li>
+			            <li><a href="#">Ajout</a></li>
+			          </ul>
+			        </li>        
+			      </ul>
+			      <ul class="nav navbar-nav navbar-right">        
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">Deconnexion</a></li>
+			          </ul>
+			        </li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->			 
+			</nav>
+		</header>		
+		<div class="row">		  
+			<div class="col-md-6 col-md-offset-3">
+			  	<div class="panel panel-default">
+					  <div class="panel-body">
+					    <form action="" method="GET">
+							<div class="form-group">
+								<label for="Nom">Nom*</label>
+								<input type="text" class="form-control" id="nom" placeholder="Nom" required>
+							</div>
+								<div class="form-group">
+								<label for="prenom">Prenom*</label>
+								<input type="text" class="form-control" id="prenom" placeholder="Prenom" required>
+							</div>
+							<div class="form-group">
+								<label for="date_nat">Date de naissance*</label>
+								<input type="date" class="form-control" id="date_nat" placeholder="Date de naissance" required>
+							</div>
+							<div class="form-group">
+								<label for="email">Email*</label>
+								<input type="email" class="form-control" id="email" placeholder="Mail" required>
+							</div>
+							<div class="form-group">
+								<label for="adresse">Adresse</label>
+								<input type="text" class="form-control" id="adresse" placeholder="Adresse">
+							</div>
+							<div class="form-group">
+								<label for="adresse">Adresse</label>
+								<input type="text" class="form-control" id="adresse" placeholder="Adresse">
+							</div>
+							<div class="form-group">
+								<label for="BP">Code postal</label>
+								<input type="text" class="form-control" id="BP" placeholder="Code postal">
+							</div>
+							<div class="form-group">
+								<label for="ville">Ville</label>
+								<input type="text" class="form-control" id="ville" placeholder="Ville">
+							</div>
+							<div class="form-group">
+								<label for="paiement">Date de paiement</label>
+								<input type="text" class="form-control" id="paiement" placeholder="Date de paiement">
+							</div>
+							<div class="form-group">
+								<label for="montant">Montant</label>
+								<input type="text" class="form-control" id="montant" placeholder="Montant">
+							</div>
+							<div class="col-md-offset-3">
+								<button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-remove"></span><b> Supprimer</b></Button>
+								<button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-ok"></span><b> Enregistrer</b></button>
+							</div>
+						</form>
+					  </div>
+				</div>
+			</div>	
+		</div>
+</body>
+</html>
