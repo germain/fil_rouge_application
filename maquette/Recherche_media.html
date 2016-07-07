@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Insert title here</title>
-	<link rel="stylesheet" href="css\Recherche_adherent.css">
+	<link rel="stylesheet" href="css\Recherche_media.css">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.css">
 	
 	<!-- Optional theme -->	
@@ -62,13 +62,27 @@
 		<div>
 			<form id="form">
 				<div class="form-group">
-			      <div class="col-xs-4">
-			        <input class="form-control" id="ex1" type="text" placeholder="rechercher par identifiant">
+			      <div class="col-xs-3">
+			        <input class="form-control" id="ex1" type="text" placeholder="Recherche par titre">
 			      </div>
-			      <div class="col-xs-4">
-			        <input class="form-control" id="ex2" type="text" placeholder="rechercher par nom">
+			      <div class="col-xs-3">
+			        <input class="form-control" id="ex2" type="text" placeholder="Reherche par nom d'auteur">
 			      </div>
-			      <div class="col-xs-4">
+			      <div class="col-xs-3">
+			       <!-- Single button -->
+					<div class="btn-group">
+					  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    Livre<span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu">
+					    <li><a href="#">CD</a></li>
+					    <li><a href="#">Livre</a></li>
+					    <li><a href="#">DVD</a></li>
+					   </ul>
+					</div>
+
+			      </div>
+			      <div class="col-xs-3">
 			        <button type="button" class="btn btn-info">Rechercher</button>
 			      </div>
 	    		</div>
@@ -80,67 +94,63 @@
 		    <span class="caret"></span>
 		  </button>
 		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-		    <li><a href="#">Nom&prénom</a></li>
-		    <li><a href="#">date de naissance</a></li>
-		    <li><a href="#">Identifiant</a></li>
+		    <li><a href="#">Titre média</a></li>
+		    <li><a href="#">nom d'auteur</a></li>
+		    <li><a href="#">Type média</a></li>
 		     
 		  </ul>
 		</div>
     		<div id="table">
 				<table class="table table-hover">
 					<tr>
-						<td><label>Identifiant</label></td>
-						<td><label>Nom</label></td>
-						<td><label>Prénom</label></td>
-						<td><label>Date de naissance</label></td>
-						<td><label>Cotisation</label></td>
-						<td><label>Nombre de média en possession</label></td>
+						<td><label>Titre du média</label></td>
+						<td><label>Type du média</label></td>
+						<td><label>Auteur du média</label></td>
+						<td><label>Emprunteur</label></td>
+						<td><label>Date de retour prévu</label></td>
 					</tr>
 					<tr>
-						<td>2502332</td>
-						<td>Chéné</td>
-						<td>Jocelyn</td>
-						<td>15/02/1988</td>
-						<td>oui</td>
-						<td>10</td>
+						<td>Don Quichotte </td>
+						<td>Livre</td>
+						<td>Miguel de Cervantes  </td>
+						<td>Germain</td>
+						<td>08/08/2016</td>
+						
 					</tr>
 						<tr>
-						<td>236662</td>
-						<td>Chéné</td>
-						<td>Germain</td>
-						<td>07/11/1987</td>
-						<td>oui</td>
-						<td>10</td>
+						<td>Fables </td>
+						<td>Livre</td>
+						<td>Ésope </td>
+						<td>Hela</td>
+						<td>19/07/2016</td>
+						
 					</tr>
 					<tr>
-						<td>2447853</td>
-						<td>Chéné</td>
+						<td>Fables de Jean de la Fontaine  </td>
+						<td>Livre</td>
+						<td>Jean de La Fontaine  </td>
+						<td>Natanael</td>
+						<td>08/07/2016</td>
+						
+					</tr>
+					<tr>
+						<td>Les métamorphoses </td>
+						<td>Livre</td>
+						<td>Ovide </td>
+						<td>Jocelyn</td>
+						<td>08/08/2016</td>
+					</tr>
+					<tr>
+						<td>Les voyages de Gulliver</td>
+						<td>Livre</td>
+						<td>Jonathan Swift  </td>
 						<td>Yanis</td>
-						<td>09/05/1986</td>
-						<td>oui</td>
-						<td>10</td>
+						<td>01/08/2016</td>
+						
 					</tr>
-					<tr>
-						<td>565661</td>
-						<td>Levaseur</td>
-						<td>Nathanael</td>
-						<td>20/06/1988</td>
-						<td>oui</td>
-						<td>30</td>
-					</tr
-					<tr>
-						<td>1524446</td>
-						<td>Soussi</td>
-						<td>hela</td>
-						<td>18/08/1988</td>
-						<td>oui</td>
-						<td>7</td>
-					</tr>
-				
-				
 				</table>
 			</div>
-			<div  id="pagination">
+			<div id="pagination">
 				<nav>
 					  <ul class="pagination">
 					    <li class="disabled">
