@@ -95,12 +95,12 @@
 						<td><label>Cotisation</label></td>
 						<td><label>Nombre de média en possession</label></td>
 					</tr>
-					<tr>
+					<tr  data-toggle="modal" data-target="#myModal">
 						<td>2502332</td>
 						<td>Chéné</td>
 						<td>Jocelyn</td>
 						<td>15/02/1988</td>
-						<td>oui</td>
+						<td>20€</td>
 						<td>10</td>
 					</tr>
 						<tr>
@@ -108,7 +108,7 @@
 						<td>Chéné</td>
 						<td>Germain</td>
 						<td>07/11/1987</td>
-						<td>oui</td>
+						<td>25€</td>
 						<td>10</td>
 					</tr>
 					<tr>
@@ -116,7 +116,7 @@
 						<td>Chéné</td>
 						<td>Yanis</td>
 						<td>09/05/1986</td>
-						<td>oui</td>
+						<td>30€</td>
 						<td>10</td>
 					</tr>
 					<tr>
@@ -124,21 +124,137 @@
 						<td>Levaseur</td>
 						<td>Nathanael</td>
 						<td>20/06/1988</td>
-						<td>oui</td>
+						<td>10€</td>
 						<td>30</td>
-					</tr
+					</tr>
 					<tr>
 						<td>1524446</td>
 						<td>Soussi</td>
 						<td>hela</td>
 						<td>18/08/1988</td>
-						<td>oui</td>
+						<td>15€</td>
 						<td>7</td>
 					</tr>
 				
 				
 				</table>
 			</div>
+			
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			      	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+					  <div class="panel panel-default">
+					    <div class="panel-heading" role="tab" id="headingOne">
+					      <h4 class="panel-title">
+					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					          Détail Adhérent
+					        </a>
+					      </h4>
+					    </div>
+					    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+					      <div class="panel-body">
+					        <div class="modal-body">
+			       	<div class="row">
+					  <div class="col-md-8 col-md-offset-2">
+					    <div class="thumbnail">
+					     	
+					      <div class="caption">
+					        <div><h3>Chéné Jocelyn</h3></div>
+					        <div class="row"><label class="col-md-2 col-md-offset-1">Date de naissance: </label> <label class="col-md-4 col-md-offset-2">15/02/1988</label></div>
+					        <div class="row"><label class="col-md-2 col-md-offset-1">E-mail: </label> <label class="col-md-4 col-md-offset-2">Chéné Jocelyn@gmail.com </label></div>
+					        <div class="row"><label class="col-md-2 col-md-offset-1">Adresse: </label> <label class="col-md-4 col-md-offset-2">5 avenue General Leclerc 75001 Paris</label></div>
+					        <div class="row"><label class="col-md-2 col-md-offset-1">Date de paiement de la cotisation: </label> <label class="col-md-4 col-md-offset-2">08/07/2016 </label></div>
+					        <div class="row"><label class="col-md-2 col-md-offset-1">Montant la cotisation: </label> <label class="col-md-4 col-md-offset-2">20€ </label></div>
+					        
+					        <p><a href="#" class="btn btn-primary" role="button">Modifier</a> <a href="#" class="btn btn-default" role="button">Supprimer</a></p>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+			      </div>
+			      
+			    			</div>
+			  			</div>
+					</div>
+					<div class="panel panel-default">
+					    <div class="panel-heading" role="tab" id="headingTwo">
+					      <h4 class="panel-title">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					          Liste des médias
+					        </a>
+					      </h4>
+					    </div>
+					    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					      <div class="panel-body">								 
+					      	<div id="table">
+								<table class="table table-hover">
+									<tr>
+										<td><label>Type de media</label></td>
+										<td><label>Titre</label></td>
+										<td><label>Date de l'emprunt</label></td>
+									</tr>
+									<tr data-toggle="modal" data-target="#myModal">
+										<td>Livre </td>
+										<td>Don Quichotte</td>
+										<td>18/06/2016 </td>
+									</tr>
+										<tr>
+										<td>CD </td>
+										<td>Tutoriaux JavaScript</td>
+										<td>07/07/2016</td>
+									</tr>
+								</table>
+					      </div>
+					    </div>
+					 </div>
+					 <div class="panel panel-default">
+					    <div class="panel-heading" role="tab" id="headingThree">
+					      <h4 class="panel-title">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+					          Ajouter nouveau Média
+					        </a>
+					      </h4>
+					    </div>
+					    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					      <div class="panel-body">
+					      
+					      	<form action="" method="GET">
+					      	
+						  <div class="form-group">
+						    <label for="Titre" class="Gras">Type de média <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
+						    <input type="text" class="form-control" id="Titre" placeholder="Titre" required>
+						  </div>
+						  <div class="form-group">
+						    <label for="Auteur" class="Gras">Titre <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
+						    <input type="text" class="form-control" id="Auteur" placeholder="Auteur" required>
+						  </div>
+						  <div class="form-group">
+						    <label for="Auteur" class="Gras">Date de l'emprunt <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
+						    <input type="date" class="form-control" id="Auteur" placeholder="Auteur" required>
+						  </div>						
+						  		<div >
+						  			<button type="submit" class="btn btn-success">Enregistrer</button>
+						  		</div>		  							  		
+						  </form>
+						  
+					      </div>
+					    </div>
+					  
+					  </div>
+										
+						</div>
+						<div class="modal-footer">
+			       		 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        	</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+		</div>
+			
 			<div class="row">
 				<div class="col-md-6 col-md-offset-4">
 					<nav>
