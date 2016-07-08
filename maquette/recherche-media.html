@@ -65,7 +65,7 @@
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-			            <li><a href="#">Deconnexion</a></li>
+			            <li><a href="connexion.html">Deconnexion</a></li>
 			          </ul>
 			        </li>
 			      </ul>
@@ -84,82 +84,80 @@
 		      </div>
 		      <div class="btn-group col-xs-4">
 				<!-- Single button -->
-				  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Livre<span class="caret"></span>
-				  </button>
-					<ul class="dropdown-menu">
-						<li><a href="#">CD</a></li>
-						<li><a href="#">Livre</a></li>
-						<li><a href="#">DVD</a></li>
-					</ul>
-					<button type="button" class="btn btn-info col-xs-offset-1">Rechercher</button>
-				</div>
-
-	   		</div>
-	   	</form>
-	  </div>
-	  <div class="dropup">
-	  	<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    Trie
-	    <span class="caret"></span>
-	  </button>
-	  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-	    <li><a href="#">Titre média</a></li>
-	    <li><a href="#">nom d'auteur</a></li>
-	    <li><a href="#">Type média</a></li>
-	     
-	  </ul>
-	</div>
-		<div id="table" class="table-responsive">
-			<table class="table table-hover">
-				<tr>
-					<td><label>Titre du média</label></td>
-					<td><label>Type du média</label></td>
-					<td><label>Auteur du média</label></td>
-					<td><label>Emprunteur</label></td>
-					<td><label>Date de retour prévu</label></td>
-				</tr>
-				<tr data-toggle="modal" data-target="#myModal">
-					<td>Don Quichotte </td>
-					<td>Livre</td>
-					<td>Miguel de Cervantes  </td>
-					<td>Germain</td>
-					<td>08/08/2016</td>
-					
-				</tr>
-					<tr>
-					<td>Fables </td>
-					<td>Livre</td>
-					<td>Ésope </td>
-					<td>Hela</td>
-					<td>19/07/2016</td>
-					
-				</tr>
-				<tr>
-					<td>Fables de Jean de la Fontaine  </td>
-					<td>Livre</td>
-					<td>Jean de La Fontaine  </td>
-					<td>Natanael</td>
-					<td>08/07/2016</td>
-					
-				</tr>
-				<tr>
-					<td>Les métamorphoses </td>
-					<td>Livre</td>
-					<td>Ovide </td>
-					<td>Jocelyn</td>
-					<td>08/08/2016</td>
-				</tr>
-				<tr>
-					<td>Les voyages de Gulliver</td>
-					<td>Livre</td>
-					<td>Jonathan Swift  </td>
-					<td>Yanis</td>
-					<td>01/08/2016</td>
-					
-				</tr>
-			</table>
+		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    Livre <span class="caret"></span>
+		  </button>
+			<ul class="dropdown-menu">
+				<li><a href="#">CD</a></li>
+				<li><a href="#">Livre</a></li>
+				<li><a href="#">DVD</a></li>
+			</ul>
+			<button type="button" class="btn btn-info col-xs-offset-1">Rechercher</button>
 		</div>
+	 		</div>
+	 	</form>
+	</div>
+	<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Trie
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+				<li><a href="#">Titre média</a></li>
+				<li><a href="#">nom d'auteur</a></li>
+				<li><a href="#">Type média</a></li>
+			</ul>
+	</div>
+	<div id="table" class="table-responsive">
+		<table class="table table-hover">
+			<tr>
+				<td><label>Titre du média</label></td>
+				<td><label>Type du média</label></td>
+				<td><label>Auteur du média</label></td>
+				<td><label>Emprunteur</label></td>
+				<td><label>Date de retour prévu</label></td>
+			</tr>
+			<tr data-toggle="modal" data-target="#myModal">
+				<td>Don Quichotte </td>
+				<td>Livre</td>
+				<td>Miguel de Cervantes  </td>
+				<td>Germain</td>
+				<td>08/08/2016</td>
+				
+			</tr>
+				<tr>
+				<td>Fables </td>
+				<td>Livre</td>
+				<td>Ésope </td>
+				<td>Hela</td>
+				<td>19/07/2016</td>
+				
+			</tr>
+			<tr>
+				<td>Fables de Jean de la Fontaine  </td>
+				<td>Livre</td>
+				<td>Jean de La Fontaine  </td>
+				<td>Natanael</td>
+				<td>08/07/2016</td>
+				
+			</tr>
+			<tr>
+				<td>Les métamorphoses </td>
+				<td>Livre</td>
+				<td>Ovide </td>
+				<td>Jocelyn</td>
+				<td>08/08/2016</td>
+			</tr>
+			<tr>
+				<td>Les voyages de Gulliver</td>
+				<td>Livre</td>
+				<td>Jonathan Swift  </td>
+				<td>Yanis</td>
+				<td>01/08/2016</td>
+				
+			</tr>
+		</table>
+	</div>
 		
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -184,9 +182,9 @@
 										      <img src="img/livre-don quichotte.jpg">
 										      <div class="caption">
 										        <div><h3>Don Quichotte</h3></div>
-										        <div class="row"><label class="col-md-2 col-md-offset-1">Type: </label> <label class="col-md-5 col-md-offset-1"> Livre</label></div>
-										        <div class="row"><label class="col-md-2 col-md-offset-1">Auteur: </label> <label class="col-md-5 col-md-offset-1">Miguel de Cervantes </label></div>
-										        <p><a href="#" class="btn btn-primary" role="button">Modifier</a> <a href="#" class="btn btn-default" role="button">Supprimer</a></p>
+										        <label>Type: </label> Livre<br>
+										        <label>Auteur: </label> Miguel de Cervantes
+										        <p><a href="modification-media.html" class="btn btn-primary" role="button">Modifier</a> <a href="#" class="btn btn-default" role="button">Supprimer</a></p>
 										      </div>
 										    </div>
 										  </div>
@@ -196,16 +194,16 @@
 				  			</div>
 						</div>
 						<div class="panel panel-default">
-						    <div class="panel-heading" role="tab" id="headingTwo">
-						      <h4 class="panel-title">
-						        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-						          Liste des emprunteurs
-						        </a>
-						      </h4>
-						    </div>
-						    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-						      <div class="panel-body">								 
-						      	<div id="table">
+								<div class="panel-heading" role="tab" id="headingTwo">
+								  <h4 class="panel-title">
+								    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								      Liste des emprunteurs
+								    </a>
+								  </h4>
+								</div>
+							   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+							     <div class="panel-body">								 
+							     	<div id="table">
 									<table class="table table-hover">
 										<tr>
 											<td><label>Nom de l'emprunteur</label></td>
@@ -223,42 +221,39 @@
 											<td>07/08/2016</td>
 										</tr>
 									</table>
-						      </div>
-						    </div>
-						 </div>
-						 <div class="panel panel-default">
-						    <div class="panel-heading" role="tab" id="headingThree">
-						      <h4 class="panel-title">
-						        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-						          Ajouter nouveau emprunteur
-						        </a>
-						      </h4>
-						    </div>
-						    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-						      <div class="panel-body">
-						      
-						      	<form action="" method="GET">
-						      	
-								<div class="form-group">
-									<label for="Titre" class="Gras">Nom de l'emprunteur <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
-									<input type="text" class="form-control" id="Titre" placeholder="Titre" required>
+							     </div>
+							   </div>
+							</div>
+							<div class="panel panel-default">
+							    <div class="panel-heading" role="tab" id="headingThree">
+							      <h4 class="panel-title">
+							        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							          Ajouter nouveau emprunteur
+							        </a>
+							      </h4>
+							    </div>
+								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+								    <div class="panel-body">
+										<form action="" method="GET">
+											<div class="form-group">
+												<label for="Titre" class="Gras">Nom de l'emprunteur*</label>
+												<input type="text" class="form-control" id="Titre" placeholder="Titre" required>
+											</div>
+											<div class="form-group">
+												<label for="Auteur" class="Gras">Date de l'emprunteur*</label>
+												<input type="date" class="form-control" id="Auteur" placeholder="Auteur" required>
+											</div>
+											<div class="form-group">
+												<label for="Auteur" class="Gras">Date de retour*</label>
+												<input type="date" class="form-control" id="Auteur" placeholder="Auteur" required>
+											</div>						
+											<div>
+												<button type="submit" class="btn btn-success col-md-offset-5">Enregistrer</button>
+											</div>		  							  		
+										</form>
+									</div>
 								</div>
-								<div class="form-group">
-									<label for="Auteur" class="Gras">Date de l'emprunteur <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
-									<input type="date" class="form-control" id="Auteur" placeholder="Auteur" required>
-								</div>
-								<div class="form-group">
-									<label for="Auteur" class="Gras">Date de retour <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
-									<input type="date" class="form-control" id="Auteur" placeholder="Auteur" required>
-								</div>						
-								<div >
-									<button type="submit" class="btn btn-success">Enregistrer</button>
-								</div>		  							  		
-							  </form>
 							  
-						      </div>
-						    </div>
-						  
 							</div>
 											
 							</div>
