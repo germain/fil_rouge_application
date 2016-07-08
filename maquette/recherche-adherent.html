@@ -12,7 +12,22 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 	
-	<script src="bootstrap\js\bootstrap.js" crossorigin="anonymous"></script>		
+	<script src="bootstrap\js\bootstrap.js"></script>	
+		
+	<script>
+	$(function(){
+	    $('#orderModal').modal({
+	        keyboard: true,
+	        backdrop: "static",
+	        show:false,	        
+	    }).on('show', function(){
+	        var getIdFromRow = $(event.target).closest('tr').data('id');
+	        //make your ajax call populate items or what even you need
+	        $(this).find('#orderDetails').html($('<b> Order Id selected: ' + getIdFromRow  + '</b>'))
+	    });
+	});
+	</script>	
+	
 </head>
 <body>
 <div id="wrap">		
@@ -73,19 +88,17 @@
 	    		</div>
 	    	</form>
     	</div>
-    	<div class="dropup">
+    	<div class="dropdown">
 		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    Trie
-		    <span class="caret"></span>
+			Trie <span class="caret"></span>
 		  </button>
-		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-		    <li><a href="#">Nom&prénom</a></li>
-		    <li><a href="#">date de naissance</a></li>
-		    <li><a href="#">Identifiant</a></li>
-		     
-		  </ul>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+				<li><a href="#">Nom&prénom</a></li>
+				<li><a href="#">date de naissance</a></li>
+				<li><a href="#">Identifiant</a></li>
+			</ul>
 		</div>
-    		<div id="table">
+    		<div id="table" class="table-responsive">
 				<table class="table table-hover">
 					<tr>
 						<td><label>Identifiant</label></td>
@@ -126,7 +139,7 @@
 						<td>20/06/1988</td>
 						<td>oui</td>
 						<td>30</td>
-					</tr
+					</tr>
 					<tr>
 						<td>1524446</td>
 						<td>Soussi</td>
@@ -134,10 +147,38 @@
 						<td>18/08/1988</td>
 						<td>oui</td>
 						<td>7</td>
-					</tr>
-				
-				
+					</tr>				
 				</table>
+			</div>
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Détail Livre</h4>
+			      </div>
+			      <div class="modal-body">
+			       	<div class="row">
+					  <div class="col-md-8 col-md-offset-2">
+					    <div class="thumbnail">
+					      <img src="img/livre-don quichotte.jpg">
+					      <div class="caption">
+					        <div><h3>Don Quichotte</h3></div>
+					        <div class="row"><label class="col-md-2 col-md-offset-1">Type: </label> <label class="col-md-5 col-md-offset-1"> Livre</label></div>
+					        <div class="row"><label class="col-md-2 col-md-offset-1">Auteur: </label> <label class="col-md-5 col-md-offset-1">Miguel de Cervantes </label></div>
+					        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-primary">Save changes</button>
+			      </div>
+			    </div>
+			  </div>
 			</div>
 			<div class="row">
 				<div class="col-md-6 col-md-offset-4">
