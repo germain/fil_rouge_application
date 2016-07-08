@@ -4,3 +4,36 @@
 .Gras{
 	font-size:16px;
 }
+
+footer {
+    height: 50px;
+    background-color: #333;
+    color: lightgrey;
+    line-height: 40px;
+    /*text-align: center;*/
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin-top: 10px;
+    width: 100%;
+}
+
+/*@media (min-width: 768px) {
+	footer {
+		width: 750px;
+	}
+}
+
+@media (min-width: 992px) {
+	footer {
+		width: 970px;
+	}
+}
+
+@media (min-width: 1200px) {
+	footer {
+		width: 1170px;
+	}
+}
+*/
