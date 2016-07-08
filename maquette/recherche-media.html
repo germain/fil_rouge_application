@@ -24,7 +24,8 @@
 	          var getIdFromRow = $(event.target).closest('tr').data('id');
 	        //make your ajax call populate items or what even you need
 	        $(this).find('#orderDetails').html($('<b> Order Id selected: ' + getIdFromRow  + '</b>'))
-	    });
+	    })
+	})
 	</script>	
 </head>
 <body>
@@ -71,8 +72,7 @@
 					    </div><!-- /.navbar-collapse -->			 
 					</nav>
 				</header>
-		</div>
-	</div>
+		
 		<div>
 			<form id="form">
 				<div class="form-group">
@@ -195,10 +195,7 @@
 					  </div>
 					</div>
 			      </div>
-			      <div class="modal-footer">
-			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			        
-			      </div>
+			      
 			    			</div>
 			  			</div>
 					</div>
@@ -211,10 +208,7 @@
 					      </h4>
 					    </div>
 					    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-					      <div class="panel-body">
-						      <div>
-						      	<button type="button" class="btn btn-link">Ajout nouveau adhérent</button>
-						      </div>
+					      <div class="panel-body">								 
 					      	<div id="table">
 								<table class="table table-hover">
 									<tr>
@@ -235,12 +229,46 @@
 								</table>
 					      </div>
 					    </div>
-					    <div class="modal-footer">
-			        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			            </div>
 					 </div>
-					
+					 <div class="panel panel-default">
+					    <div class="panel-heading" role="tab" id="headingThree">
+					      <h4 class="panel-title">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+					          Ajouter nouveau emprunteur
+					        </a>
+					      </h4>
+					    </div>
+					    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					      <div class="panel-body">
+					      
+					      	<form action="" method="GET">
+					      	
+						  <div class="form-group">
+						    <label for="Titre" class="Gras">Nom de l'emprunteur <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
+						    <input type="text" class="form-control" id="Titre" placeholder="Titre" required>
+						  </div>
+						  <div class="form-group">
+						    <label for="Auteur" class="Gras">Date de l'emprunteur <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
+						    <input type="date" class="form-control" id="Auteur" placeholder="Auteur" required>
+						  </div>
+						  <div class="form-group">
+						    <label for="Auteur" class="Gras">Date de retour <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></label>
+						    <input type="date" class="form-control" id="Auteur" placeholder="Auteur" required>
+						  </div>						
+						  		<div >
+						  			<button type="submit" class="btn btn-success">Enregistrer</button>
+						  		</div>		  							  		
+						  </form>
+						  
+					      </div>
+					    </div>
+					  
+					  </div>
+										
 						</div>
+						<div class="modal-footer">
+			       		 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        	</div>
 					</div>
 				</div>
 			</div>		
@@ -248,7 +276,7 @@
 		</div>
 					   
 			      
-
+<div class="center">fjijolzr</div>
 
 			<div class="row">
 				<div class="col-md-6 col-md-offset-4">
