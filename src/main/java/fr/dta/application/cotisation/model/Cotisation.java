@@ -6,13 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotBlank;
-
-import fr.dta.application.adherent.model.Adherent;
 
 @Entity
 public class Cotisation {
@@ -21,16 +18,22 @@ public class Cotisation {
 	private Long id;
 	
 	@Column
-	@NotBlank
+	@NotNull
 	@Temporal(TemporalType.DATE)
 	private Date dateDerniereCotisation;
 	
 	@Column
-	@NotBlank
+	@NotNull
 	private double montant;
 	
-	@OneToOne
-	private Adherent adherentCotisant;
+	public Cotisation(){
+		
+	}
+	
+	public Cotisation(Date dateDerniereCotisation, double montant) {
+		this.dateDerniereCotisation = dateDerniereCotisation;
+		this.montant = montant;
+	}
 
 	public Long getId() {
 		return id;
@@ -54,16 +57,6 @@ public class Cotisation {
 
 	public void setMontant(double montant) {
 		this.montant = montant;
-	}
-
-	public Adherent getAdherentCotisant() {
-		return adherentCotisant;
-	}
-
-	public void setAdherentCotisant(Adherent adherentCotisant) {
-		this.adherentCotisant = adherentCotisant;
-	}
-	
-	
+	}	
 	
 }

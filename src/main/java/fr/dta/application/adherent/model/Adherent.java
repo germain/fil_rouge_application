@@ -6,10 +6,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
+
+import fr.dta.application.cotisation.model.Cotisation;
 
 @Entity
 public class Adherent {
@@ -26,7 +30,7 @@ public class Adherent {
 	private String prenom;
 	
 	@Column
-	@NotBlank
+	@NotNull
 	@Temporal(TemporalType.DATE)
 	private Date dateNaissance;
 	
@@ -45,9 +49,27 @@ public class Adherent {
 	
 	@Column
 	private int nbEmpruntEnCours;
+	
+	@OneToOne
+	private Cotisation cotisation;
+	
+	public Adherent(){
+		
+	}
 
-	
-	
+	public Adherent(String nom, String prenom, Date dateNaissance, String email, String adresse, int postal,
+			String ville, int nbEmpruntEnCours, Cotisation cotisation) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.email = email;
+		this.adresse = adresse;
+		this.postal = postal;
+		this.ville = ville;
+		this.nbEmpruntEnCours = nbEmpruntEnCours;
+		this.cotisation = cotisation;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -118,6 +140,14 @@ public class Adherent {
 
 	public void setNbEmpruntEnCours(int nbEmpruntEnCours) {
 		this.nbEmpruntEnCours = nbEmpruntEnCours;
+	}
+
+	public Cotisation getCotisation() {
+		return cotisation;
+	}
+
+	public void setCotisation(Cotisation cotisation) {
+		this.cotisation = cotisation;
 	}
 	
 	
