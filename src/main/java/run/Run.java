@@ -7,6 +7,10 @@ import fr.dta.application.adherent.model.Adherent;
 import fr.dta.application.cotisation.model.Cotisation;
 import dao.*;
 
+import dao.MediaDAO;
+import fr.dta.application.media.model.Media;
+import fr.dta.application.media.model.Type;
+
 public class Run {
 
 	public static void main(String[] args) {			
@@ -38,11 +42,17 @@ public class Run {
 			
 			AdherentDao.listAdherent();
 			
+			MediaDAO mediaDAO = MediaDAO.instance();
+			
+			Media book1 = new Media("Don Quichotte", Type.Livre, "Miguel de Cervantes");
+			Media book2 = new Media("Fables", Type.Livre, "Esope");
+			
+			mediaDAO.addMedia(book1);
+			mediaDAO.addMedia(book2);
+			
 		} catch (ParseException e) {			
 			e.printStackTrace();
 		}
-
-		
 		
 	}
 

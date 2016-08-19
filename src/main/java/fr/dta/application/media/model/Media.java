@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -28,7 +29,7 @@ public class Media {
 	private String title;
 	
 	@Enumerated(EnumType.STRING)
-	@NotBlank
+	@NotNull
 	private Type type;
 	
 	@Column
@@ -44,6 +45,13 @@ public class Media {
 		this.type = type;
 		this.author = author;
 		this.emprunt = emprunt;
+	}
+	
+	public Media(String title, Type type, String author) {
+		super();
+		this.title = title;
+		this.type = type;
+		this.author = author;
 	}
 
 	public Media() {
