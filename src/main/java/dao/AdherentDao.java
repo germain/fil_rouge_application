@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import fr.dta.application.adherent.model.Adherent;
@@ -18,17 +20,23 @@ public class AdherentDao {
 		em.getTransaction().begin();
 		em.merge(a);
 		DatabaseHelper.commitTxAndClose(em);
-	}
+	}	
 	
-	
-	static public void findAdherent(long id) {
-		EntityManager em = DatabaseHelper.createEntityManager();
-		
+	static public void findAdherent(long id) {		
+		EntityManager em = DatabaseHelper.createEntityManager();		
 		Query query = em.createQuery("FROM Adherent WHERE id=:id",Adherent.class);
 		query.setParameter("id", id);
 		Adherent adherentFind = (Adherent) query.getSingleResult();
-		System.out.println(adherentFind.getPrenom());
+		System.out.println(adherentFind.getPrenom());		
 	}
-
 	
+	static public void listAdherent() {		
+		EntityManager em = DatabaseHelper.createEntityManager();		
+		Query query = em.createQuery("FROM Adherent",Adherent.class);
+		List<Adherent> adherents = query.getResultList();
+		for (Adherent adherent : adherents) {
+			System.out.println(adherent.getPrenom());
+		}	
+	}	
+
 }
