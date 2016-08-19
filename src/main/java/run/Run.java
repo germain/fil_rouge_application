@@ -6,8 +6,6 @@ import java.text.SimpleDateFormat;
 import fr.dta.application.adherent.model.Adherent;
 import fr.dta.application.cotisation.model.Cotisation;
 import dao.*;
-
-import dao.MediaDAO;
 import fr.dta.application.media.model.Media;
 import fr.dta.application.media.model.Type;
 
@@ -18,21 +16,33 @@ public class Run {
 		SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy");
 		try {
 			
+			//Ajout cotisation
 			Cotisation cotisation = new Cotisation(formater.parse("01-01-2000"), 25);
 			CotisationDao.persistCotisation(cotisation);
 			
-			Adherent adherent = new Adherent("nom1", "prenom1", formater.parse("10-10-2000"), "blabla@mail", "adresse1", 44000, "ville1", 0, cotisation);			
+			//Ajout adherent
+			Adherent adherent = new Adherent("nom1", "prenom1", formater.parse("10-10-2000"), "blabla@mail", "adresse1", 44000, "ville1", 2, cotisation);			
 			AdherentDao.persistAdherent(adherent);
 			
-			cotisation = new Cotisation(formater.parse("01-01-2000"), 55);
-			CotisationDao.persistCotisation(cotisation);
+			Adherent adherent2 = new Adherent("nom2", "prenom2", formater.parse("10-10-2100"), "blabla2@mail", "adresse2", 75000, "ville2", 1, cotisation);			
+			AdherentDao.persistAdherent(adherent2);	
+			
+			//Recherche nb emprunt adherent			
+			AdherentDao.CountAdherentEmprunt(2L);
+			
 			//Maj cotisation adherent
-			adherent.setCotisation(cotisation);
-			AdherentDao.mergeAdherent(adherent);
+			cotisation.setMontant(60);
+			CotisationDao.mergeCotisation(cotisation);
 			
 			//Recherche info adherent
 			AdherentDao.findAdherent(2L);
 			
+			//Recherche tous les adherents
+			AdherentDao.listAdherent();	
+			
+			//Supprime un adherent
+			AdherentDao.DeleteAdherent(2L);	
+												
 			MediaDAO mediaDAO = MediaDAO.instance();
 			
 			Media book1 = new Media("Don Quichotte", Type.Livre, "Miguel de Cervantes");
