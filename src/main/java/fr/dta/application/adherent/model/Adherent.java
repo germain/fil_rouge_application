@@ -52,9 +52,10 @@ public class Adherent {
 	
 	@OneToOne
 	private Cotisation cotisation;
-
 	
-	
+	public Adherent(){
+		
+	}
 
 	public Adherent(String nom, String prenom, Date dateNaissance, String email, String adresse, int postal,
 			String ville, int nbEmpruntEnCours, Cotisation cotisation) {

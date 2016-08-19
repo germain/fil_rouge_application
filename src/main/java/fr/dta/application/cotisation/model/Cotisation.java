@@ -26,6 +26,9 @@ public class Cotisation {
 	@NotNull
 	private double montant;
 	
+	public Cotisation(){
+		
+	}
 	
 	public Cotisation(Date dateDerniereCotisation, double montant) {
 		this.dateDerniereCotisation = dateDerniereCotisation;
@@ -54,9 +57,6 @@ public class Cotisation {
 
 	public void setMontant(double montant) {
 		this.montant = montant;
-	}
-
-	
-	
+	}	
 	
 }
