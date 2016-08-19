@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -25,15 +26,15 @@ public class Emprunt {
 	private Long id;
 	
 	@ManyToOne
-	@NotBlank
+	@NotNull
 	private Media media;
 	
 	@ManyToOne
-	@NotBlank
+	@NotNull
 	private Adherent adherent;
 	
 	@Column
-	@NotBlank
+	@NotNull
 	@Temporal(TemporalType.DATE)
 	private Date dateEmprunt;
 	
@@ -47,6 +48,13 @@ public class Emprunt {
 		this.adherent = adherent;
 		this.dateEmprunt = dateEmprunt;
 		this.dateRetourEmprunt = dateRetourEmprunt;
+	}
+	
+	public Emprunt(Media media, Adherent adherent, Date dateEmprunt) {
+		super();
+		this.media = media;
+		this.adherent = adherent;
+		this.dateEmprunt = dateEmprunt;
 	}
 	
 	public Emprunt() {

@@ -24,8 +24,10 @@ public class EmpruntDAO {
             entityManager.persist(emp);
             DatabaseHelper.commitTxAndClose(entityManager);
         } catch (Exception e) {
-            DatabaseHelper.rollbackTxAndClose(entityManager);
+//            DatabaseHelper.rollbackTxAndClose(entityManager);
             throw new RuntimeException(e);
         }
     }
+    
+    
 }

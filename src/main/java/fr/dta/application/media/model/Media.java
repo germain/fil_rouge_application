@@ -15,6 +15,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import fr.dta.application.adherent.model.Adherent;
 import fr.dta.application.emprunt.model.Emprunt;
 
 @Entity
@@ -38,7 +39,7 @@ public class Media {
 	
 	@OneToMany(mappedBy="media")
 	private List<Emprunt> emprunt;
-
+	
 	public Media(String title, Type type, String author, List<Emprunt> emprunt) {
 		super();
 		this.title = title;
@@ -98,7 +99,10 @@ public class Media {
 	public Long getId() {
 		return id;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Media [title=" + title + ", type=" + type + ", author=" + author + "]";
+	}
 	
 }
