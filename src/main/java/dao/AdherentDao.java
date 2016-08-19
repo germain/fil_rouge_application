@@ -30,6 +30,14 @@ public class AdherentDao {
 		System.out.println(adherentFind.getPrenom());		
 	}
 	
+	static public void CountAdherentEmprunt(long id) {		
+		EntityManager em = DatabaseHelper.createEntityManager();		
+		Query query = em.createQuery("FROM Adherent WHERE id=:id",Adherent.class);
+		query.setParameter("id", id);
+		Adherent adherentFind = (Adherent) query.getSingleResult();	
+		System.out.println("nb emprunt de l'adherent " + adherentFind.getNbEmpruntEnCours());	
+	}
+	
 	static public void listAdherent() {		
 		EntityManager em = DatabaseHelper.createEntityManager();		
 		Query query = em.createQuery("FROM Adherent",Adherent.class);
@@ -37,6 +45,15 @@ public class AdherentDao {
 		for (Adherent adherent : adherents) {
 			System.out.println(adherent.getPrenom());
 		}	
-	}	
+	}		
+	
+	static public void DeleteAdherent(long id) {	
+		EntityManager em = DatabaseHelper.createEntityManager();
+		em.getTransaction().begin();
+		Query query = em.createQuery("delete Adherent where id=:id").setParameter("id", id);		
+		query.executeUpdate();		
+		DatabaseHelper.commitTxAndClose(em);
+	}
+
 
 }
