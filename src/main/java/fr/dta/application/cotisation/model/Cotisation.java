@@ -8,8 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
@@ -19,15 +18,19 @@ public class Cotisation {
 	private Long id;
 	
 	@Column
-	@NotBlank
+	@NotNull
 	@Temporal(TemporalType.DATE)
 	private Date dateDerniereCotisation;
 	
 	@Column
-	@NotBlank
+	@NotNull
 	private double montant;
 	
 	
+	public Cotisation(Date dateDerniereCotisation, double montant) {
+		this.dateDerniereCotisation = dateDerniereCotisation;
+		this.montant = montant;
+	}
 
 	public Long getId() {
 		return id;

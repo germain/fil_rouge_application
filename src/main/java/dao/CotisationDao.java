@@ -2,14 +2,13 @@ package dao;
 
 import javax.persistence.EntityManager;
 
-import fr.dta.application.adherent.model.Adherent;
+import fr.dta.application.cotisation.model.Cotisation;
 
-
-public class AdherentDao {
-	static public void persistAdherent(Adherent a) {
+public class CotisationDao {
+	public static void persistCotisation(Cotisation c) {
 		EntityManager em = DatabaseHelper.createEntityManager();
 		em.getTransaction().begin();
-		em.persist(a);
+		em.persist(c);
 		DatabaseHelper.commitTxAndClose(em);
 	}
 }

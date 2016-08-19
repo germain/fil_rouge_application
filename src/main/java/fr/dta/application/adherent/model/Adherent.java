@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -29,7 +30,7 @@ public class Adherent {
 	private String prenom;
 	
 	@Column
-	@NotBlank
+	@NotNull
 	@Temporal(TemporalType.DATE)
 	private Date dateNaissance;
 	
