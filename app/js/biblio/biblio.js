@@ -4,7 +4,7 @@ angular.module('biblio', ['ngRoute'])
 			templateUrl: '/html/biblio/modification-media.html', 
 			controller: 'ModificationMediaCtrl'			
 		});
-		$routeProvider.otherwise({ 
+		$routeProvider.otherwise({  
 			redirectTo: '/404'			
 		});
 	});
