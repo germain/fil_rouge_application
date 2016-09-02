@@ -18,6 +18,6 @@ angular.module('biblio', ['ngRoute'])
 		});
 		$routeProvider.when('/creation-adherent', {
 			templateUrl: 'html/biblio/creation-adherent.html',
-			controller: 'CreationMediaCtrl'
+			controller: 'CreationAdherentCtrl'
 		});
 	});
