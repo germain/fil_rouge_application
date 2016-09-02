@@ -11,8 +11,13 @@ angular.module('biblio', ['ngRoute'])
 		});		
 		$routeProvider.when('/modification-adherent', {
 			templateUrl: 'html/biblio/modification-adherent.html'
+		
+		});
+		$routeProvider.when('/modification-adherent', {
+			templateUrl: 'html/biblio/modification-adherent.html'
 		});
 		$routeProvider.when('/creation-adherent', {
-			templateUrl: 'html/biblio/creation-adherent.html'
+			templateUrl: 'html/biblio/creation-adherent.html',
+			controller: 'CreationMediaCtrl'
 		});
 	});
