@@ -7,10 +7,10 @@ angular.module('biblio', ['ngRoute'])
 		});
 		$routeProvider.when('/recherche-adherent', {
 			templateUrl: 'html/biblio/recherche-adherant.html',
-			controller: 'rechercheAdherantCtrl',		
+			controller: 'rechercheAdherantCtrl'		
 		});		
-		$routeProvider.when('/modification-adherent', {
-			templateUrl: 'html/biblio/modification-adherent.html'
-		
+		$routeProvider.when('/modification-adherent/:id', {
+			templateUrl: 'html/biblio/modification-adherent.html',
+			controller: 'ModificationAdherentCtrl'
 		});
 	});
