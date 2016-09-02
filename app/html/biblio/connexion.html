@@ -1,0 +1,53 @@
+<div id="wrap">		
+	<div class="container">
+		<div ng-include="'./html/biblio/header.html'"></div>
+		<div class="row">		  
+			<div class="col-md-4 col-md-offset-4">	
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<form name="formConnexion" ng-submit="connecter()" novalidate">
+							<div class="form-group">
+								<label for="identifiant">Identifiant</label>
+								<input type="email" class="form-control" id="identifiant" name="email" ng-model="email" placeholder="Email" required >
+							</div>
+							<div ng-show="formConnexion.$invalid"> 
+								<div ng-show="formConnexion.email.$error.email" class="alert alert-danger" role="alert">Vérifier votre E-mail
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="mot_de_passe">Mot de passe</label>
+								<input type="password" class="form-control" id="mot_de_passe" placeholder="Password" name="password" ng-model="password" ng-pattern="/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/" required >
+							</div>
+
+							<div ng-show="formConnexion.$invalid"> 
+								<div ng-show="formConnexion.password.$error.pattern" class="alert alert-danger" role="alert">
+								Un mot de passe valide aura: <br>
+								- de 8 à 15 caractères <br>
+								- au moins une lettre minuscule <br>
+								- au moins une lettre majuscule <br>
+								- au moins un chiffre <br>
+								- au moins un de ces caractères spéciaux: $ @ % * + - _ ! <br>
+								- aucun autre caractère possible
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-6 col-md-offset-4">
+								  	<button type="submit" class="btn btn-success">Valider</button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-7 col-md-offset-2">
+									<a href="connexion.html">Mot de passe oubli&#233</a>
+								</div>
+							</div>
+								
+							
+						</form>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div ng-include="'./html/biblio/footer.html'"></div>
+	</div>
+</div>
