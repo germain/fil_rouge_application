@@ -9,6 +9,9 @@ angular.module('biblio', ['ngRoute'])
 		});
 		$routeProvider.when('/modification-adherent', {
 			templateUrl: 'html/biblio/modification-adherent.html'
+		});
+		$routeProvider.when('/modification-adherent', {
+			templateUrl: 'html/biblio/modification-adherent.html'
 		/*}).when('/bonjour/:name', {
 			templateUrl: 'template/jeu/bonjour.html',
 			controller: 'BonjourCtrl'
