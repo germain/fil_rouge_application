@@ -1,9 +1,8 @@
 angular.module('biblio', ['ngRoute'])
 	.config(function ($routeProvider) {
-		/*$routeProvider.when('/rencontre', {
-			templateUrl: 'template/jeu/rencontre.html',
-			controller: 'RencontreCtrl'
-		}).when('/bonjour/:name', {
+		$routeProvider.when('/modification-adherent', {
+			templateUrl: 'html/biblio/modification-adherent.html'
+		/*}).when('/bonjour/:name', {
 			templateUrl: 'template/jeu/bonjour.html',
 			controller: 'BonjourCtrl'
 		}).when('/boude', {
@@ -12,6 +11,6 @@ angular.module('biblio', ['ngRoute'])
 			templateUrl: 'template/jeu/jeu.html',
 			controller: 'JeuCtrl',
 		}).otherwise({
-			redirectTo:'/rencontre'
-		});*/
+			redirectTo:'/rencontre'*/
+		});
 	});
