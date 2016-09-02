@@ -4,24 +4,25 @@
 	<div class="col-md-6 col-md-offset-3">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<form action="" method="GET">
+				<form name="formAdh" action="" method="GET" ng-submit="validAdherent()" novalidate>
 <!-- 				ng-repeat ? -->
 					<div class="form-group">
 						<label for="Nom">Nom*</label> <input type="text"
-							class="form-control" id="nom" placeholder="Nom" required>
+							class="form-control" id="nom" placeholder="Nom" ng-model="nom" required 
+							ng-minlength="2" ng-maxlength="20">
 					</div>
 					<div class="form-group">
 						<label for="prenom">Prenom*</label> <input type="text"
-							class="form-control" id="prenom" placeholder="Prenom" required>
+							class="form-control" id="prenom" placeholder="Prenom" ng-model="prenom" required>
 					</div>
 					<div class="form-group">
 						<label for="date_nat">Date de naissance*</label> <input
 							type="date" class="form-control" id="date_nat"
-							placeholder="Date de naissance" required>
+							placeholder="Date de naissance" ng-model="dateNat" required>
 					</div>
 					<div class="form-group">
 						<label for="email">Email*</label> <input type="email"
-							class="form-control" id="email" placeholder="Mail" required>
+							class="form-control" id="email" placeholder="Mail" ng-model="email" required>
 					</div>
 					<div class="form-group">
 						<label for="adresse">Adresse</label> <input type="text"
@@ -57,3 +58,5 @@
 		</div>
 	</div>
 </div>
+
+<div ng-include="'./html/biblio/footer.html'"></div>
