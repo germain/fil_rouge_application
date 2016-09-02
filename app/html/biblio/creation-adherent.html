@@ -4,16 +4,27 @@
 	<div class="col-md-6 col-md-offset-3">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<form name="formAdh" action="" method="GET" ng-submit="validAdherent()" novalidate>
-<!-- 				ng-repeat ? -->
+				<form name="formAdh" ng-submit="validAdherent()" novalidate>
+					<!-- 				ng-repeat ? -->
 					<div class="form-group">
-						<label for="Nom">Nom*</label> <input type="text"
-							class="form-control" id="nom" placeholder="Nom" ng-model="nom" required 
-							ng-minlength="2" ng-maxlength="20">
+						<label for="Nom">Nom*</label> <input type="text" name="nom"
+							class="form-control" id="nom" placeholder="Nom" ng-model="nom"
+							required ng-minlength="2"
+							ng-maxlength="20">
+<!-- 						<div ng-show="formAdh.$invalid"> -->
+<!-- 							<div ng-show="formAdh.nom.$error.minlength" class="alert alert-danger"> -->
+<!-- 								Trop court</div> -->
+<!-- 							<div ng-show="formAdh.nom.$error.maxlength">Et -->
+<!-- 								Trop long</div> -->
+<!-- 						</div> -->
+						<div ng-messages="formAdh.nom.$error">
+						<div ng-messages-include="html/biblio/erreur.html"></div>
+						</div> 
 					</div>
 					<div class="form-group">
 						<label for="prenom">Prenom*</label> <input type="text"
-							class="form-control" id="prenom" placeholder="Prenom" ng-model="prenom" required>
+							class="form-control" id="prenom" placeholder="Prenom"
+							ng-model="prenom" required>
 					</div>
 					<div class="form-group">
 						<label for="date_nat">Date de naissance*</label> <input
@@ -22,7 +33,8 @@
 					</div>
 					<div class="form-group">
 						<label for="email">Email*</label> <input type="email"
-							class="form-control" id="email" placeholder="Mail" ng-model="email" required>
+							class="form-control" id="email" placeholder="Mail"
+							ng-model="email" required>
 					</div>
 					<div class="form-group">
 						<label for="adresse">Adresse</label> <input type="text"
