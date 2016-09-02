@@ -9,7 +9,7 @@ angular.module('biblio', ['ngRoute'])
 		});
 		$routeProvider.when('/modification-adherent', {
 			templateUrl: 'html/biblio/modification-adherent.html'
-		});
+		}); 
 		$routeProvider.when('/modification-adherent', {
 			templateUrl: 'html/biblio/modification-adherent.html'
 		/*}).when('/bonjour/:name', {
