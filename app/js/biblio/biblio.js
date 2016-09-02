@@ -1,5 +1,11 @@
 angular.module('biblio', ['ngRoute'])
 	.config(function ($routeProvider) {
+
+		$routeProvider.when('/ajoutMedia', {
+			templateUrl: 'html/biblio/creation-media.html',
+			controller: 'CreationMediaCtrl'
+		});
+
 		/*$routeProvider.when('/rencontre', {
 			templateUrl: 'template/jeu/rencontre.html',
 			controller: 'RencontreCtrl'
