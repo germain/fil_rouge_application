@@ -1,4 +1,4 @@
-angular.module('biblio', ['ngRoute'])
+angular.module('biblio', ['ngRoute', 'ngMessages'])
 	.config(function ($routeProvider) {
 
 
