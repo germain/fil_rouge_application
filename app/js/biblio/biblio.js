@@ -2,9 +2,14 @@ angular.module('biblio', ['ngRoute'])
 	.config(function ($routeProvider) {
 
 
-		$routeProvider.when('/ajoutMedia', {
+		$routeProvider.when('/creation-media', {
 			templateUrl: 'html/biblio/creation-media.html',
 			controller: 'CreationMediaCtrl'
+		});
+
+		$routeProvider.when('/connexion', {
+			templateUrl: 'html/biblio/connexion.html',
+			controller: 'ConnexionCtrl'
 		});
 
 
@@ -16,6 +21,9 @@ angular.module('biblio', ['ngRoute'])
 			templateUrl: 'html/biblio/recherche-adherant.html',
 			controller: 'rechercheAdherantCtrl',		
 		});		
+		$routeProvider.when('/recherche-media', {
+			templateUrl: 'html/biblio/recherche-media.html'
+		});
 		$routeProvider.when('/modification-adherent', {
 			templateUrl: 'html/biblio/modification-adherent.html'
 		
