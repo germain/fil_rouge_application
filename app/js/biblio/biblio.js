@@ -12,15 +12,8 @@ angular.module('biblio', ['ngRoute'])
 		});
 		$routeProvider.when('/modification-adherent', {
 			templateUrl: 'html/biblio/modification-adherent.html'
-		/*}).when('/bonjour/:name', {
-			templateUrl: 'template/jeu/bonjour.html',
-			controller: 'BonjourCtrl'
-		}).when('/boude', {
-			templateUrl: 'template/jeu/boude.html'
-		}).when('/jeu', {
-			templateUrl: 'template/jeu/jeu.html',
-			controller: 'JeuCtrl',
-		}).otherwise({
-			redirectTo:'/rencontre'*/
+		});
+		$routeProvider.when('/creation-adherent', {
+			templateUrl: 'html/biblio/creation-adherent.html'
 		});
 	});
