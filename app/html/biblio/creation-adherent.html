@@ -1,0 +1,76 @@
+<div ng-include="'./html/biblio/header.html'"></div>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<form name="formAdh" ng-submit="validAdherent()" novalidate>
+					<!-- 				ng-repeat ? -->
+					<div class="form-group">
+						<label for="Nom">Nom*</label> <input type="text" name="nom"
+							class="form-control" id="nom" placeholder="Nom" ng-model="nom"
+							required ng-minlength="2" ng-maxlength="20">
+						<div ng-messages="formAdh.nom.$error">
+							<div ng-messages-include="html/biblio/erreur.html"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="prenom">Prenom*</label> <input type="text" name="prenom"
+							class="form-control" id="prenom" placeholder="Prenom"
+							ng-model="prenom" required>
+					</div>
+					<div ng-messages="formAdh.nom.$error">
+						<div ng-messages-include="html/biblio/erreur.html"></div>
+					</div>
+					<div class="form-group">
+						<label for="date_nat">Date de naissance*</label> <input name="date"
+							type="date" class="form-control" id="date_nat"
+							placeholder="Date de naissance" ng-model="dateNat" required>
+						<div ng-messages="formAdh.nom.$error">
+							<div ng-messages-include="html/biblio/erreur.html"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email">Email*</label> <input type="email" name="email"
+							class="form-control" id="email" placeholder="Mail"
+							ng-model="email" required>
+						<div ng-messages="formAdh.nom.$error">
+							<div ng-messages-include="html/biblio/erreur.html"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="adresse">Adresse</label> <input type="text"
+							class="form-control" id="adresse" placeholder="Adresse">
+					</div>
+					<div class="form-group">
+						<label for="adresse">Adresse</label> <input type="text"
+							class="form-control" id="adresse" placeholder="Adresse">
+					</div>
+					<div class="form-group">
+						<label for="BP">Code postal</label> <input type="text"
+							class="form-control" id="BP" placeholder="Code postal">
+					</div>
+					<div class="form-group">
+						<label for="ville">Ville</label> <input type="text"
+							class="form-control" id="ville" placeholder="Ville">
+					</div>
+					<div class="form-group">
+						<label for="paiement">Date de paiement</label> <input type="text"
+							class="form-control" id="paiement" placeholder="Date de paiement">
+					</div>
+					<div class="form-group">
+						<label for="montant">Montant</label> <input type="text"
+							class="form-control" id="montant" placeholder="Montant">
+					</div>
+					<div class="col-md-6 col-md-offset-4">
+						<button class="btn btn-success" type="submit">
+							<span class="glyphicon glyphicon-ok"></span><b> Enregistrer</b>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div ng-include="'./html/biblio/footer.html'"></div>

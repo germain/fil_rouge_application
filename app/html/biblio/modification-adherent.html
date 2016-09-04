@@ -1,0 +1,57 @@
+<div id="wrap">		
+	<div class="container">
+		<div ng-include="'html/biblio/header.html'"></div>
+		<div class="page-header">
+  			<h3>Modification de l'adherent</h3>
+		</div>
+		<div class="row">		  
+			<div class="col-md-6 col-md-offset-3">
+			  	<div class="panel panel-default">
+					  <div class="panel-body">
+					    <form name="modifcationAdherentForm" novalidate>
+							<div class="form-group">
+								<label for="Nom">Nom*</label>
+								<input type="text" name="adherentName" ng-model="adherent.nom" class="form-control" id="nom" placeholder="Nom" required>
+							</div>
+								<div class="form-group">
+								<label for="prenom">Prenom*</label>
+								<input type="text" name="adherentPrenom" ng-model="adherent.prenom" class="form-control" id="prenom" placeholder="Prenom" required>
+							</div>
+							<div class="form-group">
+								<label for="date_nat">Date de naissance*</label>
+								<input type="date" name="adherentBirthday" ng-model="adherent.date_naissance" class="form-control" id="date_nat" placeholder="Date de naissance" required>
+							</div>
+							<div class="form-group">
+								<label for="email">Email*</label>
+								<input type="email" name="adherentEmail" ng-model="adherent.email" class="form-control" id="email" placeholder="Mail" required>
+							</div>
+							<div class="form-group">
+								<label for="adresse">Adresse</label>
+								<input type="text" name="adherentAddresse" ng-model="adherent.adresse" class="form-control" id="adresse" placeholder="Adresse">
+							</div>
+							<div class="form-group">
+								<label for="BP">Code postal</label>
+								<input type="text" name="adherentCodePostal" ng-model="adherent.adresse.codepostal" class="form-control" id="BP" placeholder="Code postal">
+							</div>
+							<div class="form-group">
+								<label for="ville">Ville</label>
+								<input type="text" name="adherentVille" ng-model="adherent.adresse.ville" class="form-control" id="ville" placeholder="Ville">
+							</div>
+							<div class="form-group">
+								<label for="paiement">Date de paiement</label>
+								<input type="text" name="adherentDatePaiement" ng-model="adherent.cotisation.debut" class="form-control" id="paiement" placeholder="Date de paiement">
+							</div>
+							<div class="form-group">
+								<label for="montant">Montant</label>
+								<input type="text" name="adherentMontant" ng-model="adherent.cotisation.montant" class="form-control" id="montant" placeholder="Montant">
+							</div>
+							<div class="row">	  										
+								<button type="submit" class="btn btn-success col-md-offset-5">Enregistrer</button>		  							  		
+							</div>	
+						</form>
+					  </div>
+				</div>
+			</div>	
+		</div>
+	</div>	
+</div>
