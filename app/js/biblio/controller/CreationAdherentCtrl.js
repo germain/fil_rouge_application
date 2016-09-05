@@ -1,3 +1,5 @@
 angular.module('biblio').controller('CreationAdherentCtrl', function($scope, $routeParams){
-			$scope.id = $routeParams.id;		
+			$scope.id = $routeParams.id;
+			
+			$scope.validAdherent = function()
 });
