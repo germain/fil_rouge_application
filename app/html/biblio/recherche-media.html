@@ -1,0 +1,271 @@
+<script>
+	$(function(){
+	    $('#orderModal').modal({
+	        keyboard: true,
+	        backdrop: "static",
+	        show:false,
+	        
+	    }).on('show', function(){
+	          var getIdFromRow = $(event.target).closest('tr').data('id');
+	        //make your ajax call populate items or what even you need
+	        $(this).find('#orderDetails').html($('<b> Order Id selected: ' + getIdFromRow  + '</b>'))
+	    });
+	});
+</script>	
+<body>
+<div id="wrap">		
+	<div class="container">
+		<header>
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Biblio</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">        
+					  <li class="dropdown">
+					    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Media<span class="caret"></span></a>
+					    <ul class="dropdown-menu">
+					      <li><a href="recherche-media.html">Recherche</a></li>
+					      <li><a href="creation-media.html">Ajout</a></li>
+					    </ul>
+					  </li>
+					  <li class="dropdown">
+					    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adherent<span class="caret"></span></a>
+					    <ul class="dropdown-menu">
+					      <li><a href="recherche-adherent.html">Recherche</a></li>
+					      <li><a href="creation-adherent.html">Ajout</a></li>
+					    </ul>
+					  </li>        
+					</ul>
+					<ul class="nav navbar-nav navbar-right">        
+					  <li class="dropdown">
+					    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+					    <ul class="dropdown-menu">
+					      <li><a href="connexion.html">Deconnexion</a></li>
+					    </ul>
+					  </li>
+					</ul>
+				</div>		 
+			</nav>
+		</header>
+
+	<div class="row">
+		<form id="form">
+			<div class="form-group">
+		      <div class="col-xs-4">
+		        <input class="form-control" id="ex1" type="text" ng-model="toAddMedia.titre" placeholder="Recherche par titre">
+		      </div>
+		      <div class="col-xs-4">
+		        <input class="form-control" id="ex2" type="text" ng-model="toAddMedia.auteur" placeholder="Reherche par nom d'auteur">
+		      </div>
+		      <div class="btn-group col-xs-4">
+				<!-- Single button -->
+		  <button type="button" class="btn btn-default dropdown-toggle" ng-model="toAddMedia.type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    Livre <span class="caret"></span>
+		  </button>
+			<ul class="dropdown-menu">
+				<li><a href="#">CD</a></li>
+				<li><a href="#">Livre</a></li>
+				<li><a href="#">DVD</a></li>
+			</ul>
+			<button type="button" ng-click="RechercheMedia()" class="btn btn-info col-xs-offset-1">Rechercher</button>
+		</div>
+	 		</div>
+	 	</form>
+	</div>
+	<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Trie
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+				<li><a href="#">Titre média</a></li>
+				<li><a href="#">nom d'auteur</a></li>
+				<li><a href="#">Type média</a></li>
+			</ul>
+	</div>
+	<!-- {{$scope.list} -->
+	
+	<div id="table" class="table-responsive">
+		<table class="table table-hover">
+			<tr>
+				<td><label>Titre du média</label></td>
+				<td><label>Type du média</label></td>
+				<td><label>Auteur du média</label></td>
+				<td><label>Emprunteur</label></td>
+				<td><label>Date de retour prévu</label></td>
+			</tr>
+			<tr ng-repeat="obj in list" >
+							<td>{{obj.titre}}</td>
+							<td>{{obj.type}}</td>
+							<td>{{obj.auteur}}</td>
+							<td>{{obj.emprunteur.nom}}</td>
+							<td>{{obj.emprunteur.cotisation.fin}}</td>				
+			</tr>
+<!-- 			<tr data-toggle="modal" data-target="#myModal">
+				<td>Don Quichotte </td>
+				<td>Livre</td>
+				<td>Miguel de Cervantes  </td>
+				<td>Germain</td>
+				<td>08/08/2016</td>				
+			</tr> -->			
+		</table>
+	</div>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				      	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+						  <div class="panel panel-default">
+						    <div class="panel-heading" role="tab" id="headingOne">
+						      <h4 class="panel-title">
+						        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						          Détail adhérent
+						        </a>
+						      </h4>
+						    </div>
+						    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+								<div class="panel-body">
+									<div class="modal-body">
+								     	<div class="row">
+										  <div class="col-md-8 col-md-offset-2">
+										    <div class="thumbnail">
+										      <img src="img/livre-don quichotte.jpg">
+										      <div class="caption">
+										        <div><h3>Don Quichotte</h3></div>
+										        <label>Type: </label> Livre<br>
+										        <label>Auteur: </label> Miguel de Cervantes
+										        <p><a href="modification-media.html" class="btn btn-primary" role="button">Modifier</a> <a href="#" class="btn btn-default" role="button">Supprimer</a></p>
+										      </div>
+										    </div>
+										  </div>
+										</div>
+								    </div>
+								</div>
+				  			</div>
+						</div>
+						<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingTwo">
+								  <h4 class="panel-title">
+								    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								      Liste des emprunteurs
+								    </a>
+								  </h4>
+								</div>
+							   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+							     <div class="panel-body">								 
+							     	<div id="table">
+									<table class="table table-hover">
+										<tr>
+											<td><label>Nom de l'emprunteur</label></td>
+											<td><label>Date de l'emprunt</label></td>
+											<td><label>Date du retour</label></td>
+										</tr>
+										<tr data-toggle="modal" data-target="#myModal">
+											<td>Hela </td>
+											<td>18/06/2016</td>
+											<td>18/07/2016 </td>
+										</tr>
+											<tr>
+											<td>Germain </td>
+											<td>07/07/2016</td>
+											<td>07/08/2016</td>
+										</tr>
+									</table>
+							     </div>
+							   </div>
+							</div>
+							<div class="panel panel-default">
+							    <div class="panel-heading" role="tab" id="headingThree">
+							      <h4 class="panel-title">
+							        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							          Ajouter nouveau emprunteur
+							        </a>
+							      </h4>
+							    </div>
+								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+								    <div class="panel-body">
+										<form action="" method="GET">
+											<div class="form-group">
+												<label for="Titre" class="Gras">Nom de l'emprunteur*</label>
+												<input type="text" class="form-control" id="Titre" placeholder="Titre" required>
+											</div>
+											<div class="form-group">
+												<label for="Auteur" class="Gras">Date de l'emprunteur*</label>
+												<input type="date" class="form-control" id="Auteur" placeholder="Auteur" required>
+											</div>
+											<div class="form-group">
+												<label for="Auteur" class="Gras">Date de retour*</label>
+												<input type="date" class="form-control" id="Auteur" placeholder="Auteur" required>
+											</div>						
+											<div>
+												<button type="submit" class="btn btn-success col-xs-offset-5">Enregistrer</button>
+											</div>		  							  		
+										</form>
+									</div>
+								</div>
+							  
+							</div>
+											
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>		
+			</div>
+		</div>
+					   
+			   
+		<div class="row">
+			<div class="col-md-6 col-md-offset-4">
+				<nav>
+					  <ul class="pagination">
+					    <li class="disabled">
+					      <span>
+					        <span aria-hidden="true">&laquo;</span>
+					      </span>
+					    </li>
+					    <li>
+					      <span>1 <span class="sr-only">(current)</span></span>
+					    </li>
+					     <li>
+					      <span>2<span class="sr-only">(current)</span></span>
+					    </li>
+					     <li>
+					      <span>2 <span class="sr-only">(current)</span></span>
+					    </li>
+					     <li>
+					      <span>3 <span class="sr-only">(current)</span></span>
+					    </li>
+					     <li class="active">
+					      <span>4<span class="sr-only">(current)</span></span>
+					    </li>
+					     <li>
+					      <span>...<span class="sr-only">(current)</span></span>
+					    </li>
+					     <li>
+					      <span>8<span class="sr-only">(current)</span></span>
+					    </li>
+					  </ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>		
+		
+	
+
+</body>
+</html>

@@ -3,6 +3,8 @@ angular.module('biblio').controller('CreationAdherentCtrl', function($scope, $ro
 			
 			$scope.validAdherent = function(){
 				console.log("Controleur creation d'adherent "
-						+ $scope.toAddAdherent.nom + " " + $scope.toAddAdherent.prenom + " " + $scope.toAddAdherent.date);
+						+ $scope.toAddAdherent.nom + " " + $scope.toAddAdherent.prenom + " " + $scope.toAddAdherent.dateNat
+						+ " " + $scope.toAddAdherent.email+ " " + $scope.toAddAdherent.adresse+ " " + $scope.toAddAdherent.codePost
+						+ " " + $scope.toAddAdherent.ville+ " " + $scope.toAddAdherent.datePaie+ " " + $scope.toAddAdherent.montant);
 			};
 });

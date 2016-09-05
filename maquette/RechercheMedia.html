@@ -1,33 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Bibliotheque</title>
-	<link rel="stylesheet" href="css\recherche-media.css">
-	<link rel="stylesheet" href="bootstrap\css\bootstrap.css">
-	<link rel="shortcut icon" href="img/2-logo-centre-couleurs.jpg"/> 
-	<!-- Optional theme -->	
-	<link rel="stylesheet" href="bootstrap\css\bootstrap-theme.css">
-	
-	<!-- Latest compiled and minified JavaScript -->
-	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-	
-	<script src="bootstrap\js\bootstrap.js"></script>	
-	<script>
-	$(function(){
-	    $('#orderModal').modal({
-	        keyboard: true,
-	        backdrop: "static",
-	        show:false,
-	        
-	    }).on('show', function(){
-	          var getIdFromRow = $(event.target).closest('tr').data('id');
-	        //make your ajax call populate items or what even you need
-	        $(this).find('#orderDetails').html($('<b> Order Id selected: ' + getIdFromRow  + '</b>'))
-	    });
-	});
-	</script>	
-</head>
+<script>
+$(function(){
+    $('#orderModal').modal({
+        keyboard: true,
+        backdrop: "static",
+        show:false,
+        
+    }).on('show', function(){
+          var getIdFromRow = $(event.target).closest('tr').data('id');
+        //make your ajax call populate items or what even you need
+        $(this).find('#orderDetails').html($('<b> Order Id selected: ' + getIdFromRow  + '</b>'))
+    });
+});
+</script>	
 <body>
 <div id="wrap">		
 	<div class="container">
@@ -77,14 +61,14 @@
 		<form id="form">
 			<div class="form-group">
 		      <div class="col-xs-4">
-		        <input class="form-control" id="ex1" type="text" placeholder="Recherche par titre">
+		        <input class="form-control" id="ex1" type="text" ng-model="toAddMedia.titre" placeholder="Recherche par titre">
 		      </div>
 		      <div class="col-xs-4">
-		        <input class="form-control" id="ex2" type="text" placeholder="Reherche par nom d'auteur">
+		        <input class="form-control" id="ex2" type="text" ng-model="toAddMedia.auteur" placeholder="Reherche par nom d'auteur">
 		      </div>
 		      <div class="btn-group col-xs-4">
 				<!-- Single button -->
-		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		  <button type="button" class="btn btn-default dropdown-toggle" ng-model="toAddMedia.type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    Livre <span class="caret"></span>
 		  </button>
 			<ul class="dropdown-menu">
@@ -92,7 +76,7 @@
 				<li><a href="#">Livre</a></li>
 				<li><a href="#">DVD</a></li>
 			</ul>
-			<button type="button" class="btn btn-info col-xs-offset-1">Rechercher</button>
+			<button type="button" ng-click="RechercheMedia()" class="btn btn-info col-xs-offset-1">Rechercher</button>
 		</div>
 	 		</div>
 	 	</form>
@@ -103,19 +87,19 @@
 				<span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-				<li><a href="#">Titre m√©dia</a></li>
+				<li><a href="#">Titre mÈdia</a></li>
 				<li><a href="#">nom d'auteur</a></li>
-				<li><a href="#">Type m√©dia</a></li>
+				<li><a href="#">Type mÈdia</a></li>
 			</ul>
 	</div>
 	<div id="table" class="table-responsive">
 		<table class="table table-hover">
 			<tr>
-				<td><label>Titre du m√©dia</label></td>
-				<td><label>Type du m√©dia</label></td>
-				<td><label>Auteur du m√©dia</label></td>
+				<td><label>Titre du mÈdia</label></td>
+				<td><label>Type du mÈdia</label></td>
+				<td><label>Auteur du mÈdia</label></td>
 				<td><label>Emprunteur</label></td>
-				<td><label>Date de retour pr√©vu</label></td>
+				<td><label>Date de retour prÈvu</label></td>
 			</tr>
 			<tr data-toggle="modal" data-target="#myModal">
 				<td>Don Quichotte </td>
@@ -125,37 +109,14 @@
 				<td>08/08/2016</td>
 				
 			</tr>
-				<tr>
+<!-- 			<tr>
 				<td>Fables </td>
 				<td>Livre</td>
-				<td>√âsope </td>
+				<td>…sope </td>
 				<td>Hela</td>
 				<td>19/07/2016</td>
 				
-			</tr>
-			<tr>
-				<td>Fables de Jean de la Fontaine  </td>
-				<td>Livre</td>
-				<td>Jean de La Fontaine  </td>
-				<td>Natanael</td>
-				<td>08/07/2016</td>
-				
-			</tr>
-			<tr>
-				<td>Les m√©tamorphoses </td>
-				<td>Livre</td>
-				<td>Ovide </td>
-				<td>Jocelyn</td>
-				<td>08/08/2016</td>
-			</tr>
-			<tr>
-				<td>Les voyages de Gulliver</td>
-				<td>Livre</td>
-				<td>Jonathan Swift  </td>
-				<td>Yanis</td>
-				<td>01/08/2016</td>
-				
-			</tr>
+			</tr> -->
 		</table>
 	</div>
 		
@@ -169,7 +130,7 @@
 						    <div class="panel-heading" role="tab" id="headingOne">
 						      <h4 class="panel-title">
 						        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						          D√©tail adh√©rent
+						          DÈtail adhÈrent
 						        </a>
 						      </h4>
 						    </div>
