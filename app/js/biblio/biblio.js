@@ -1,4 +1,4 @@
-angular.module('biblio', ['ngRoute', 'ngMessages'])
+angular.module('biblio', ['ngRoute', 'ngMessages', 'ui.bootstrap'])
 	.config(function ($routeProvider) {		
 		$routeProvider.when('/creation-media', {
 			templateUrl: 'html/biblio/creation-media.html',
