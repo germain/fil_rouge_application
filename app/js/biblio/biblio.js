@@ -37,4 +37,8 @@ angular.module('biblio', ['ngRoute', 'ngMessages', 'ui.bootstrap'])
 			templateUrl: 'html/biblio/creation-adherent.html',
 			controller: 'CreationAdherentCtrl'
 		});
+
+		$routeProvider.otherwise({
+			redirectTo:'/connexion'
+		});
 	});
