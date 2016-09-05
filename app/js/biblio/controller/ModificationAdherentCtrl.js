@@ -30,4 +30,11 @@ angular.module('biblio')
 
 			$scope.adherent = adherentTmp;
 		});
+
+		$scope.modifyAdherent = function(adherent) {
+			serviceAdherent.modifyAdherent(adherent).then(function(response) {
+				console.log(response)
+			});
+		};
+
 	});
