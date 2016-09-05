@@ -14,8 +14,8 @@ angular.module('biblio', ['ngRoute', 'ngMessages'])
 		});
 
 		$routeProvider.when('/recherche-adherent', {
-			templateUrl: 'html/biblio/recherche-adherant.html',
-			controller: 'rechercheAdherantCtrl'		
+			templateUrl: 'html/biblio/recherche-adherent.html',
+			controller: 'rechercheAdherentCtrl'		
 		});	
 
 		$routeProvider.when('/modification-adherent/:id', {
