@@ -14,8 +14,8 @@ angular.module('biblio', ['ngRoute', 'ngMessages'])
 		});
 
 		$routeProvider.when('/recherche-adherent', {
-			templateUrl: 'html/biblio/recherche-adherant.html',
-			controller: 'rechercheAdherantCtrl'		
+			templateUrl: 'html/biblio/recherche-adherent.html',
+			controller: 'rechercheAdherentCtrl'		
 		});	
 
 		$routeProvider.when('/modification-adherent/:id', {
@@ -24,7 +24,13 @@ angular.module('biblio', ['ngRoute', 'ngMessages'])
 		});
 	
 		$routeProvider.when('/recherche-media', {
-			templateUrl: 'html/biblio/recherche-media.html'
+			templateUrl: 'html/biblio/recherche-media.html',
+			controller: 'RechercheMediaCtrl'	
+		});
+		
+		$routeProvider.when('/recherche-media/:titre', {
+			templateUrl: 'html/biblio/recherche-media.html',
+			controller: 'RechercheMediaCtrl'	
 		});
 
 		$routeProvider.when('/creation-adherent', {
