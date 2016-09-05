@@ -5,21 +5,23 @@
 	font-size:16px;
 }
 
-footer {
-    height: 50px;
-    background-color: #333;
-    color: lightgrey;
-    line-height: 40px;
-    /*text-align: center;*/
+footer {  
+    /*height: 40px;*/
+/*    background-color: #333;
+    color: lightgrey;*/
+    /*line-height: 40px;*/
+    text-align: center;
     position: fixed;
     bottom: 0;
-    right: 0;
-    left: 0;
-    margin-top: 10px;
+    /*right: 0;
+    left: 0;*/
+    /*margin-top: 10px;*/	
     width: 100%;
+    padding-right: 30px;
 }
 
-/*@media (min-width: 768px) {
+
+@media (min-width: 768px) {
 	footer {
 		width: 750px;
 	}
@@ -36,4 +38,7 @@ footer {
 		width: 1170px;
 	}
 }
-*/
+
+#panel-footer {
+	margin-bottom: 0px;
+}
