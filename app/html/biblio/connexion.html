@@ -10,13 +10,18 @@
 								<label for="identifiant">Identifiant</label>
 								<input type="email" class="form-control" id="identifiant" name="email" ng-model="email" placeholder="Email" required >
 							</div>
-							<div ng-show="formConnexion.$invalid"> 
-								<div ng-show="formConnexion.email.$error.email" class="alert alert-danger" role="alert">Vérifier votre E-mail
-								</div>
+
+							<div ng-messages="formConnexion.email.$error">
+								<div ng-messages-include="html/biblio/erreur.html"></div>
 							</div>
+							
 							<div class="form-group">
 								<label for="mot_de_passe">Mot de passe</label>
 								<input type="password" class="form-control" id="mot_de_passe" placeholder="Password" name="password" ng-model="password" ng-pattern="/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/" required >
+							</div>
+
+							<div ng-messages="formConnexion.password.$error">
+								<div ng-messages-include="html/biblio/erreur.html"></div>
 							</div>
 
 							<div ng-show="formConnexion.$invalid"> 
