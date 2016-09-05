@@ -8,8 +8,7 @@ angular.module('biblio').factory('media',function($http, $timeout){
 				  //console.log(data);
 			  });		 
 		},
-		modificationmedia : function(id, titre, auteur, type){	
-			//id, titre, auteur, type
+		modificationmedia : function(id, titre, auteur, type){				
 			console.log("Webservice modification du media - " + id + " - "+ titre + " - " + auteur + " - " + type);
 			var req = {
 					 method: 'POST',
@@ -32,6 +31,22 @@ angular.module('biblio').factory('media',function($http, $timeout){
 		},	
 		creationMedia : function(titre, auteur, type){			
 			console.log("Webservice creation du media" + titre + " " + auteur + " " + type);
+			var req = {
+					 method: 'POST',
+					 url: 'http://192.168.10.41:8090/resource/',
+					 headers: {
+					   'Content-Type': undefined
+					 },
+					 data: { titre : titre,
+						 	 auteur : auteur,
+						 	 type : type
+					 	   }
+					}
+			
+			$http(req).then(function (response) {				 
+				  //return response.data; 
+				  console.log(data);
+			  });
 		}	
 	};
 });
