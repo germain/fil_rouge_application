@@ -25,11 +25,21 @@ angular.module('biblio', ['ngRoute', 'ngMessages'])
 		});
 	
 		$routeProvider.when('/recherche-media', {
-			templateUrl: 'html/biblio/recherche-media.html'
+			templateUrl: 'html/biblio/recherche-media.html',
+			controller: 'RechercheMediaCtrl'	
+		});
+		
+		$routeProvider.when('/recherche-media/:titre', {
+			templateUrl: 'html/biblio/recherche-media.html',
+			controller: 'RechercheMediaCtrl'	
 		});
 
 		$routeProvider.when('/creation-adherent', {
 			templateUrl: 'html/biblio/creation-adherent.html',
 			controller: 'CreationAdherentCtrl'
+		});
+
+		$routeProvider.otherwise({
+			redirectTo:'/connexion'
 		});
 	});

@@ -1,43 +1,43 @@
 	<div id="wrap">		
 		<div class="container">
-			<div ng-include="'./html/biblio/header.html'"></div>
+			<div x-ng-include="'./html/biblio/header.html'"></div>
 			<div class="row">		  
 					<div class="col-md-6 col-md-offset-3">
 					  	<div class="panel panel-default">
 							<div class="panel-body"> 
-								<form name="formCreationMedia" ng-submit="ajoutMedia()" novalidate>
+								<form name="formCreationMedia" novalidate>
 								  <div class="form-group">
 								    <label for="Titre" class="Gras">Titre*</label>
-								    <input type="text" class="form-control" name="titre" ng-model="toAddMedia.titre" placeholder="Titre" required>
+								    <input type="text" class="form-control" name="titre" x-ng-model="toAddMedia.titre" placeholder="Titre" required>
+								    <div x-ng-if="formCreationMedia.titre.$dirty" x-ng-messages="formCreationMedia.auteur.$error">
+										<div x-ng-messages-include="html/biblio/erreur.html"></div>
+									</div>
 								  </div>
 								  <div class="form-group">
 								    <label for="Auteur" class="Gras">Auteur*</label>
-								    <input type="text" class="form-control" name="auteur" ng-model="toAddMedia.auteur" placeholder="Auteur"  ng-maxlength="20" ng-minlength="2" ng-pattern="/^[a-zA-Z-]+$/" 
+								    <input type="text" class="form-control" name="auteur" x-ng-model="toAddMedia.auteur" placeholder="Auteur"  x-ng-maxlength="20" x-ng-minlength="2" x-ng-pattern="/^[a-zA-Z-]+$/" 
 									 required>
-									<div ng-messages="formCreationMedia.auteur.$error">
-										<div ng-messages-include="html/biblio/erreur.html"></div>
+									<div x-ng-if="formCreationMedia.auteur.$dirty" x-ng-messages="formCreationMedia.auteur.$error">
+										<div x-ng-messages-include="html/biblio/erreur.html"></div>
 									</div>
 								  </div>	
 									<div class="form-group">
 								      <label for="type" class="Gras">Type*</label>
-								      <select class="form-control" id="type" name="type" ng-model="toAddMedia.type" required>
-								      	<option value="">-- Sélectionner un type --</option>
-								        <option value="livre">Livre</option>
-								        <option value="cd">CD</option>
-								        <option value="dvd">DVD</option>
+								      <select class="form-control" id="type" name="type" x-ng-model="toAddMedia.type" required>
+								      	<option value="">-- Selectionner un type --</option>
+								        <option value="Livre">Livre</option>
+								        <option value="CD">CD</option>
+								        <option value="DVD">DVD</option>
 								      </select>
-								    </div>
-
-								  <div class="row">
-								  		<div class="col-md-6 col-md-offset-4">
-								  			<button type="submit" ng-click="ajoutmedia()" class="btn btn-success">Enregistrer</button>
+								      <div class="col-md-6 col-md-offset-4">
+								  			<button type="submit" x-ng-click="ajoutmedia()" class="btn btn-success">Enregistrer</button>
 								  		</div>	
-								  </div>  
+								    </div>
 								</form>
 							  </div>					  
 						</div>
 					</div>	
 			</div>
-			<div ng-include="'./html/biblio/footer.html'"></div>
+			<div x-ng-include="'./html/biblio/footer.html'"></div>
 		</div>		
 	</div>

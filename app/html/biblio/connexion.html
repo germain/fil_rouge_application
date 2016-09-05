@@ -1,4 +1,15 @@
 <div id="wrap">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<a href="#" class="thumbnail"> <img
+						src="img/2-logo-centre-couleurs.jpg">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4">
@@ -11,7 +22,7 @@
 									x-ng-model="email" placeholder="Email" required>
 							</div>
 
-							<div x-ng-messages="formConnexion.email.$error">
+							<div x-ng-if="formConnexion.email.$dirty" x-ng-messages="formConnexion.email.$error">
 								<div x-ng-messages-include="html/biblio/erreur.html"></div>
 							</div>
 
@@ -22,7 +33,7 @@
 									required>
 							</div>
 
-							<div x-ng-messages="formConnexion.password.$error">
+							<div x-ng-if="formConnexion.password.$dirty" x-ng-messages="formConnexion.password.$error">
 								<div x-ng-messages-include="html/biblio/erreur.html"></div>
 							</div>
 
