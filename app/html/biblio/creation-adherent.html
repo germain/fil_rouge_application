@@ -19,14 +19,14 @@
 							class="form-control" id="prenom" placeholder="Prenom"
 							ng-model="prenom" required>
 					</div>
-					<div ng-messages="formAdh.nom.$error">
+					<div ng-messages="formAdh.prenom.$error">
 						<div ng-messages-include="html/biblio/erreur.html"></div>
 					</div>
 					<div class="form-group">
 						<label for="date_nat">Date de naissance*</label> <input name="date"
 							type="date" class="form-control" id="date_nat"
 							placeholder="Date de naissance" ng-model="dateNat" required>
-						<div ng-messages="formAdh.nom.$error">
+						<div ng-messages="formAdh.date.$error">
 							<div ng-messages-include="html/biblio/erreur.html"></div>
 						</div>
 					</div>
@@ -34,7 +34,7 @@
 						<label for="email">Email*</label> <input type="email" name="email"
 							class="form-control" id="email" placeholder="Mail"
 							ng-model="email" required>
-						<div ng-messages="formAdh.nom.$error">
+						<div ng-messages="formAdh.email.$error">
 							<div ng-messages-include="html/biblio/erreur.html"></div>
 						</div>
 					</div>
