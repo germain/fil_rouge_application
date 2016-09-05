@@ -23,8 +23,7 @@ angular.module('biblio').controller('CreationAdherentCtrl',	function($scope, $ro
 							$scope.toAddAdherent.ville,
 							$scope.toAddAdherent.datePaie,
 							$scope.toAddAdherent.montant);
-				}
-				;
+				};
 			}
 
-		});
+});
