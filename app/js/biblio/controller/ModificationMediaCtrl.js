@@ -5,17 +5,17 @@ angular.module('biblio').controller('ModificationMediaCtrl', function($scope, $r
 			media.getMedia($routeParams.id).then(function(data){				
 				console.log(data);
 				$scope.toAddMedia = {
+									id :data.id,
 									titre :data.titre,
 									auteur :data.auteur, 
 									type:data.type
 									};
 			});			
 						
-			$scope.ajoutmedia = function(){
-				media.postMedia($scope.toAddMedia.titre, $scope.toAddMedia.auteur, $scope.toAddMedia.type)
-//				console.log($scope.toAddMedia.titre);
-//				console.log($scope.toAddMedia.auteur);
-//				console.log($scope.toAddMedia.type);
+			$scope.modificationmedia = function(){
+				console.log("Controleur modification du media - " + $scope.toAddMedia.id + " - "+ $scope.toAddMedia.titre + " - " +
+							$scope.toAddMedia.auteur + " - " + $scope.toAddMedia.type);
+				media.modificationmedia($scope.toAddMedia.id, $scope.toAddMedia.titre, $scope.toAddMedia.auteur, $scope.toAddMedia.type);				
 			};
 			
 });
