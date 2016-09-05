@@ -17,7 +17,7 @@
 					<div class="form-group">
 						<label for="prenom">Prenom*</label> <input type="text"
 							name="prenom" class="form-control" id="prenom"
-							placeholder="Prenom" x-ng-model="prenom">
+							placeholder="Prenom" x-ng-model="prenom" x-ng-minlength="2" x-ng-maxlength="20">
 					</div>
 					<div x-ng-messages="formAdh.prenom.$error">
 						<div x-ng-messages-include="html/biblio/erreur.html"></div>
