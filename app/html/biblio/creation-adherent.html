@@ -9,7 +9,7 @@
 						<label for="Nom">Nom*</label> <input type="text" name="nom"
 							class="form-control" id="nom" placeholder="Nom"
 							x-ng-model="toAddAdherent.nom" x-ng-minlength="2"
-							x-ng-maxlength="20">
+							x-ng-maxlength="20" required>
 						<div x-ng-messages="formAdh.nom.$error">
 							<div x-ng-messages-include="html/biblio/erreur.html"></div>
 						</div>
@@ -18,7 +18,7 @@
 						<label for="prenom">Prenom*</label> <input type="text"
 							name="prenom" class="form-control" id="prenom"
 							placeholder="Prenom" x-ng-model="toAddAdherent.prenom"
-							x-ng-minlength="2" x-ng-maxlength="20">
+							x-ng-minlength="2" x-ng-maxlength="20" required>
 					</div>
 					<div x-ng-messages="formAdh.prenom.$error">
 						<div x-ng-messages-include="html/biblio/erreur.html"></div>
@@ -26,8 +26,7 @@
 					<div class="form-group">
 						<label for="date_nat">Date de naissance*</label> <input
 							name="date" type="date" class="form-control" id="date_nat"
-							placeholder="Date de naissance"
-							x-ng-model="toAddAdherent.dateNat">
+							placeholder="Date de naissance"	x-ng-model="toAddAdherent.dateNat" required>
 						<div x-ng-messages="formAdh.date.$error">
 							<div x-ng-messages-include="html/biblio/erreur.html"></div>
 						</div>
@@ -35,7 +34,7 @@
 					<div class="form-group">
 						<label for="email">Email*</label> <input type="email" name="email"
 							class="form-control" id="email" placeholder="Mail"
-							x-ng-model="toAddAdherent.email">
+							x-ng-model="toAddAdherent.email" required>
 						<div x-ng-messages="formAdh.email.$error">
 							<div x-ng-messages-include="html/biblio/erreur.html"></div>
 						</div>
