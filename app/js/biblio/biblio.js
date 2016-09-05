@@ -15,7 +15,7 @@ angular.module('biblio', ['ngRoute', 'ngMessages'])
 
 		$routeProvider.when('/recherche-adherent', {
 			templateUrl: 'html/biblio/recherche-adherent.html',
-			controller: 'rechercheAdherentCtrl'		
+			controller: 'rechercheAdherentCtrl'	
 		});	
 
 		$routeProvider.when('/modification-adherent/:id', {
