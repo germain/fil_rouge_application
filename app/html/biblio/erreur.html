@@ -1,3 +1,19 @@
 <div x-ng-show="formAdh.nom.$error.minlength" class="alert alert-danger">Trop court</div>
 <div x-ng-show="formAdh.nom.$error.maxlength" class="alert alert-danger">Trop long</div>
 <div x-ng-show="formAdh.nom.$error.required" class="alert alert-danger">Champ requis</div>
+
+<div x-ng-show="formCreationMedia.auteur.$error.minlength" class="alert alert-danger" role="alert">Le nom de l'auteur est trop court !!! </div> 
+<div x-ng-show="formCreationMedia.auteur.$error.maxlength" class="alert alert-danger" role="alert">Le nom de l'auteur est trop long !!!</div>
+<div x-ng-show="formCreationMedia.auteur.$error.pattern" class="alert alert-danger" role="alert">Vérifier dans l'écriture du nom d'auteur !!!</div> 
+
+<div x-ng-show="formConnexion.email.$error.email" class="alert alert-danger" role="alert">Vérifier votre E-mail</div>
+
+<div x-ng-show="formConnexion.password.$error.pattern" class="alert alert-danger" role="alert">
+	Un mot de passe valide aura: <br>
+	- de 8 à 15 caractères <br>
+	- au moins une lettre minuscule <br>
+	- au moins une lettre majuscule <br>
+	- au moins un chiffre <br>
+	- au moins un de ces caractères spéciaux: $ @ % * + - _ ! <br>
+	- aucun autre caractère possible
+</div>
