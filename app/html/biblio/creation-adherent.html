@@ -48,7 +48,7 @@
 					<div class="form-group">
 						<label for="BP">Code postal</label> <input type="number" name="codePostal"
 							class="form-control" id="BP" placeholder="Code postal"
-							x-ng-model="toAddAdherent.codePost" min="0" max="99999">
+							x-ng-model="toAddAdherent.codePost" min="10000" max="99999">
 					</div>
 					<div x-ng-messages="formAdh.codePostal.$error">
 						<div x-ng-messages-include="html/biblio/erreur.html"></div>

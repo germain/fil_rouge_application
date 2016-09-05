@@ -35,7 +35,7 @@ angular.module('biblio').factory('media',function($http, $timeout){
 						 	 auteur : auteur,
 						 	 type : type
 					 	   }
-					}			
+					}
 			$http(req).then(function (response) {				 
 				  //return response.data; 
 				  console.log(response);
