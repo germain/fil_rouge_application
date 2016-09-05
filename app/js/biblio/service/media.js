@@ -2,9 +2,8 @@
 //							=> Il n'y a pas besoin d'initialisation
 angular.module('biblio').factory('media',function($http, $timeout){
 	return {
-		getRechercheMedia : function(id){		
-			  console.log(id);
-			  return $http.get("http://192.168.10.41:8090/resource/media.recherche?titre="+id).then(function (response) {				 
+		getRechercheMedia : function(chaine){			  
+			  return $http.get("http://192.168.10.41:8090/resource/media.recherche?titre="+chaine).then(function (response) {				 
 				  return response.data; 
 				  //console.log(data);
 			  });		 

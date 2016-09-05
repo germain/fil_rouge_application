@@ -24,7 +24,12 @@ angular.module('biblio', ['ngRoute', 'ngMessages'])
 		});
 	
 		$routeProvider.when('/recherche-media', {
-			templateUrl: 'html/biblio/recherche-media.html'
+			templateUrl: 'html/biblio/recherche-media.html',
+			controller: 'RechercheMediaCtrl'	
+		});
+		
+		$routeProvider.when('/recherche-media/:titre', {
+			templateUrl: 'html/biblio/recherche-media.html',
 			controller: 'RechercheMediaCtrl'	
 		});
 
