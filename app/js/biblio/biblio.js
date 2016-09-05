@@ -7,6 +7,7 @@ angular.module('biblio', ['ngRoute', 'ngMessages'])
 		$routeProvider.when('/connexion', {
 			templateUrl: 'html/biblio/connexion.html',
 			controller: 'ConnexionCtrl'
+				         
 		});
 		$routeProvider.when('/modification-media/:id', {
 			templateUrl: '/html/biblio/modification-media.html', 
@@ -15,7 +16,7 @@ angular.module('biblio', ['ngRoute', 'ngMessages'])
 
 		$routeProvider.when('/recherche-adherent', {
 			templateUrl: 'html/biblio/recherche-adherent.html',
-			controller: 'rechercheAdherentCtrl'		
+			controller: 'rechercheAdherentCtrl'	
 		});	
 
 		$routeProvider.when('/modification-adherent/:id', {
