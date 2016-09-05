@@ -25,6 +25,7 @@ angular.module('biblio', ['ngRoute', 'ngMessages'])
 	
 		$routeProvider.when('/recherche-media', {
 			templateUrl: 'html/biblio/recherche-media.html'
+			controller: 'RechercheMediaCtrl'	
 		});
 
 		$routeProvider.when('/creation-adherent', {
