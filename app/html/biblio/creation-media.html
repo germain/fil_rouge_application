@@ -15,15 +15,11 @@
 								    <label for="Auteur" class="Gras">Auteur*</label>
 								    <input type="text" class="form-control" name="auteur" ng-model="auteur" placeholder="Auteur"  ng-maxlength="20" ng-minlength="2" ng-pattern="/^[a-zA-Z-]+$/" 
 									 required>
+									<div ng-messages="formCreationMedia.auteur.$error">
+										<div ng-messages-include="html/biblio/erreur.html"></div>
+									</div>
 								  </div>
-								  <div ng-show="formCreationMedia.$invalid"> 
-								    <div ng-show="formCreationMedia.auteur.$error.minlength" class="alert alert-danger" role="alert">Le nom de l'auteur est trop court !!!
-								    </div> 
-								    <div ng-show="formCreationMedia.auteur.$error.maxlength" class="alert alert-danger" role="alert">Le nom de l'auteur est trop long !!!
-								    </div>
-								    <div ng-show="formCreationMedia.auteur.$error.pattern" class="alert alert-danger" role="alert">Vérifier dans l'écriture du nom d'auteur !!!
-									</div> 
-								  </div>
+								  
 
 									<div class="form-group">
 								      <label for="type" class="Gras">Type*</label>
