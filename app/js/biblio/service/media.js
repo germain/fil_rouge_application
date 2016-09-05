@@ -8,10 +8,11 @@ angular.module('biblio').factory('media',function($http, $timeout){
 				  //console.log(data);
 			  });		 
 		},
-		postMedia : function(titre, auteur, type){			
-			console.log(titre);
-			console.log(auteur);
-			console.log(type);
-		}		 
+		modificationmedia : function(titre, auteur, type){			
+			console.log("Webservice MAJ du media" + titre + " " + auteur + " " + type);
+		},	
+		creationMedia : function(titre, auteur, type){			
+			console.log("Webservice creation du media" + titre + " " + auteur + " " + type);
+		}	
 	};
 });

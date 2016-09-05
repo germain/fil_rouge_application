@@ -11,11 +11,9 @@ angular.module('biblio').controller('ModificationMediaCtrl', function($scope, $r
 									};
 			});			
 						
-			$scope.ajoutmedia = function(){
-				media.postMedia($scope.toAddMedia.titre, $scope.toAddMedia.auteur, $scope.toAddMedia.type)
-//				console.log($scope.toAddMedia.titre);
-//				console.log($scope.toAddMedia.auteur);
-//				console.log($scope.toAddMedia.type);
+			$scope.modificationmedia = function(){
+				console.log("Controleur modification du media" + $scope.toAddMedia.titre + " " + $scope.toAddMedia.auteur + " " + $scope.toAddMedia.type);
+				media.modificationmedia($scope.toAddMedia.titre, $scope.toAddMedia.auteur, $scope.toAddMedia.type);				
 			};
 			
 });
