@@ -8,9 +8,11 @@ angular.module('biblio')
 //		}
 				
 		$scope.ajoutmedia = function(){
+			if ($scope.formCreationMedia.$valid) {
 			console.log("Controleur creation du media " + $scope.toAddMedia.titre + " " + $scope.toAddMedia.auteur + " " + $scope.toAddMedia.type);
 			//media.postMedia($scope.toAddMedia.titre, $scope.toAddMedia.auteur, $scope.toAddMedia.type);	
 			media.creationMedia($scope.toAddMedia.titre, $scope.toAddMedia.auteur, $scope.toAddMedia.type);
+			}
 		};
 
 	});
