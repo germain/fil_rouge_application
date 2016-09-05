@@ -1,7 +1,10 @@
 angular.module('biblio')
 	.factory('serviceAdherent', function ($http) {
-		var ulrGetAllAdherent = "http://192.168.10.41:8090/resource/adherent.recherche";
-		
+		var HOST = "http://192.168.10.41:8090/";
+		var PATH_NAME_SEARCH = "resource/adherent.recherche/";
+		var PATH_NAME_MODIFY = "resource/adherent.modification/";
+		var METHOD_POST = "POST";
+
 		var searchObjectInArray = function(data, id) {
 			var res = null;
 			angular.forEach(data, function(element) {
@@ -23,10 +26,25 @@ angular.module('biblio')
 
 		return {
 			searchAdherent: function(params) {
-				var completeUrl = ulrGetAllAdherent + concatParams(params);
+				var completeUrl = HOST + PATH_NAME_SEARCH + concatParams(params);
 				return $http.get(completeUrl).then(function(response) {
 					return response.data;
 				});
+			},
+			modifyAdherent: function(adherent) {				
+				var req = {
+					method: METHOD_POST,
+					url: HOST + PATH_NAME_MODIFY,
+					/*headers: {
+					   'Content-Type': undefined
+					},*/
+					data: adherent 
+				};
+				
+				return $http(req).then(function (response) {				 
+					return response; 
+			  	});
+				
 			}
 		};
 	});
