@@ -8,45 +8,62 @@
 			<div class="col-md-6 col-md-offset-3">
 			  	<div class="panel panel-default">
 					  <div class="panel-body">
-					    <form name="modifcationAdherentForm" novalidate>
+					    <form name="modifAdhForm" ng-submit="modifyAdherent(adherent)" novalidate>
 							<div class="form-group">
 								<label for="Nom">Nom*</label>
-								<input type="text" name="adherentName" ng-model="adherent.nom" class="form-control" id="nom" placeholder="Nom" required>
+								<input type="text" name="nom" ng-model="adherent.nom" ng-minlength="2" ng-maxlength="20" class="form-control" id="nom" placeholder="Nom" required>
+								
 							</div>
+							<div x-ng-messages="modifAdhForm.nom.$error">
+							<div x-ng-messages-include="html/biblio/erreur.html"></div>
+						</div>
 								<div class="form-group">
 								<label for="prenom">Prenom*</label>
-								<input type="text" name="adherentPrenom" ng-model="adherent.prenom" class="form-control" id="prenom" placeholder="Prenom" required>
+								<input type="text" name="prenom" ng-model="adherent.prenom" ng-minlength="2" ng-maxlength="20" class="form-control" id="prenom" placeholder="Prenom" required>
 							</div>
+							<div x-ng-messages="modifAdhForm.prenom.$error">
+						<div x-ng-messages-include="html/biblio/erreur.html"></div>
+					</div>
 							<div class="form-group">
 								<label for="date_nat">Date de naissance*</label>
-								<input type="date" name="adherentBirthday" ng-model="adherent.date_naissance" class="form-control" id="date_nat" placeholder="Date de naissance" required>
+								<input type="date" name="date_naisssance" ng-model="adherent.date_naissance" class="form-control" id="date_nat" placeholder="Date de naissance" required>
 							</div>
+							<div x-ng-messages="modifAdhForm.date_naisssance.$error">
+							<div x-ng-messages-include="html/biblio/erreur.html"></div>
+						</div>
 							<div class="form-group">
 								<label for="email">Email*</label>
-								<input type="email" name="adherentEmail" ng-model="adherent.email" class="form-control" id="email" placeholder="Mail" required>
+								<input type="email" name="email" ng-model="adherent.email" class="form-control" id="email" placeholder="Mail" required>
 							</div>
+							<div x-ng-messages="modifAdhForm.email.$error">
+							<div x-ng-messages-include="html/biblio/erreur.html"></div>
+						</div>
 							<div class="form-group">
 								<label for="adresse">Adresse</label>
-								<input type="text" name="adherentAddresse" ng-model="adherent.adresse.ligne1 + ' ' +adherent.adresse.ligne2" class="form-control" id="adresse" placeholder="Adresse">
+								<input type="text" name="addresse" ng-model="adherent.adresse.ligne1" class="form-control" id="adresse" placeholder="Adresse ligne 1">
+								<input type="text" name="addresse" ng-model="adherent.adresse.ligne2" class="form-control" id="adresse" placeholder="Adresse ligne 2">
 							</div>
 							<div class="form-group">
 								<label for="BP">Code postal</label>
-								<input type="text" name="adherentCodePostal" ng-model="adherent.adresse.codepostal" class="form-control" id="BP" placeholder="Code postal">
+								<input type="text" name="code_postal" ng-model="adherent.adresse.codepostal" class="form-control" id="BP" placeholder="Code postal">
 							</div>
 							<div class="form-group">
 								<label for="ville">Ville</label>
-								<input type="text" name="adherentVille" ng-model="adherent.adresse.ville" class="form-control" id="ville" placeholder="Ville">
+								<input type="text" name="ville" ng-model="adherent.adresse.ville" class="form-control" id="ville" placeholder="Ville">
 							</div>
 							<div class="form-group">
 								<label for="paiement">Date de paiement</label>
-								<input type="text" name="adherentDatePaiement" ng-model="adherent.cotisation.debut" class="form-control" id="paiement" placeholder="Date de paiement">
+								<input type="text" name="date_paiement" ng-model="adherent.cotisation.debut" class="form-control" id="paiement" placeholder="Date de paiement">
 							</div>
 							<div class="form-group">
 								<label for="montant">Montant</label>
-								<input type="text" name="adherentMontant" ng-model="adherent.cotisation.montant" class="form-control" id="montant" placeholder="Montant">
+								<input type="number" name="montant" ng-model="adherent.cotisation.montant" class="form-control" id="montant" placeholder="Montant" x-ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01">
 							</div>
+							<div x-ng-messages="modifAdhForm.montant.$error">
+						<div x-ng-messages-include="html/biblio/erreur.html"></div>
+					</div>
 							<div class="row">	  										
-								<button type="submit" class="btn btn-success col-md-offset-5">Enregistrer</button>		  							  		
+								<button type="submit" ng-disabled="modifAdhForm.$invalid && modifAdhForm.$error || modifAdhForm.$pristine" class="btn btn-success col-md-offset-5">Enregistrer</button>		  							  		
 							</div>	
 						</form>
 					  </div>
