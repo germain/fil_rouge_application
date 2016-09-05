@@ -2,6 +2,7 @@ angular.module('biblio').controller('CreationAdherentCtrl', function($scope, $ro
 			$scope.id = $routeParams.id;
 			
 			$scope.validAdherent = function(){
-				console.log("Controleur creation d'adherent " + $scope.toAddMedia.titre + " " + $scope.toAddMedia.auteur + " " + $scope.toAddMedia.type);
+				console.log("Controleur creation d'adherent "
+						+ $scope.toAddAdherent.nom + " " + $scope.toAddAdherent.prenom + " " + $scope.toAddAdherent.date);
 			};
 });
