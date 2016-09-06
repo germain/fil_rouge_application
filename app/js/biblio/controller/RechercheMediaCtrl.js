@@ -19,7 +19,13 @@ angular.module("biblio")
 		$scope.open = function (id) {			
 			
 			$uibModal.open({
-			      templateUrl: 'view/modal/recherche-media.html'
+			      templateUrl: 'view/modal/recherche-media.html',
+			      controller: 'ModalRechercheMediaCtrl',
+			      resolve: {
+				        param: {
+				        	id : id
+				        }
+				      }
 			    });
 			return;			
 			
@@ -27,7 +33,7 @@ angular.module("biblio")
 //				      ariaLabelledBy: 'modal-title',
 //				      ariaDescribedBy: 'modal-body',
 				      templateUrl: './recherche-media.html',
-				      //controller: 'ModalInstanceCtrl',
+				      controller: 'ModalRechercheMediaCtrl',
 				      //controllerAs: '$ctrl',
 //				      size: size,
 				      resolve: {
