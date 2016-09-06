@@ -6,7 +6,7 @@ angular.module("biblio")
         //console.log($scope.titre);
         
         $scope.RechercheMedia = function(){
-        	console.log("Controleur recherche du media " + $scope.toAddMedia.titre + " " + $scope.toAddMedia.auteur + " " + $scope.toAddMedia.type);
+        	//console.log("Controleur recherche du media " + $scope.toAddMedia.titre + " " + $scope.toAddMedia.auteur + " " + $scope.toAddMedia.type);
         	
         	//Appel du Service : passe une chaine de caractère comme titre
         	media.getRechercheMedia($scope.toAddMedia.titre).then(function(data){
