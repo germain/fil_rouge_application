@@ -6,8 +6,7 @@ angular.module('biblio', ['ngRoute', 'ngMessages', 'ui.bootstrap'])
 		});
 		$routeProvider.when('/connexion', {
 			templateUrl: '/view/biblio/connexion.html',
-			controller: 'ConnexionCtrl'
-				         
+			controller: 'ConnexionCtrl'				         
 		});
 		$routeProvider.when('/modification-media/:id', {
 			templateUrl: '/view/biblio/modification-media.html', 
