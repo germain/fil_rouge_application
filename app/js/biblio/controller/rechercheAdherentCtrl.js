@@ -23,18 +23,24 @@ angular.module("biblio").controller('rechercheAdherentCtrl',
 					console.log(data);
 				}
 		 )};
+
+
+
          $scope.tri = function(colonne){
                  $scope.maVarDeTrie = colonne;
           };    
 
+		$scope.pageNouvAdherent = function (){
+  		  $location.url = '/creation-adherent';
+		};
 
-			$scope.open = function(id) {
-				$uibModal.open({
-					templateUrl : 'view/modal/recherche-adherent.html',
-					controller : 'ModalRechercheAdherentCtrl',
-					resolve : {
-						param : {
-							id : id
+		$scope.open = function(id) {
+			$uibModal.open({
+				templateUrl : 'view/modal/recherche-adherent.html',
+				controller : 'ModalRechercheAdherentCtrl',
+				resolve : {
+					param : {
+						id : id
 						}
 					}
 				});
