@@ -1,45 +1,57 @@
 
 <body>
-<div ng-include="'./view/biblio/header.html'"> </div> 
-<div id="wrap">		
-	<div class="container">
-		<div class="page-header">
-  			<h3>Modification de media</h3>
-		</div>		
-		<div class="row">		  
-			<div class="col-md-6 col-md-offset-3">
-			  	<div class="panel panel-default">
-					<div class="panel-body">
-<!-- 						<form novalidate> -->
-							<div class="form-group">
-								<label for="Titre" class="Gras">Titre* </label>
-								<input type="text" class="form-control" id="Titre" placeholder="Titre" ng-model="toAddMedia.titre" required>
-							</div>
-							<div class="form-group">
-								<label for="Auteur" class="Gras">Auteur* </label>
-								<input type="text" class="form-control" id="Auteur" ng-model="toAddMedia.auteur" placeholder="Auteur" required>
-							</div>
-							<div class="form-group">
-								<label for="type" class="Gras">Type* </label>
-								<select class="form-control" id="type" ng-model="toAddMedia.type" required> 
-									<option value="{{toAddMedia.type}}" >{{toAddMedia.type}}</option>
-									<option value="Livre">Livre</option>
-									<option value="CD">CD</option>
-									<option value="DVD">DVD</option>
-								</select>
-							</div>
-							<div class="row">
-								<div class="center">		  										
-									<button type="button" class="btn btn-success" ng-click="modificationmedia()">Enregistrer</button>		  							  		
+	<div x-ng-include="'./view/biblio/header.html'"></div>
+	<div id="wrap">
+		<div class="container">
+			<div class="page-header">
+				<h3>Modification de media</h3>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<form name="formModifMedia" novalidate>
+								<div class="form-group">
+									<label for="Titre" class="Gras">Titre* </label> <input
+										type="text" class="form-control" id="Titre" name="titre"
+										placeholder="Titre" x-ng-model="toAddMedia.titre" required>
+									<div x-ng-if="formModifMedia.titre.$dirty"
+										x-ng-messages="formModifMedia.titre.$error">
+										<div x-ng-messages-include="view/biblio/erreur.html"></div>
+									</div>
 								</div>
-							</div>						  						  
-<!-- 						</form> -->
-					</div>					  
+								<div class="form-group">
+									<label for="Auteur" class="Gras">Auteur* </label> <input
+										type="text" class="form-control" id="Auteur" name="auteur"
+										x-ng-model="toAddMedia.auteur" placeholder="Auteur" x-ng-maxlength="20" x-ng-minlength="2" x-ng-pattern="/^[a-zA-Z-]+$/" required>
+									<div x-ng-if="formModifMedia.auteur.$dirty"
+										x-ng-messages="formModifMedia.auteur.$error">
+										<div x-ng-messages-include="view/biblio/erreur.html"></div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="type" class="Gras">Type* </label> <select
+										class="form-control" id="type" x-ng-model="toAddMedia.type"
+										required>
+										<option value="{{toAddMedia.type}}">{{toAddMedia.type}}</option>
+										<option value="Livre">Livre</option>
+										<option value="CD">CD</option>
+										<option value="DVD">DVD</option>
+									</select>
+								</div>
+								<div class="row">
+									<div class="center">
+										<button type="button" class="btn btn-success"
+											x-ng-click="modificationmedia()">Enregistrer</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
 				</div>
-			</div>	
+			</div>
 		</div>
-	</div>		
-</div>
-<div ng-include="'./view/biblio/footer.html'"> </div> 
+	</div>
+	<div x-ng-include="'./view/biblio/footer.html'"></div>
 </body>
 </html>

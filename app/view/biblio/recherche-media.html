@@ -18,60 +18,20 @@
 <body>
 <div id="wrap">		
 	<div class="container">
-		<header>
-			<nav class="navbar navbar-default">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Biblio</a>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">        
-					  <li class="dropdown">
-					    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Media<span class="caret"></span></a>
-					    <ul class="dropdown-menu">
-					      <li><a href="recherche-media.html">Recherche</a></li>
-					      <li><a href="creation-media.html">Ajout</a></li>
-					    </ul>
-					  </li>
-					  <li class="dropdown">
-					    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adherent<span class="caret"></span></a>
-					    <ul class="dropdown-menu">
-					      <li><a href="recherche-adherent.html">Recherche</a></li>
-					      <li><a href="creation-adherent.html">Ajout</a></li>
-					    </ul>
-					  </li>        
-					</ul>
-					<ul class="nav navbar-nav navbar-right">        
-					  <li class="dropdown">
-					    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
-					    <ul class="dropdown-menu">
-					      <li><a href="connexion.html">Deconnexion</a></li>
-					    </ul>
-					  </li>
-					</ul>
-				</div>		 
-			</nav>
-		</header>
+		<div x-ng-include="'view/biblio/header.html'"></div>
 
 	<div class="row">
 		<form id="form">
 			<div class="form-group">
 		      <div class="col-xs-4">
-		        <input class="form-control" id="ex1" type="text" ng-model="toAddMedia.titre" placeholder="Recherche par titre">
+		        <input class="form-control" id="ex1" type="text" x-ng-model="toAddMedia.titre" placeholder="Recherche par titre">
 		      </div>
 		      <div class="col-xs-4">
-		        <input class="form-control" id="ex2" type="text" ng-model="toAddMedia.auteur" placeholder="Reherche par nom d'auteur">
+		        <input class="form-control" id="ex2" type="text" x-ng-model="toAddMedia.auteur" placeholder="Reherche par nom d'auteur">
 		      </div>
 		      <div class="btn-group col-xs-4">
 				<!-- Single button -->
-		  <button type="button" class="btn btn-default dropdown-toggle" ng-model="toAddMedia.type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		  <button type="button" class="btn btn-default dropdown-toggle" x-ng-model="toAddMedia.type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    Livre <span class="caret"></span>
 		  </button>
 			<ul class="dropdown-menu">
@@ -79,7 +39,7 @@
 				<li><a href="#">Livre</a></li>
 				<li><a href="#">DVD</a></li>
 			</ul>
-			<button type="button" ng-click="RechercheMedia()" class="btn btn-info col-xs-offset-1">Rechercher</button>
+			<button type="button" x-ng-click="RechercheMedia()" class="btn btn-info col-xs-offset-1">Rechercher</button>
 		</div>
 	 		</div>
 	 	</form>
@@ -104,7 +64,7 @@
 				<td><label>Emprunteur</label></td>
 				<td><label>Date de retour prévu</label></td>
 			</tr>
-			<tr ng-repeat="obj in list" ng-click="open(obj.id)" >
+			<tr x-ng-repeat="obj in list" ng-click="open(obj.id)" >
 				<td>{{obj.titre}}</td>
 				<td>{{obj.type}}</td>
 				<td>{{obj.auteur}}</td>

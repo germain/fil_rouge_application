@@ -19,4 +19,9 @@ angular.module("biblio")
             ); 
             
         };  
+
+        $scope.orderByName = function(){
+        
+
+    };
    });
