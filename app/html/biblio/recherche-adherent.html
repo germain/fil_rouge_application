@@ -1,6 +1,7 @@
-<div ng-include="'./html/biblio/header.html'"> </div> 
+
 <div id="wrap" ng-app="biblio">		
 	<div class="container">
+	<div x-ng-include="'./html/biblio/header.html'"> </div> 
 		<div class="row">
 			<form id="form">
 				<div class="form-group">
@@ -41,7 +42,7 @@
 					<td><label>Nombre de média en possession</label></td>
 				</tr>
 
-				<tr data-toggle="modal" data-target="#myModal"  ng-repeat="obj in list">
+				<tr data-toggle="modal" data-target="#myModal"  ng-repeat="obj in list" ng-click="openModal(obj.id)">
 				<td>{{obj.id}}</td>
 					<td>{{obj.nom}}</td>
 					<td>{{obj.prenom}}</td>

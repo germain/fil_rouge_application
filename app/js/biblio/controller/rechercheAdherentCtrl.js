@@ -24,10 +24,19 @@ angular.module("biblio")
 
          $scope.tri = function(colonne){
                  $scope.maVarDeTrie = colonne;
-                 /*console.log("variable tri" + $scope.maVarDeTrie);*/
           };    
 
-       
+       $scope.openModal = function (id) {        
+            $uibModal.open({
+                  templateUrl: 'view/modal/recherche-adherent.html',
+                  controller: 'ModalRechercheAdherentCtrl',
+                  resolve: {
+                        param: {
+                            id : id
+                        }
+                      }
+                });
+         };
 
         
    });
