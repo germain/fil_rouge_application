@@ -5,13 +5,18 @@ angular.module("biblio")
         $scope.titre = $routeParams.titre;
         //console.log($scope.titre);
         
+        media.getRechercheMedia(" ").then(function(data){
+    		$scope.list = data;
+			//console.log(data);	
+		});	
+        
         $scope.RechercheMedia = function(){
-        	console.log("Controleur recherche du media " + $scope.toAddMedia.titre + " " + $scope.toAddMedia.auteur + " " + $scope.toAddMedia.type);
+        	//console.log("Controleur recherche du media " + $scope.toAddMedia.titre + " " + $scope.toAddMedia.auteur + " " + $scope.toAddMedia.type);
         	
         	//Appel du Service : passe une chaine de caractère comme titre
         	media.getRechercheMedia($scope.toAddMedia.titre).then(function(data){
         		$scope.list = data;
-    			console.log(data);	
+    			//console.log(data);	
     		});	
 			
 		};
