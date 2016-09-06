@@ -1,13 +1,22 @@
 angular.module("biblio")
-   .controller('rechercheAdherentCtrl', ['$scope', '$filter', function ($scope, $filter) {
-        $scope.items = [
-            { id: 2502332, name: 'Jocelyn' },
-            { id: 236662, name: 'Germain' },
-            { id: 2447853, name: 'Yanis' },
-            { id: 565661, name: 'Nathanael' },
-            { id: 5, name: 'ABCD' }];
-        $scope.items2 = $scope.items;
-        $scope.$watch('search', function (val) {
-            $scope.items = $filter('filter')($scope.items2, val);
-    });
- }]);
+.controller('rechercheAdherentCtrl', function ($scope, $location, $routeParams, $filter, serviceAdherent) {
+       
+        $scope.RechercheAhderent = function(){
+            console.log("Controleur recherche adherent " +  $scope.Adherent.id + " nom: " + $scope.Adherent.nom);
+
+            if($scope.Adherent.id != null){
+                var param = {"id": $scope.Adherent.id};
+            } else if ($scope.Adherent.nom != null) {
+                var param = {"nom": $scope.Adherent.nom};
+            } else {
+                var param = {"id": $scope.Adherent.id ,"nom": $scope.Adherent.nom};
+            }
+
+            serviceAdherent.searchAdherent(param).then(function(data){
+                $scope.list = data;
+                console.log(data);  }
+
+            ); 
+            
+        };  
+   });

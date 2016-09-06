@@ -8,6 +8,7 @@ angular.module('biblio', ['ngRoute', 'ngMessages', 'ui.bootstrap'])
 		$routeProvider.when('/connexion', {
 			templateUrl: 'view/biblio/connexion.html',
 			controller: 'ConnexionCtrl'
+				         
 		});
 		$routeProvider.when('/modification-media/:id', {
 			templateUrl: '/view/biblio/modification-media.html', 
@@ -17,6 +18,8 @@ angular.module('biblio', ['ngRoute', 'ngMessages', 'ui.bootstrap'])
 		$routeProvider.when('/recherche-adherent', {
 			templateUrl: 'view/biblio/recherche-adherent.html',
 			controller: 'rechercheAdherentCtrl'		
+			templateUrl: 'html/biblio/recherche-adherent.html',
+			controller: 'rechercheAdherentCtrl'	
 		});	
 
 		$routeProvider.when('/modification-adherent/:id', {

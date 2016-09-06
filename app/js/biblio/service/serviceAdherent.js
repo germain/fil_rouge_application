@@ -3,9 +3,18 @@ angular.module('biblio')
 		var HOST = "http://192.168.10.41:8090/";
 		var PATH_NAME_ACCESSION = "resource/adherent.accession";
 		var PATH_NAME_MODIFY = "resource/adherent.modification";
+		var PATH_NAME_SEARCH_NAME = "resource/adherent.recherche";
 		var METHOD_POST = "POST";
 
 		return {
+
+			searchAdherent : function(val){	
+				var searchUrlNom=	HOST + PATH_NAME_SEARCH_NAME; 	  
+			  	return $http.get(searchUrlNom, {params : val}).then(function (response) {				 
+				  return response.data;
+			  	});		 
+			},
+
 			getAdherent: function(id) {
 				var completeUrl = HOST + PATH_NAME_ACCESSION;
 				return $http.get(completeUrl, {params : {"id":id}}).then(function(response) {
