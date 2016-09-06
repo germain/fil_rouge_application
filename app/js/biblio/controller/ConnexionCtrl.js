@@ -5,7 +5,7 @@ angular.module('biblio').controller('ConnexionCtrl',  ['$scope', '$location', 's
                 if(response) {                    
                     $scope.dataLoading = false;
                 } else {
-                    $scope.error = "Connexion échouée";
+                    $scope.error = "Connexion échouée: verifier mot de passe ou l'identifiant";
                     $scope.dataLoading = false;
                 }
             }); 

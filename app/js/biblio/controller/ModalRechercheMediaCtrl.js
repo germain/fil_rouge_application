@@ -3,7 +3,7 @@ angular.module('biblio').controller('ModalRechercheMediaCtrl', function($scope, 
 			//console.log("dd", param.id);
 			
 			media.getMedia(param.id).then(function(data){				
-				console.log("recup info livre ",data);
+				//console.log("recup info livre ",data);
 				
 				// on récup les infos du media
 				$scope.toAddMedia = {

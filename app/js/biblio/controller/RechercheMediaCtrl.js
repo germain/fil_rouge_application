@@ -21,6 +21,11 @@ angular.module("biblio")
 			
 		};
 		
+
+        $scope.tri = function(colonne){
+            $scope.maVarDeTrie = colonne;
+            /*console.log("variable tri" + $scope.maVarDeTrie);*/
+        }; 
 		
 		$scope.open = function (id) {		
 			$uibModal.open({
