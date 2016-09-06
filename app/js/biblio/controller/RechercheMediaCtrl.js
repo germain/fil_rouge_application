@@ -21,6 +21,7 @@ angular.module("biblio")
 			
 		};
 		
+		
 		$scope.open = function (id) {		
 			$uibModal.open({
 			      templateUrl: 'view/modal/recherche-media.html',

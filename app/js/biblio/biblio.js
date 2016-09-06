@@ -4,10 +4,6 @@ angular.module('biblio', ['ngRoute', 'ngMessages', 'ui.bootstrap'])
 			templateUrl: '/view/biblio/creation-media.html',
 			controller: 'CreationMediaCtrl'
 		});
-		$routeProvider.when('/connexion', {
-			templateUrl: '/view/biblio/connexion.html',
-			controller: 'ConnexionCtrl'				         
-		});
 		$routeProvider.when('/modification-media/:id', {
 			templateUrl: '/view/biblio/modification-media.html', 
 			controller: 'ModificationMediaCtrl'			
@@ -33,6 +29,6 @@ angular.module('biblio', ['ngRoute', 'ngMessages', 'ui.bootstrap'])
 			controller: 'CreationAdherentCtrl'
 		});
 		$routeProvider.otherwise({
-			redirectTo:'/connexion'
+			redirectTo:'/recherche-media'
 		});
 	});

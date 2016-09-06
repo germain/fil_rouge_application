@@ -12,27 +12,15 @@
 					</div>
 					<div class="col-xs-4">
 						<button type="button" x-ng-click="RechercheAhderent()" class="btn btn-info">Rechercher</button>
-						<button type="button" x-ng-clic="pageNouvAdherent()" class="btn btn-info">Nouveau</button>
+						<a href="/#/creation-adherent" class="btn btn-info" role="button">Nouveau</a>
+						
 					</div>
 					
 				</div>
 			</form>
 		</div>
 		
-		<div>
-		<div class="dropdown">
-			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				Trie <span class="caret"></span>
-			</button>
-
-			<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-				<li><a ng-click="orderByName()">Nom/prénom</a></li>
-				<li><a href="#">date de naissance</a></li>
-				<li><a href="ng-click=clickPredicateID()">Identifiant</a></li>
-			</ul>
-
-		</div>
-		</div>
+		
 		
  		<div id="table" class="table-responsive">
 			<table class="table table-hover">
@@ -56,7 +44,8 @@
 						<label ng-click="tri('nombre_media')">Nombre de média en possession<span class="caret"></span></label>
 					</td>
 				</tr>
-				<tr data-toggle="modal" data-target="#myModal"  ng-repeat="obj in list | orderBy:['nom' , 'prenom']"> 
+
+				<tr data-toggle="modal" data-target="#myModal" ng-click="open()" ng-repeat="obj in list | orderBy:['nom' , 'prenom']"> 
 					<td>{{obj.id}}</td>
 					<td>{{obj.nom}}</td>
 					<td>{{obj.prenom}}</td>

@@ -3,7 +3,7 @@ angular.module('biblio').controller('ConnexionCtrl',  ['$scope', '$location', 's
             $scope.dataLoading = true;
             serviceConnexion.connexion($scope.email, $scope.password).then(function(response) {
                 if(response) {                    
-                    $location.path('/recherche-media');
+                    $scope.dataLoading = false;
                 } else {
                     $scope.error = "Connexion échouée";
                     $scope.dataLoading = false;
