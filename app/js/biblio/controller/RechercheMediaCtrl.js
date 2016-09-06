@@ -1,5 +1,5 @@
 angular.module("biblio")
-   .controller('RechercheMediaCtrl', function ($scope, $location, $routeParams, $filter, media) {
+   .controller('RechercheMediaCtrl', function ($scope, $location, $routeParams, $filter, $uibModal, media) {
 	   
         $scope.items = "";
         $scope.titre = $routeParams.titre;
@@ -16,7 +16,30 @@ angular.module("biblio")
 			
 		};
 		
+		$scope.open = function (id) {			
+			
+			$uibModal.open({
+			      templateUrl: 'view/modal/recherche-media.html'
+			    });
+			return;			
+			
+			var item = {		      
+//				      ariaLabelledBy: 'modal-title',
+//				      ariaDescribedBy: 'modal-body',
+				      templateUrl: './recherche-media.html',
+				      //controller: 'ModalInstanceCtrl',
+				      //controllerAs: '$ctrl',
+//				      size: size,
+				      resolve: {
+				        cekjveu: {
+				        	id : id
+				        }
+				      }
+				    }
+		 };
+		
+		 // on injecte la variable cekjveu dans le controleur, 
 				
 		
    });
-            
+
