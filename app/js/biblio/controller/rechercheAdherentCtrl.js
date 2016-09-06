@@ -1,7 +1,5 @@
-angular.module("biblio").controller(
-		'rechercheAdherentCtrl',
+angular.module("biblio").controller('rechercheAdherentCtrl',
 		function($scope, $location, $routeParams, $filter, $uibModal, serviceAdherent) {
-
 			$scope.RechercheAhderent = function() {
 				console.log("Controleur recherche adherent " + $scope.Adherent.id + " nom: " + $scope.Adherent.nom);
 
@@ -24,10 +22,11 @@ angular.module("biblio").controller(
 					$scope.list = data;
 					console.log(data);
 				}
-
-				);
-
-			};
+		 )};
+         $scope.tri = function(colonne){
+                 $scope.maVarDeTrie = colonne;
+                 /*console.log("variable tri" + $scope.maVarDeTrie);*/
+          };    
 
 			$scope.orderByName = function() {
 			};
@@ -44,3 +43,4 @@ angular.module("biblio").controller(
 				});
 			}
 		});
+       

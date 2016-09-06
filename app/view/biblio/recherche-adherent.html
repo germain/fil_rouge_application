@@ -22,40 +22,48 @@
 			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Trie <span class="caret"></span>
 			</button>
+
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-				<li><a href="#">Nom/prénom</a></li>
+				<li><a ng-click="orderByName()">Nom/prénom</a></li>
 				<li><a href="#">date de naissance</a></li>
-				<li><a href="#">Identifiant</a></li>
+				<li><a href="ng-click=clickPredicateID()">Identifiant</a></li>
 			</ul>
+
 		</div>
 		</div>
 		
  		<div id="table" class="table-responsive">
 			<table class="table table-hover">
 				<tr>
-					<td><label>Identifiant</label></td>
-					<td><label>Nom</label></td>
-					<td><label>Prénom</label></td>
-					<td><label>Date de naissance</label></td>
-					<td><label>Cotisation</label></td>
-					<td><label>Nombre de média en possession</label></td>
+					<td>
+						<label ng-click="tri('id')">Identifiant<span class="caret"></span></label>
+					</td>
+					<td>
+						<label ng-click="tri('nom')">Nom <span class="caret"></span></label>
+					</td>
+					<td>
+						<label ng-click="tri('prenom')">Prénom<span class="caret"></span></label>
+					</td>
+					<td>
+						<label ng-click="tri('date_naissance')">Date de naissance<span class="caret"></span></label>
+					</td>
+					<td>
+						<label ng-click="tri('cotisation.montant')">Cotisation<span class="caret"></span></label>
+					</td>
+					<td>
+						<label ng-click="tri('nombre_media')">Nombre de média en possession<span class="caret"></span></label>
+					</td>
 				</tr>
-
-				<tr x-ng-repeat="obj in list" x-ng-click="open(obj.id)">
+				<tr data-toggle="modal" data-target="#myModal"  ng-repeat="obj in list | orderBy:['nom' , 'prenom']"> 
 					<td>{{obj.id}}</td>
 					<td>{{obj.nom}}</td>
 					<td>{{obj.prenom}}</td>
 					<td>{{obj.date_naissance}}</td>
 					<td>{{obj.cotisation.montant}}</td>
 					<td>{{obj.nombre_media}}</td>
-
-				</tr>
-			
-								
+				</tr>		
 			</table>
-		</div>
-
-<!-- modal -->
+		</div>		
 		<div class="row">
 			<div class="col-md-6 col-md-offset-4">
 				<nav>

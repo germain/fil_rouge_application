@@ -1,4 +1,61 @@
-	<!-- Modal -->
+<div ng-include="'./html/biblio/header.html'"> </div> 
+<div id="wrap" ng-app="biblio">		
+	<div class="container">
+		<div class="row">
+			<form id="form">
+				<div class="form-group">
+					<div class="col-xs-4">
+						<input class="form-control" id="ex1" type="text" placeholder="rechercher par identifiant" ng-model="Adherent.id">
+					</div>
+					<div class="col-xs-4">
+						<input class="form-control" id="ex2" type="text" placeholder="rechercher par nom" ng-model="Adherent.nom">
+					</div>
+					<div class="col-xs-4">
+						<button type="button" ng-click="RechercheAhderent()" class="btn btn-info">Rechercher</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		<div>
+		<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Trie <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+				<li><a href="orderByName()">Nom/prénom</a></li>
+				<li><a href="#">date de naissance</a></li>
+				<li><a href="#">Identifiant</a></li>
+			</ul>
+		</div>
+		</div>
+		
+ 		<div id="table" class="table-responsive">
+			<table class="table table-hover">
+				<tr>
+					<td><label>Identifiant</label></td>
+					<td><label>Nom</label></td>
+					<td><label>Prénom</label></td>
+					<td><label>Date de naissance</label></td>
+					<td><label>Cotisation</label></td>
+					<td><label>Nombre de média en possession</label></td>
+				</tr>
+
+				<tr data-toggle="modal" data-target="#myModal"  ng-repeat="obj in list">
+				<td>{{obj.id}}</td>
+					<td>{{obj.nom}}</td>
+					<td>{{obj.prenom}}</td>
+					<td>{{obj.date_naissance}}</td>
+					<td>{{obj.cotisation.montant}}</td>
+					<td>{{obj.nombre_media}}</td>
+
+				</tr>
+			
+								
+			</table>
+		</div>
+
+		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -110,3 +167,41 @@
 				</div>		
 			</div>
 		</div>
+		<!-- / Modal -->
+		<div class="row">
+			<div class="col-md-6 col-md-offset-4">
+				<nav>
+					<ul class="pagination">
+						<li class="disabled">
+							<span>
+								<span aria-hidden="true">&laquo;</span>
+							</span>
+						</li>
+						<li>
+							<span>1 <span class="sr-only">(current)</span></span>
+						</li>
+						 <li>
+							<span>2<span class="sr-only">(current)</span></span>
+						</li>
+						<li>
+							<span>2 <span class="sr-only">(current)</span></span>
+						</li>
+						<li>
+							<span>3 <span class="sr-only">(current)</span></span>
+						</li>
+						 <li class="active">
+							<span>4<span class="sr-only">(current)</span></span>
+						</li>
+						<li>
+							<span>...<span class="sr-only">(current)</span></span>
+						</li>
+						 <li>
+							<span>8<span class="sr-only">(current)</span></span>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>	
+</div>
+<div ng-include="'./html/biblio/footer.html'"> </div> 	
