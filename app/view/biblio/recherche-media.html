@@ -1,20 +1,3 @@
-<!--
-<script>
-	$(function(){
-	    $('#orderModal').modal({
-	        keyboard: true,
-	        backdrop: "static",
-	        show:false,
-	        
-	    }).on('show', function(){
-	          var getIdFromRow = $(event.target).closest('tr').data('id');
-	        //make your ajax call populate items or what even you need
-	        $(this).find('#orderDetails').html($('<b> Order Id selected: ' + getIdFromRow  + '</b>'))
-	    });
-	});
-</script>
--->
-
 <body>
 <div id="wrap">		
 	<div class="container">
@@ -58,11 +41,11 @@
 	<div id="table" class="table-responsive">
 		<table class="table table-hover">
 			<tr>
-				<td><label>Titre du média</label></td>
-				<td><label>Type du média</label></td>
-				<td><label>Auteur du média</label></td>
+				<td><label>Titre du m&eacute;dia</label></td>
+				<td><label>Type du m&eacute;dia</label></td>
+				<td><label>Auteur du m&eacute;dia</label></td>
 				<td><label>Emprunteur</label></td>
-				<td><label>Date de retour prévu</label></td>
+				<td><label>Date de retour pr&eacute;vu</label></td>
 			</tr>
 			<tr x-ng-repeat="obj in list" ng-click="open(obj.id)" >
 				<td>{{obj.titre}}</td>
@@ -109,8 +92,5 @@
 		</div>
 	</div>
 </div>		
-		
-	
-
 </body>
 </html>

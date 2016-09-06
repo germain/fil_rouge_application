@@ -1,6 +1,6 @@
-<div ng-include="'./view/biblio/header.html'"> </div> 
 <div id="wrap" ng-app="biblio">		
 	<div class="container">
+	<div ng-include="'./view/biblio/header.html'"> </div> 
 		<div class="row">
 			<form id="form">
 				<div class="form-group">
@@ -24,7 +24,7 @@
 			</button>
 
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-				<li><a ng-click="orderByName()">Nom/prénom</a></li>
+				<li><a ng-click="orderByName()">Nom/pr&eacute;nom</a></li>
 				<li><a href="#">date de naissance</a></li>
 				<li><a href="ng-click=clickPredicateID()">Identifiant</a></li>
 			</ul>
@@ -42,7 +42,7 @@
 						<label ng-click="tri('nom')">Nom <span class="caret"></span></label>
 					</td>
 					<td>
-						<label ng-click="tri('prenom')">Prénom<span class="caret"></span></label>
+						<label ng-click="tri('prenom')">Pr&eacute;nom<span class="caret"></span></label>
 					</td>
 					<td>
 						<label ng-click="tri('date_naissance')">Date de naissance<span class="caret"></span></label>
@@ -51,7 +51,7 @@
 						<label ng-click="tri('cotisation.montant')">Cotisation<span class="caret"></span></label>
 					</td>
 					<td>
-						<label ng-click="tri('nombre_media')">Nombre de média en possession<span class="caret"></span></label>
+						<label ng-click="tri('nombre_media')">Nombre de m&eacute;dia en possession<span class="caret"></span></label>
 					</td>
 				</tr>
 
@@ -108,3 +108,4 @@
 	</div>	
 </div>
 <div ng-include="'./view/biblio/footer.html'"> </div> 	
+
