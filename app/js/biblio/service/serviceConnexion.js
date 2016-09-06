@@ -2,7 +2,7 @@ angular.module('biblio').factory('serviceConnexion',function($http, $timeout){
 	return {
 		connexion : function(identifiant, motdepasse){
 			
-			var auth = btoa(identifiant + ':' + motdepasse);
+			var auth = btoa(identifiant + ':' + motdepasse); 
 			
 			var config = {
 				headers : {
