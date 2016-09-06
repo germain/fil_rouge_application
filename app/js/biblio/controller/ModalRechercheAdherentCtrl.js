@@ -1,11 +1,11 @@
-angular.module('biblio').controller('ModalRechercheAdherentCtrl', function($scope, $uibModal, adherent, param, $uibModalInstance){
-	console.log("dd", param.id);
+angular.module('biblio').controller('ModalRechercheAdherentCtrl', function($scope, $uibModal, serviceAdherent, param, $uibModalInstance){
+	console.log("ModalRechercheAdherentCtrl");
 	
-	adherent.getAdherent(param.id).then(function(data){				
-		console.log(data);
-		$scope.toAddAdherent = {
-							id :data.id,
-							nom :data.nom
-							};
-	});	
+//	serviceAdherent.getAdherent(param.id).then(function(data){				
+//		console.log(data);
+//		$scope.toAddAdherent = {
+//							id :data.id,
+//							nom :data.nom
+//							};
+//	});	
 });

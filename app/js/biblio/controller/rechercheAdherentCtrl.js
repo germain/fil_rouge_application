@@ -31,13 +31,13 @@ angular.module("biblio").controller('rechercheAdherentCtrl',
 			$scope.orderByName = function() {
 			};
 
-			$scope.open = function(id) {
+			$scope.open = function() {
 				$uibModal.open({
 					templateUrl : 'view/modal/recherche-adherent.html',
 					controller : 'ModalRechercheAdherentCtrl',
 					resolve : {
 						param : {
-							id : id
+							id : '5'
 						}
 					}
 				});
