@@ -1,58 +1,17 @@
 <div ng-include="'./view/biblio/header.html'"> </div> 
 <div id="wrap" ng-app="biblio">		
 	<div class="container">
-		<header>
-			<nav class="navbar navbar-default">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Biblio</a>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">				
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Media<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="recherche-media.html">Recherche</a></li>
-								<li><a href="creation-media.html">Ajout</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adherent<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="recherche-adherent.html">Recherche</a></li>
-								<li><a href="creation-adherent.html">Ajout</a></li>
-							</ul>
-						</li>				
-					</ul>
-					<ul class="nav navbar-nav navbar-right">				
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="connexion.html">Deconnexion</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div><!-- /.navbar-collapse -->			 
-			</nav>
-		</header>
 		<div class="row">
 			<form id="form">
 				<div class="form-group">
 					<div class="col-xs-4">
-						<input class="form-control" id="ex1" type="text" placeholder="rechercher par identifiant">
+						<input class="form-control" id="ex1" type="text" placeholder="rechercher par identifiant" ng-model="Adherent.id">
 					</div>
 					<div class="col-xs-4">
-						<input class="form-control" id="ex2" type="text" placeholder="rechercher par nom">
+						<input class="form-control" id="ex2" type="text" placeholder="rechercher par nom" ng-model="Adherent.nom">
 					</div>
 					<div class="col-xs-4">
-						<button type="button" class="btn btn-info">Rechercher</button>
+						<button type="button" ng-click="RechercheAhderent()" class="btn btn-info">Rechercher</button>
 					</div>
 				</div>
 			</form>
@@ -82,46 +41,17 @@
 					<td><label>Nombre de média en possession</label></td>
 				</tr>
 
-				<tr data-toggle="modal" data-target="#myModal">
-					<td>2502332</td>
-					<td>Chéné</td>
-					<td>Jocelyn</td>
-					<td>15/02/1988</td>
-					<td>20€</td>
-					<td>10</td>
+				<tr data-toggle="modal" data-target="#myModal"  ng-repeat="obj in list">
+				<td>{{obj.id}}</td>
+					<td>{{obj.nom}}</td>
+					<td>{{obj.prenom}}</td>
+					<td>{{obj.date_naissance}}</td>
+					<td>{{obj.cotisation.montant}}</td>
+					<td>{{obj.nombre_media}}</td>
+
 				</tr>
-				<tr>
-					<td>236662</td>
-					<td>Chéné</td>
-					<td>Germain</td>
-					<td>07/11/1987</td>
-					<td>25€</td>
-					<td>10</td>
-				</tr>
-				<tr>
-					<td>2447853</td>
-					<td>Chéné</td>
-					<td>Yanis</td>
-					<td>09/05/1986</td>
-					<td>30€</td>
-					<td>10</td>
-				</tr>
-				<tr>
-					<td>565661</td>
-					<td>Levaseur</td>
-					<td>Nathanael</td>
-					<td>20/06/1988</td>
-					<td>10€</td>
-					<td>30</td>
-				</tr>
-				<tr>
-					<td>1524446</td>
-					<td>Soussi</td>
-					<td>hela</td>
-					<td>18/08/1988</td>
-					<td>15€</td>
-					<td>7</td>
-				</tr>				
+			
+								
 			</table>
 		</div>
 
