@@ -1,9 +1,22 @@
-angular.module('biblio').controller('ModalRechercheMediaCtrl', function($scope, $routeParams, media, param){
+angular.module('biblio').controller('ModalRechercheMediaCtrl', function($scope, $uibModal, media, param, $uibModalInstance){
 			
-			console.log("dd", param);
-			console.log("Controleur du modal ");		
-			$scope.modificationmedia = function(){
-				console.log("Controleur du modal ");				
+			console.log("dd", param.id);
+			
+			media.getMedia(param.id).then(function(data){				
+				console.log(data);
+				$scope.toAddMedia = {
+									id :data.id,
+									titre :data.titre,
+									auteur :data.auteur, 
+									type:data.type
+									};
+			});	
+			
+			
+			
+			$scope.ok = function () {
+				console.log('fds');
+				$uibModalInstance.close();
 			};
 			
 });
