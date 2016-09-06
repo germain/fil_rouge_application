@@ -54,7 +54,7 @@
 						<label ng-click="tri('nombre_media')">Nombre de média en possession<span class="caret"></span></label>
 					</td>
 				</tr>
-				<tr data-toggle="modal" data-target="#myModal" ng-click="open()" ng-repeat="obj in list | orderBy:['nom' , 'prenom']"> 
+				<tr data-toggle="modal" data-target="#myModal" ng-click="open()" ng-repeat="obj in list | orderBy:maVarDeTrie"> 
 					<td>{{obj.id}}</td>
 					<td>{{obj.nom}}</td>
 					<td>{{obj.prenom}}</td>
