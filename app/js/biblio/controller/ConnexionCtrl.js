@@ -5,7 +5,7 @@ angular.module('biblio').controller('ConnexionCtrl',  ['$scope', '$location', 's
                 if(response) {                    
                     $location.path('/recherche-media');
                 } else {
-                    $scope.error = "Connexion échouée";
+                    $scope.error = "Connexion échouée: verifier mot de passe ou l'identifiant";
                     $scope.dataLoading = false;
                 }
             }); 
