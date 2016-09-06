@@ -14,11 +14,10 @@ angular.module('biblio', ['ngRoute', 'ngMessages', 'ui.bootstrap'])
 		});
 		$routeProvider.when('/recherche-adherent', {
 			templateUrl: 'view/biblio/recherche-adherent.html',
-			controller: 'rechercheAdherentCtrl',		
-			templateUrl: 'html/biblio/recherche-adherent.html'		
+			controller: 'rechercheAdherentCtrl'			
 		});	
 		$routeProvider.when('/modification-adherent/:id', {
-			templateUrl: 'view/biblio/modification-adherent.html',
+			templateUrl: '/view/biblio/modification-adherent.html',
 			controller: 'ModificationAdherentCtrl'
 		});	
 		$routeProvider.when('/recherche-media', {
