@@ -1,6 +1,8 @@
 angular.module("biblio")
 .controller('rechercheAdherentCtrl', function ($scope, $location, $routeParams, $filter, serviceAdherent) {
-       
+        
+        
+
         $scope.RechercheAhderent = function(){
             console.log("Controleur recherche adherent " +  $scope.Adherent.id + " nom: " + $scope.Adherent.nom);
 
@@ -20,8 +22,12 @@ angular.module("biblio")
             
         };  
 
-        $scope.orderByName = function(){
-        
+         $scope.tri = function(colonne){
+                 $scope.maVarDeTrie = colonne;
+                 /*console.log("variable tri" + $scope.maVarDeTrie);*/
+          };    
 
-    };
+       
+
+        
    });
