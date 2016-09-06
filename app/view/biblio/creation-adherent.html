@@ -1,4 +1,4 @@
-<div x-ng-include="'./html/biblio/header.html'"></div>
+<div x-ng-include="'./view/biblio/header.html'"></div>
 
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
@@ -10,7 +10,7 @@
 							class="form-control" id="nom" placeholder="Nom"
 							x-ng-model="toAddAdherent.nom" x-ng-minlength="2"
 							x-ng-maxlength="20" required>
-						<div x-ng-messages="formAdh.nom.$error">
+						<div x-ng-if="formAdh.nom.$dirty" x-ng-messages="formAdh.nom.$error">
 							<div x-ng-messages-include="view/biblio/erreur.html"></div>
 						</div>
 					</div>
@@ -20,14 +20,14 @@
 							placeholder="Prenom" x-ng-model="toAddAdherent.prenom"
 							x-ng-minlength="2" x-ng-maxlength="20" required>
 					</div>
-					<div x-ng-messages="formAdh.prenom.$error">
+					<div x-ng-if="formAdh.prenom.$dirty" x-ng-messages="formAdh.prenom.$error">
 						<div x-ng-messages-include="view/biblio/erreur.html"></div>
 					</div>
 					<div class="form-group">
 						<label for="date_nat">Date de naissance*</label> <input
 							name="date" type="date" class="form-control" id="date_nat"
 							placeholder="Date de naissance"	x-ng-model="toAddAdherent.dateNat" required>
-						<div x-ng-messages="formAdh.date.$error">
+						<div x-ng-if="formAdh.date.$dirty" x-ng-messages="formAdh.date.$error">
 							<div x-ng-messages-include="view/biblio/erreur.html"></div>
 						</div>
 					</div>
@@ -35,7 +35,7 @@
 						<label for="email">Email*</label> <input type="email" name="email"
 							class="form-control" id="email" placeholder="Mail"
 							x-ng-model="toAddAdherent.email" required>
-						<div x-ng-messages="formAdh.email.$error">
+						<div x-ng-if="formAdh.email.$dirty" x-ng-messages="formAdh.email.$error">
 							<div x-ng-messages-include="view/biblio/erreur.html"></div>
 						</div>
 					</div>
@@ -49,7 +49,7 @@
 							class="form-control" id="BP" placeholder="Code postal"
 							x-ng-model="toAddAdherent.codePost" min="10000" max="99999">
 					</div>
-					<div x-ng-messages="formAdh.codePostal.$error">
+					<div x-ng-if="formAdh.codePostal.$dirty" x-ng-messages="formAdh.codePostal.$error">
 						<div x-ng-messages-include="view/biblio/erreur.html"></div>
 					</div>
 					<div class="form-group">
@@ -68,7 +68,7 @@
 							placeholder="Montant" x-ng-model="toAddAdherent.montant"
 							x-ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01">
 					</div>
-					<div x-ng-messages="formAdh.montant.$error">
+					<div x-ng-if="formAdh.montant.$dirty" x-ng-messages="formAdh.montant.$error">
 						<div x-ng-messages-include="view/biblio/erreur.html"></div>
 					</div>
 					<div class="col-md-6 col-md-offset-4">
@@ -82,4 +82,4 @@
 	</div>
 </div>
 
-<div x-ng-include="'./html/biblio/footer.html'"></div>
+<div x-ng-include="'./view/biblio/footer.html'"></div>

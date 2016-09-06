@@ -22,7 +22,7 @@
 									x-ng-model="email" placeholder="Email" required>
 							</div>
 
-							<div x-ng-messages="formConnexion.email.$error">
+							<div x-ng-if="formConnexion.email.$dirty" x-ng-messages="formConnexion.email.$error">
 								<div x-ng-messages-include="view/biblio/erreur.html"></div>
 							</div>
 
@@ -34,8 +34,8 @@
 									required>
 							</div>
 
-							<div x-ng-messages="formConnexion.password.$error">
-								<div x-ng-messages-include="html/biblio/erreur.html"></div>
+							<div x-ng-if="formConnexion.passeword.$dirty" x-ng-messages="formConnexion.password.$error">
+								<div x-ng-messages-include="view/biblio/erreur.html"></div>
 							</div>
 
 							<div x-ng-show="formConnexion.$invalid">
