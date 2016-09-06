@@ -16,20 +16,18 @@ angular.module("biblio")
 			
 		};
 		
-		$scope.open = function (id) {
-			
+		$scope.open = function (id) {			
 			
 			$uibModal.open({
-			      templateUrl: 'html/modal/recherche-media.htm',
+			      templateUrl: 'view/modal/recherche-media.html'
 			    });
-			return;
-			
+			return;			
 			
 			var item = {		      
 //				      ariaLabelledBy: 'modal-title',
 //				      ariaDescribedBy: 'modal-body',
-				      templateUrl: 'html/modal/recherche-media.html',
-				      controller: 'ModalInstanceCtrl',
+				      templateUrl: './recherche-media.html',
+				      //controller: 'ModalInstanceCtrl',
 				      //controllerAs: '$ctrl',
 //				      size: size,
 				      resolve: {
