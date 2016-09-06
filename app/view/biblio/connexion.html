@@ -17,35 +17,31 @@
 					<div class="panel-body">
 						<form name="formConnexion" x-ng-submit="connecter()" novalidate>
 							<div class="form-group">
-								<label for="identifiant">Identifiant</label> <input type="email"
+								<label for="identifiant">Identifiant</label> <input type="text"
 									class="form-control" id="identifiant" name="email"
 									x-ng-model="email" placeholder="Email" required>
 							</div>
 
-							<div x-ng-messages="formConnexion.email.$error">
-								<div x-ng-messages-include="view/biblio/erreur.html"></div>
-							</div>
-
 							<div class="form-group">
 								<label for="mot_de_passe">Mot de passe</label> <input
-									type="password" class="form-control" id="mot_de_passe"
+									type="password" class="form-control" id="mot_de_passe" name="passeword"
 									placeholder="Password" name="password" x-ng-model="password"
-									x-ng-pattern="/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/"
 									required>
+								<div x-ng-if="formConnexion.passeword.$dirty"
+									x-ng-messages="formConnexion.password.$error">
+									<div x-ng-messages-include="view/biblio/erreur.html"></div>
+								</div>
 							</div>
 
-							<div x-ng-messages="formConnexion.password.$error">
-								<div x-ng-messages-include="view/biblio/connexion.html"></div>
-							</div>
 
 							<div x-ng-show="formConnexion.$invalid">
 								<div x-ng-show="formConnexion.password.$error.pattern"
 									class="alert alert-danger" role="alert">
-									Un mot de passe valide aura: <br> - de 8 à 15 caracteres
+									Un mot de passe valide aura: <br> - de 8 a 15 caracteres
 									<br> - au moins une lettre minuscule <br> - au moins
 									une lettre majuscule <br> - au moins un chiffre <br>
 									- au moins un de ces caracteres speciaux: $ @ % * + - _ ! <br>
-									- aucun autre caractère possible
+									- aucun autre caractere possible
 								</div>
 							</div>
 
