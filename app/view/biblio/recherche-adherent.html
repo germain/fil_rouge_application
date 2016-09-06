@@ -1,17 +1,17 @@
-<div ng-include="'./view/biblio/header.html'"> </div> 
-<div id="wrap" ng-app="biblio">		
+<div x-ng-include="'./view/biblio/header.html'"> </div> 
+<div id="wrap" x-ng-app="biblio">		
 	<div class="container">
 		<div class="row">
 			<form id="form">
 				<div class="form-group">
 					<div class="col-xs-4">
-						<input class="form-control" id="ex1" type="text" placeholder="rechercher par identifiant" ng-model="Adherent.id">
+						<input class="form-control" id="ex1" type="text" placeholder="rechercher par identifiant" x-ng-model="Adherent.id">
 					</div>
 					<div class="col-xs-4">
-						<input class="form-control" id="ex2" type="text" placeholder="rechercher par nom" ng-model="Adherent.nom">
+						<input class="form-control" id="ex2" type="text" placeholder="rechercher par nom" x-ng-model="Adherent.nom">
 					</div>
 					<div class="col-xs-4">
-						<button type="button" ng-click="RechercheAhderent()" class="btn btn-info">Rechercher</button>
+						<button type="button" x-ng-click="RechercheAhderent()" class="btn btn-info">Rechercher</button>
 					</div>
 				</div>
 			</form>
@@ -41,8 +41,8 @@
 					<td><label>Nombre de média en possession</label></td>
 				</tr>
 
-				<tr data-toggle="modal" data-target="#myModal"  ng-repeat="obj in list">
-				<td>{{obj.id}}</td>
+				<tr x-ng-repeat="obj in list" x-ng-click="open(obj.id)">
+					<td>{{obj.id}}</td>
 					<td>{{obj.nom}}</td>
 					<td>{{obj.prenom}}</td>
 					<td>{{obj.date_naissance}}</td>
@@ -55,119 +55,7 @@
 			</table>
 		</div>
 
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">Détail Livre</h4>
-					</div>
-					<div class="modal-body">
-						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="headingOne">
-									<h4 class="panel-title">
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											Détail Adhérent
-										</a>
-									</h4>
-								</div>
-								<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-									<div class="panel-body">
-										<div class="modal-body">
-										 	<div class="row">
-										<div class="col-md-10 col-md-offset-1">
-											<div class="thumbnail">
-												<div class="caption">
-													<div><h3>Chéné Jocelyn</h3></div>
-													<label>Date de naissance: </label> 15/02/1988<br>
-													<label>E-mail: </label> Chéné Jocelyn@gmail.com<br>
-													<label>Adresse: </label> 5 avenue General Leclerc 75001 Paris<br>
-													<label>Date de paiement de la cotisation: </label> 08/07/2016<br>
-													<label>Montant la cotisation: </label> 20€ 
-													
-													<p><a href="modification-adherent.html" class="btn btn-primary" role="button">Modifier</a> <a href="#" class="btn btn-default" role="button">Supprimer</a></p>
-				
-												</div>
-											</div>
-										</div>
-									</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="headingTwo">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-											Liste des médias
-										</a>
-									</h4>
-								</div>
-								<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-									<div class="panel-body">								 
-										<div id="table">
-											<table class="table table-hover">
-												<tr>
-													<td><label>Type de media</label></td>
-													<td><label>Titre</label></td>
-													<td><label>Date de l'emprunt</label></td>
-												</tr>
-												<tr data-toggle="modal" data-target="#myModal">
-													<td>Livre </td>
-													<td>Don Quichotte</td>
-													<td>18/06/2016 </td>
-												</tr>
-													<tr>
-													<td>CD </td>
-													<td>Tutoriaux JavaScript</td>
-													<td>07/07/2016</td>
-												</tr>
-											</table>
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading" role="tab" id="headingThree">
-										<h4 class="panel-title">
-											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-												Ajouter nouveau Média
-											</a>
-										</h4>
-									</div>
-									<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-										<div class="panel-body">
-											<form action="" method="GET">
-												<div class="form-group">
-													<label for="Titre" class="Gras">Type de média</label>
-													<input type="text" class="form-control" id="Titre" placeholder="Titre" required>
-												</div>
-												<div class="form-group">
-													<label for="Auteur" class="Gras">Titre</label>
-													<input type="text" class="form-control" id="Auteur" placeholder="Auteur" required>
-												</div>
-												<div class="form-group">
-													<label for="Auteur" class="Gras">Date de l'emprunt</label>
-													<input type="date" class="form-control" id="Auteur" placeholder="Auteur" required>
-												</div>						
-												<div >
-													<button type="submit" class="btn btn-success col-xs-offset-5">Enregistrer</button>
-												</div>													
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="modal-footer">
-							 	 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							</div>
-						</div>
-					</div>
-				</div>		
-			</div>
-		</div>
-		<!-- / Modal -->
+<!-- modal -->
 		<div class="row">
 			<div class="col-md-6 col-md-offset-4">
 				<nav>
@@ -204,4 +92,4 @@
 		</div>
 	</div>	
 </div>
-<div ng-include="'./view/biblio/footer.html'"> </div> 	
+<div x-ng-include="'./view/biblio/footer.html'"> </div> 	
