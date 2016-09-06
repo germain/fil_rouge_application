@@ -15,7 +15,7 @@ angular.module('biblio').controller('ModalRechercheMediaCtrl', function($scope, 
 				
 				//On récupère les emprunteurs				
 	        		$scope.list_emprunt = data.emprunteurs;
-	    			console.log("adh",data);				
+	    			//console.log("adh",data);				
 				
 			});	
 									
@@ -23,21 +23,8 @@ angular.module('biblio').controller('ModalRechercheMediaCtrl', function($scope, 
 				$uibModalInstance.close();
 			};					
 			
-			$scope.AjoutEmprunt = function () {
-				
-				//$scope.toAddEmprunt.date_retour = $filter('date')($scope.toAddEmprunt.date_retour, "yyyy-MM-dd"); 
-				
-				$scope.toAddEmprunt.date_emprunt_format = new Date($scope.toAddEmprunt.date_emprunt);
-				//$scope.toAddEmprunt.date_retour = $filter('date')($scope.toAddEmprunt.date_retour, "yyyy-MM-dd");
-				
-				//$scope.toAddEmprunt.date_retour = $scope.toAddEmprunt.date_retour | date: "yyyy-MM-dd;
-				console.log($scope.toAddEmprunt.id + "-" + $scope.toAddMedia.id + "-" + $scope.toAddEmprunt.date_emprunt_format);
-				
-				serviceEmprunt.postEmprunt($scope.toAddEmprunt.id, $scope.toAddMedia.id, $scope.toAddEmprunt.date_emprunt_format);				
-				
-				
-			};
-			
-
-			
+			$scope.AjoutEmprunt = function () {					
+				//console.log($scope.toAddEmprunt.id + "-" + $scope.toAddMedia.id + "-" + $scope.toAddEmprunt.date_emprunt_format);				
+				serviceEmprunt.postEmprunt($scope.toAddEmprunt.id, $scope.toAddMedia.id, $scope.toAddEmprunt.date_emprunt);					
+			};		
 });
