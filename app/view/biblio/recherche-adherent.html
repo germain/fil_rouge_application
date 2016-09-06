@@ -1,17 +1,22 @@
+<<<<<<< HEAD
 <div id="wrap" ng-app="biblio">		
+=======
+<div x-ng-include="'./view/biblio/header.html'"> </div> 
+<div id="wrap" x-ng-app="biblio">		
+>>>>>>> branch 'master' of https://github.com/germain/fil_rouge_application
 	<div class="container">
 	<div ng-include="'./view/biblio/header.html'"> </div> 
 		<div class="row">
 			<form id="form">
 				<div class="form-group">
 					<div class="col-xs-4">
-						<input class="form-control" id="ex1" type="text" placeholder="rechercher par identifiant" ng-model="Adherent.id">
+						<input class="form-control" id="ex1" type="text" placeholder="rechercher par identifiant" x-ng-model="Adherent.id">
 					</div>
 					<div class="col-xs-4">
-						<input class="form-control" id="ex2" type="text" placeholder="rechercher par nom" ng-model="Adherent.nom">
+						<input class="form-control" id="ex2" type="text" placeholder="rechercher par nom" x-ng-model="Adherent.nom">
 					</div>
 					<div class="col-xs-4">
-						<button type="button" ng-click="RechercheAhderent()" class="btn btn-info">Rechercher</button>
+						<button type="button" x-ng-click="RechercheAhderent()" class="btn btn-info">Rechercher</button>
 					</div>
 				</div>
 			</form>
@@ -54,23 +59,16 @@
 						<label ng-click="tri('nombre_media')">Nombre de m&eacute;dia en possession<span class="caret"></span></label>
 					</td>
 				</tr>
-
-				<tr data-toggle="modal" data-target="#myModal"  ng-repeat="obj in list | orderBy:['nom' , 'prenom']"> 
+				<tr data-toggle="modal" data-target="#myModal" ng-click="open()" ng-repeat="obj in list | orderBy:maVarDeTrie"> 
 					<td>{{obj.id}}</td>
 					<td>{{obj.nom}}</td>
 					<td>{{obj.prenom}}</td>
 					<td>{{obj.date_naissance}}</td>
 					<td>{{obj.cotisation.montant}}</td>
 					<td>{{obj.nombre_media}}</td>
-				</tr>
-			
-								
+				</tr>		
 			</table>
-		</div>
-
-		<!-- Modal -->
-		<div ng-include="'./view/modal/recherche-adherent.html'"> </div> 
-		<!-- / Modal -->
+		</div>		
 		<div class="row">
 			<div class="col-md-6 col-md-offset-4">
 				<nav>
@@ -107,5 +105,9 @@
 		</div>
 	</div>	
 </div>
+<<<<<<< HEAD
 <div ng-include="'./view/biblio/footer.html'"> </div> 	
 
+=======
+<div x-ng-include="'./view/biblio/footer.html'"> </div> 	
+>>>>>>> branch 'master' of https://github.com/germain/fil_rouge_application

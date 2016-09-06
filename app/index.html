@@ -28,10 +28,12 @@
 	<script src="js/biblio/controller/ModificationAdherentCtrl.js"></script> 	
 	<script src="js/biblio/controller/ModificationMediaCtrl.js"></script>
 	<script src="js/biblio/controller/rechercheAdherentCtrl.js"></script>
-	<script src="js/biblio/controller/rechercheMediaCtrl.js"></script>	
-	
+	<script src="js/biblio/controller/rechercheMediaCtrl.js"></script>
+	<script src="js/biblio/controller/MainCtrl.js"></script>	
+
 	<!-- Controleur Modal -->
-	<script src="js/biblio/controller/ModalRechercheMediaCtrl.js"></script>	
+	<script src="js/biblio/controller/ModalRechercheMediaCtrl.js"></script>
+	<script src="js/biblio/controller/ModalRechercheAdherentCtrl.js"></script>	
 
 	<!-- Service  -->
 	<script src="js/biblio/service/serviceAdherent.js"></script> 	
@@ -40,9 +42,10 @@
 	<script src="js/biblio/service/serviceEmprunt.js"></script>
 	
 </head>
-
-<body>
-	<ng-view></ng-view> 
+<body ng-controller="MainCtrl">
+	<ng-view ng-if="isConnected()"></ng-view> 
+	<div ng-if="!isConnected()">
+		<div ng-include="'/view/biblio/connexion.html'"></div>
+	</div>
 </body>
-
 </html>

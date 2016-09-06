@@ -2,7 +2,6 @@
 <div id="wrap">		
 	<div class="container">
 		<div x-ng-include="'view/biblio/header.html'"></div>
-
 	<div class="row">
 		<form id="form">
 			<div class="form-group">
@@ -41,13 +40,21 @@
 	<div id="table" class="table-responsive">
 		<table class="table table-hover">
 			<tr>
+<<<<<<< HEAD
 				<td><label>Titre du m&eacute;dia</label></td>
 				<td><label>Type du m&eacute;dia</label></td>
 				<td><label>Auteur du m&eacute;dia</label></td>
 				<td><label>Emprunteur</label></td>
 				<td><label>Date de retour pr&eacute;vu</label></td>
+=======
+				<td><label ng-click="tri('titre')" >Titre du média <span class="caret"></span> </label></td>
+				<td><label ng-click="tri('type')" >Type du média <span class="caret"></span> </label></td>
+				<td><label ng-click="tri('auteur')" >Auteur du média <span class="caret"></span> </label></td>
+				<td><label ng-click="tri('emprunteur')" >Emprunteur <span class="caret"></span> </label></td>
+				<td><label ng-click="tri('date_retour')" >Date de retour prévu <span class="caret"></span> </label></td>
+>>>>>>> branch 'master' of https://github.com/germain/fil_rouge_application
 			</tr>
-			<tr x-ng-repeat="obj in list" ng-click="open(obj.id)" >
+			<tr x-ng-repeat="obj in list | orderBy:maVarDeTrie" x-ng-click="open(obj.id)" > 
 				<td>{{obj.titre}}</td>
 				<td>{{obj.type}}</td>
 				<td>{{obj.auteur}}</td>
