@@ -8,7 +8,7 @@ angular.module('biblio').controller('ConnexionCtrl',  ['$scope', '$location', 's
                     $scope.error = "Connexion échouée";
                     $scope.dataLoading = false;
                 }
-            });
-        };
+            }); 
+        }; 
     }]);
 		
