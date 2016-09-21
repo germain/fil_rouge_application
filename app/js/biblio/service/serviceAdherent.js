@@ -1,6 +1,6 @@
 angular.module('biblio')
 	.factory('serviceAdherent', function ($http, $q) {
-		var HOST = "http://192.168.10.41:8090/";
+		var HOST = "http://localhost:8090/";
 		var PATH_NAME_ACCESSION = "resource/adherent.accession";
 		var PATH_NAME_MODIFY = "resource/adherent.modification";
 		var PATH_NAME_SEARCH_NAME = "resource/adherent.recherche";
@@ -41,7 +41,7 @@ angular.module('biblio')
 				console.log(nom,prenom,dateN,email,adresse,codeP,ville,dateP,montant);
 				var req = {
 					method : 'POST',
-					url : 'http://192.168.10.41:8090/resource/adherent.creation',
+					url : 'http://localhost:8090/resource/adherent.creation',
 					data : {
 						nom : nom,
 						prenom : prenom,

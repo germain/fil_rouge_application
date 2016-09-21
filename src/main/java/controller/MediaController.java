@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import fr.dta.application.media.model.Media;
+import modele.media.Media;
+import service.MediaService;
+
 
 public class MediaController {
 	@Autowired private MediaService mediaService;
@@ -34,11 +36,11 @@ public class MediaController {
 	
 	@RequestMapping(value = "{id}", method = RequestMethod.PUT)
 	public Media updateMedia(@PathVariable int id, @RequestBody Media media){
-		return mediaService.update(id);
+		 return mediaService.save(media);
 	}
 	
 	@RequestMapping(value = "{id}", method = RequestMethod.DELETE)
 	public void deleteMedia(@PathVariable int id){
-		mediaService.delete(id);
+		//mediaService.remove(id);
 	}
 }
