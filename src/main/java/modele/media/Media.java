@@ -1,4 +1,4 @@
-package fr.dta.application.media.model;
+package modele.media;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,12 +15,12 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import fr.dta.application.adherent.model.Adherent;
-import fr.dta.application.emprunt.model.Emprunt;
+import core.Model;
+import modele.emprunt.Emprunt;
 
 @Entity
 @Table(name ="media")
-public class Media {
+public class Media implements Model {
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -96,13 +96,22 @@ public class Media {
 		this.emprunt = emprunt;
 	}
 
+	@Override
+	public String toString() {
+		return "Media [title=" + title + ", type=" + type + ", author=" + author + "]";
+	}
+
+	@Override
 	public Long getId() {
+		// TODO Auto-generated method stub
 		return id;
 	}
 
 	@Override
-	public String toString() {
-		return "Media [title=" + title + ", type=" + type + ", author=" + author + "]";
+	public void setId(Long id) {
+		// TODO Auto-generated method stub
+		this.id = id;
+		
 	}
 	
 }

@@ -3,8 +3,7 @@ package dao;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import fr.dta.application.adherent.model.Adherent;
-import fr.dta.application.media.model.Media;
+import modele.media.Media;
 
 public class MediaDAO {
 	

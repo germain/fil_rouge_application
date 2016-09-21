@@ -4,7 +4,10 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import fr.dta.application.adherent.model.Adherent;
+
+import modele.adherent.Adherent;
+
+
 
 public class AdherentDao {
 	
