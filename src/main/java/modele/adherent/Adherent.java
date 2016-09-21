@@ -1,4 +1,4 @@
-package fr.dta.application.adherent.model;
+package modele.adherent;
 
 import java.util.Date;
 
@@ -13,10 +13,11 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import fr.dta.application.cotisation.model.Cotisation;
+import core.Model;
+import modele.cotisation.Cotisation;
 
 @Entity
-public class Adherent {
+public class Adherent implements Model {
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -149,8 +150,5 @@ public class Adherent {
 	public void setCotisation(Cotisation cotisation) {
 		this.cotisation = cotisation;
 	}
-	
-	
-	
-	
+		
 }

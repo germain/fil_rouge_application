@@ -3,11 +3,11 @@ package run;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import fr.dta.application.adherent.model.Adherent;
-import fr.dta.application.cotisation.model.Cotisation;
 import dao.*;
-import fr.dta.application.media.model.Media;
-import fr.dta.application.media.model.Type;
+import modele.adherent.Adherent;
+import modele.cotisation.Cotisation;
+import modele.media.Media;
+import modele.media.Type; 
 
 public class Run {
 

@@ -1,4 +1,4 @@
-package fr.dta.application.emprunt.model;
+package modele.emprunt;
 
 
 import java.util.Date;
@@ -15,12 +15,13 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import fr.dta.application.adherent.model.Adherent;
-import fr.dta.application.media.model.Media;
+import core.Model;
+import modele.adherent.Adherent;
+import modele.media.Media;
 
 @Entity
 @Table(name ="emprunt")
-public class Emprunt {
+public class Emprunt implements Model {
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -31,7 +32,7 @@ public class Emprunt {
 	
 	@ManyToOne
 	@NotNull
-	private Adherent adherent;
+	private modele.adherent.Adherent adherent;
 	
 	@Column
 	@NotNull
@@ -96,6 +97,12 @@ public class Emprunt {
 
 	public Long getId() {
 		return id;
+	}
+
+	@Override
+	public void setId(Long id) {
+		this.id = id;
+		
 	}
 	
 	

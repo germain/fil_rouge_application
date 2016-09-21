@@ -2,7 +2,7 @@ package dao;
 
 import javax.persistence.EntityManager;
 
-import fr.dta.application.emprunt.model.Emprunt;
+import modele.emprunt.Emprunt;
 
 public class EmpruntDAO {
 	private static EmpruntDAO empruntDao;

@@ -1,4 +1,4 @@
-package fr.dta.application.cotisation.model;
+package modele.cotisation;
 
 import java.util.Date;
 
@@ -10,9 +10,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import core.Model;
 
+ 
 @Entity
-public class Cotisation {
+public class Cotisation implements Model {
 	@Id
 	@GeneratedValue
 	private Long id;

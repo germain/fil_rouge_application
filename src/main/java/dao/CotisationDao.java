@@ -2,8 +2,7 @@ package dao;
 
 import javax.persistence.EntityManager;
 
-import fr.dta.application.adherent.model.Adherent;
-import fr.dta.application.cotisation.model.Cotisation;
+import modele.cotisation.Cotisation;
 
 public class CotisationDao {
 	

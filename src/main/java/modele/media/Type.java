@@ -1,4 +1,4 @@
-package fr.dta.application.media.model;
+package modele.media;
 
 public enum Type {
 	Livre, 
