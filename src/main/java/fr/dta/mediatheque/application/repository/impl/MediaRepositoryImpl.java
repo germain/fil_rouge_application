@@ -1,21 +1,19 @@
-package application.repository.impl;
+package fr.dta.mediatheque.application.repository.impl;
 
-import java.util.List;
-
-import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
-import application.core.JpaRepositoryImpl;
-import application.model.media.Media;
-import application.repository.MediaRepository;
+import fr.dta.mediatheque.application.core.JpaRepositoryImpl;
+import fr.dta.mediatheque.application.model.Media;
+import fr.dta.mediatheque.application.repository.MediaRepository;
 
 @Repository
 public class MediaRepositoryImpl extends JpaRepositoryImpl<Media> implements MediaRepository {
 
 	@Override
-	protected Class<Media> getEntityClass() {
-		// TODO Auto-generated method stub
-		return Media.class;
+	protected Class<Media> getEntityClass() {	return Media.class;	}
+	
+	public Media findByLogin(String login){
+		return findFirst("select u from Media u where u.login ='"+login+"'");
 	}
 
 }

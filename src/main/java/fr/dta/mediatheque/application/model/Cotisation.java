@@ -1,4 +1,4 @@
-package application.model.cotisation;
+package fr.dta.mediatheque.application.model;
 
 import java.util.Date;
 
@@ -6,18 +6,20 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
-import application.core.Model;
+import fr.dta.mediatheque.application.core.Model;
 
  
 @Entity
+@Table(name="cotisation")
 public class Cotisation implements Model {
 	@Id
 	@GeneratedValue
-	private Long id;
+	private int id;
 	
 	@Column
 	@NotNull
@@ -37,11 +39,13 @@ public class Cotisation implements Model {
 		this.montant = montant;
 	}
 
-	public Long getId() {
+	@Override
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	@Override
+	public void setId(int id) {
 		this.id = id;
 	}
 

@@ -1,4 +1,4 @@
-package application;
+package fr.dta.mediatheque;
 
 import java.util.Properties;
 
@@ -41,7 +41,7 @@ public class JpaConfiguration {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(dataSource());
-		em.setPackagesToScan(new String[] { "application" });
+		em.setPackagesToScan(new String[] { "fr.dta.mediatheque" });
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
 		em.setJpaProperties(additionalProperties());

@@ -1,9 +1,6 @@
-package application.service;
+package fr.dta.mediatheque.application.core;
 
 import java.util.List;
-
-import application.core.JpaRepository;
-import application.core.Model;
 
 
 	public interface GenericService<T extends Model> {

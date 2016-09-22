@@ -1,4 +1,4 @@
-package application.model.media;
+package fr.dta.mediatheque.application.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,15 +15,14 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import application.core.Model;
-import application.model.emprunt.Emprunt;
+import fr.dta.mediatheque.application.core.Model;
 
 @Entity
-@Table(name ="media")
+@Table(name="media")
 public class Media implements Model {
 	@Id
 	@GeneratedValue
-	private Long id;
+	private int id;
 	
 	@Column
 	@NotBlank
@@ -102,13 +101,13 @@ public class Media implements Model {
 	}
 
 	@Override
-	public Long getId() {
+	public int getId() {
 		// TODO Auto-generated method stub
 		return id;
 	}
 
 	@Override
-	public void setId(Long id) {
+	public void setId(int id) {
 		// TODO Auto-generated method stub
 		this.id = id;
 		

@@ -1,4 +1,4 @@
-package application.core;
+package fr.dta.mediatheque.application.core;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
 
-package application.repository;
+package fr.dta.mediatheque.application.repository;
 
-import application.core.JpaRepository;
-import application.model.cotisation.Cotisation;
+import fr.dta.mediatheque.application.core.JpaRepository;
+import fr.dta.mediatheque.application.model.Cotisation;
 
 public interface CotisationRepository extends JpaRepository<Cotisation> {
 

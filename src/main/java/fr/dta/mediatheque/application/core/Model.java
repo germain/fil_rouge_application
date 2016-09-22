@@ -1,9 +1,9 @@
-package application.core;
+package fr.dta.mediatheque.application.core;
 
 import java.io.Serializable;
 
 public interface Model extends Serializable {
 
-	Long getId();
-    void setId(Long id);
+	int getId();
+    void setId(int id);
 }

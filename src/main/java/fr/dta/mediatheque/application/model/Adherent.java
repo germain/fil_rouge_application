@@ -1,4 +1,4 @@
-package application.model.adherent;
+package fr.dta.mediatheque.application.model;
 
 import java.util.Date;
 
@@ -7,20 +7,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import application.core.Model;
-import application.model.cotisation.Cotisation;
+import fr.dta.mediatheque.application.core.Model;
 
 @Entity
+@Table(name="adherent")
 public class Adherent implements Model {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue
-	private Long id;
+	private int id;
 	
 	@Column
 	@NotBlank
@@ -70,12 +76,14 @@ public class Adherent implements Model {
 		this.nbEmpruntEnCours = nbEmpruntEnCours;
 		this.cotisation = cotisation;
 	}
-
-	public Long getId() {
+	
+	@Override
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	@Override
+	public void setId(int id) {
 		this.id = id;
 	}
 

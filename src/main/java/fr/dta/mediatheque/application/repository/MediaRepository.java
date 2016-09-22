@@ -1,8 +1,9 @@
 
-package application.repository;
+package fr.dta.mediatheque.application.repository;
 
-import application.core.JpaRepository;
-import application.model.media.Media;
+import fr.dta.mediatheque.application.core.JpaRepository;
+import fr.dta.mediatheque.application.model.Media;
 
 public interface MediaRepository extends JpaRepository<Media> {
+	public Media findByLogin(String login);
 }

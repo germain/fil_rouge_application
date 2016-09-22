@@ -1,4 +1,4 @@
-package application.model.emprunt;
+package fr.dta.mediatheque.application.model;
 
 
 import java.util.Date;
@@ -13,18 +13,19 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotBlank;
-
-import application.core.Model;
-import application.model.adherent.Adherent;
-import application.model.media.Media;
+import fr.dta.mediatheque.application.core.Model;
 
 @Entity
 @Table(name ="emprunt")
 public class Emprunt implements Model {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue
-	private Long id;
+	private int id;
 	
 	@ManyToOne
 	@NotNull
@@ -32,7 +33,7 @@ public class Emprunt implements Model {
 	
 	@ManyToOne
 	@NotNull
-	private application.model.adherent.Adherent adherent;
+	private fr.dta.mediatheque.application.model.Adherent adherent;
 	
 	@Column
 	@NotNull
@@ -95,12 +96,13 @@ public class Emprunt implements Model {
 		this.dateRetourEmprunt = dateRetourEmprunt;
 	}
 
-	public Long getId() {
+	@Override
+	public int getId() {
 		return id;
 	}
 
 	@Override
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 		
 	}
