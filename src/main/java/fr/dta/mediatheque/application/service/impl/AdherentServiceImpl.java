@@ -24,8 +24,12 @@ public class AdherentServiceImpl implements AdherentService {
 
 	@Override
 	public List<Adherent> findAllAdherent() {
-		// TODO Auto-generated method stub
 		return repository.findAllAdherent();
+	}
+
+	@Override
+	public Adherent findAdherentByName(String nom) {
+		return repository.findByName(nom);
 	}
 
 }

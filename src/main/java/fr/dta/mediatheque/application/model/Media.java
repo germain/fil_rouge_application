@@ -3,10 +3,12 @@ package fr.dta.mediatheque.application.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -20,6 +22,11 @@ import fr.dta.mediatheque.application.core.Model;
 @Entity
 @Table(name="media")
 public class Media implements Model {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue
 	private int id;
@@ -36,7 +43,7 @@ public class Media implements Model {
 	@NotBlank
 	private String author;
 	
-	@OneToMany(mappedBy="media")
+	@OneToMany(fetch=FetchType.EAGER , cascade = CascadeType.ALL, mappedBy="media")
 	private List<Emprunt> emprunt;
 	
 	public Media(String title, Type type, String author, List<Emprunt> emprunt) {

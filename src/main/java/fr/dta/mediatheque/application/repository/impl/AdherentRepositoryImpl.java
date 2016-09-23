@@ -18,9 +18,12 @@ public class AdherentRepositoryImpl extends JpaRepositoryImpl<Adherent> implemen
 		return findFirst("select u from Adherent u where u.login ='"+login+"'");
 	}
 
+	public Adherent findByName(String nom){
+		return findFirst("select u from Adherent u where u.nom ='"+nom+"'");
+	}
+
 	@Override
 	public List<Adherent> findAllAdherent() {
-		// TODO Auto-generated method stub
 		return findAll();
 	}
 }
