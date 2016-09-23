@@ -1,7 +1,7 @@
 angular.module('biblio', ['ngRoute', 'ngMessages', 'ui.bootstrap'])
 	.config(function ($routeProvider) {		
 		$routeProvider.when('/creation-media', {
-			templateUrl: '/view/biblio/creation-media.html',
+			templateUrl: './view/biblio/creation-media.html',
 			controller: 'CreationMediaCtrl'
 		});
 		$routeProvider.when('/modification-media/:id', {
@@ -17,15 +17,15 @@ angular.module('biblio', ['ngRoute', 'ngMessages', 'ui.bootstrap'])
 			controller: 'ModificationAdherentCtrl'
 		});	
 		$routeProvider.when('/recherche-media', {
-			templateUrl: '/view/biblio/recherche-media.html',
+			templateUrl: './view/biblio/recherche-media.html',
 			controller: 'RechercheMediaCtrl'	
 		});		
 		$routeProvider.when('/recherche-media/:titre', {
-			templateUrl: '/view/biblio/recherche-media.html',
+			templateUrl: './view/biblio/recherche-media.html',
 			controller: 'RechercheMediaCtrl'	
 		});
 		$routeProvider.when('/creation-adherent', {
-			templateUrl: '/view/biblio/creation-adherent.html',
+			templateUrl: './view/biblio/creation-adherent.html',
 			controller: 'CreationAdherentCtrl'
 		});
 		$routeProvider.otherwise({
