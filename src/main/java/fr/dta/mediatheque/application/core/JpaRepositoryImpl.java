@@ -38,8 +38,7 @@ public abstract class JpaRepositoryImpl<T extends Model> implements JpaRepositor
     }
 	
     @Transactional
-    public List<T> findAll() {
-    	System.out.println("entity: "+entityClass.getSimpleName());
+    public List<T> findAll() {    	
         return em.createQuery(" from "+entityClass.getSimpleName()).getResultList();
     }
 	

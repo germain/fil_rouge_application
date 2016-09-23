@@ -75,8 +75,8 @@ public class Adherent implements Model {
 		this.ville = ville;
 		this.nbEmpruntEnCours = nbEmpruntEnCours;
 		this.cotisation = cotisation;
-	}
-	
+	}	
+
 	@Override
 	public int getId() {
 		return id;

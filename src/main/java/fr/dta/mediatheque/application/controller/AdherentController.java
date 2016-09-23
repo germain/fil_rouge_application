@@ -1,5 +1,6 @@
 package fr.dta.mediatheque.application.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.dta.mediatheque.application.model.Adherent;
+import fr.dta.mediatheque.application.model.Cotisation;
 import fr.dta.mediatheque.application.service.AdherentService;
 
 
@@ -39,12 +41,16 @@ public class AdherentController {
 			return new ResponseEntity<Adherent>(HttpStatus.NOT_FOUND);
 		return new ResponseEntity<Adherent>(adherent, HttpStatus.OK);*/
 		
-	}
+	}	
 	
 	
-	@RequestMapping(value = "/createAdherent", method = RequestMethod.POST)
-	@ResponseStatus(HttpStatus.CREATED)
-	public Adherent createAdherent(@RequestParam("label") String label, HttpServletRequest request, Adherent adherent) {
+	@RequestMapping(value = "/createAdherent", method = RequestMethod.GET)
+	//@ResponseStatus(HttpStatus.CREATED)
+	//public Adherent createAdherent(@RequestParam("label") String label, HttpServletRequest request, Adherent adherent) {
+	public Adherent createAdh(){		
+	
+		Cotisation cot = new Cotisation();
+		Adherent adherent = new Adherent ("nom", "prenom", new Date("10/03/1999"), "email", "adresse", 75000,"ville", 2, cot);
 		return adherentService.save(adherent);
 	}
 	
