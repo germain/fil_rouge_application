@@ -63,8 +63,8 @@ public class MediaController {
 		mediaService.remove(media);
 	}
 	
-	@RequestMapping(value = "/media/recherche", method = RequestMethod.GET)
-	public ResponseEntity<List<Media>> findMediaWithTitle(@RequestBody Media media, HttpSession session) {
+	@RequestMapping(value = "/media/recherche", method = RequestMethod.POST)
+	public ResponseEntity<List<Media>> findMediaWithTitle(@RequestBody Media media) {
 		if(media.getTitle()==null) {
 			System.out.println("title non trouvé");
 			if(media.getAuthor()==null){
@@ -77,7 +77,7 @@ public class MediaController {
 		
 		List<Media> mediaResd = mediaService.findMedia(media);
 		
-		if (media == null)	return new ResponseEntity<List<Media>>(HttpStatus.NOT_FOUND);
+		if (mediaResd == null)	return new ResponseEntity<List<Media>>(HttpStatus.NOT_FOUND);
 		return new ResponseEntity<List<Media>>(mediaResd, HttpStatus.OK);
 	}
 	
