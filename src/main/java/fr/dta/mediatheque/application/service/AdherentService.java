@@ -8,4 +8,5 @@ import fr.dta.mediatheque.application.model.Adherent;
 public interface AdherentService extends GenericService<Adherent> {
 	public Adherent findAdherentByLogin(String login);
 	public List<Adherent> findAllAdherent();
+	public Adherent findAdherentByName(String nom);
 }
