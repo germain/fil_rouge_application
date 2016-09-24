@@ -65,16 +65,6 @@ public class MediaController {
 	
 	@RequestMapping(value = "/media/recherche", method = RequestMethod.POST)
 	public ResponseEntity<List<Media>> findMediaWithTitle(@RequestBody Media media) {
-		if(media.getTitle()==null) {
-			System.out.println("title non trouvé");
-			if(media.getAuthor()==null){
-				System.out.println("auteur non trouvé");
-				if(media.getType()==null) {
-					System.out.println("type non trouvé");
-				}
-			}
-		}
-		
 		List<Media> mediaResd = mediaService.findMedia(media);
 		
 		if (mediaResd == null)	return new ResponseEntity<List<Media>>(HttpStatus.NOT_FOUND);

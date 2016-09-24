@@ -37,10 +37,10 @@ public class MediaServiceImpl implements MediaService {
 			CriteriaQuery<Media> crit = repository.newCriteria();
 			CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
 			Root<Media> from = crit.from(Media.class);
-			CriteriaQuery<Media> medias = crit.multiselect(from);
-			Predicate predicate1 = criteriaBuilder.equal(from.get("titre"), media.getTitle());
+			//ajouter les conditions sur les predicats
+			Predicate predicate1 = criteriaBuilder.equal(from.get("title"), media.getTitle());
 			Predicate predicate2 = criteriaBuilder.equal(from.get("type"), media.getType());
-			Predicate predicate3 = criteriaBuilder.equal(from.get("auteur"), media.getAuthor());
+			Predicate predicate3 = criteriaBuilder.equal(from.get("author"), media.getAuthor());
 			crit.where(criteriaBuilder.and(predicate1,predicate2,predicate3));
 			return em.createQuery(crit).getResultList();
 		}
