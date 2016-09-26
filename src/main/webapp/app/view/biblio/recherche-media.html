@@ -31,15 +31,15 @@
 	<div id="table" class="table-responsive">
 		<table class="table table-hover">
 			<tr>
-				<td><label ng-click="tri('titre')" >Titre du média <span class="caret"></span> </label></td>
-				<td><label ng-click="tri('type')" >Type du média <span class="caret"></span> </label></td>
-				<td><label ng-click="tri('auteur')" >Auteur du média <span class="caret"></span> </label></td>
-				<td><label ng-click="tri('emprunteur')" >Emprunteur <span class="caret"></span> </label></td>
+				<td><label x-ng-click="tri('titre')" >Titre du média <span class="caret"></span> </label></td>
+				<td><label x-ng-click="tri('type')" >Type du média <span class="caret"></span> </label></td>
+				<td><label x-ng-click="tri('auteur')" >Auteur du média <span class="caret"></span> </label></td>
+				<td><label x-ng-click="tri('emprunteur')" >Emprunteur <span class="caret"></span> </label></td>
 			</tr>
 			<tr x-ng-repeat="obj in list | orderBy:maVarDeTrie" x-ng-click="open(obj.id)" > 
-				<td>{{obj.titre}}</td>
+				<td>{{obj.title}}</td>
 				<td>{{obj.type}}</td>
-				<td>{{obj.auteur}}</td>
+				<td>{{obj.author}}</td>
 				<td>{{obj.emprunteur.nom}}</td>
 				<td>{{obj.emprunteur.cotisation.fin}}</td>				
 			</tr>	

@@ -8,8 +8,8 @@ angular.module('biblio').controller('ModalRechercheMediaCtrl', function($scope, 
 				// on récup les infos du media
 				$scope.toAddMedia = {
 									id :data.id,
-									titre :data.titre,
-									auteur :data.auteur, 
+									title :data.titre,
+									author :data.auteur, 
 									type:data.type
 									};
 				

@@ -5,10 +5,10 @@ angular.module("biblio")
         $scope.titre = $routeParams.titre;
         //console.log($scope.titre);
         
-        media.getRechercheMedia(" ").then(function(data){
-    		$scope.list = data;
-			//console.log(data);	
-		});	
+//        media.getRechercheMedia(" ").then(function(data){
+//    		$scope.list = data;
+//			//console.log(data);	
+//		});	
         
         $scope.RechercheMedia = function(){
         	//console.log("Controleur recherche du media " + $scope.toAddMedia.titre + " " + $scope.toAddMedia.auteur + " " + $scope.toAddMedia.type);
@@ -21,7 +21,7 @@ angular.module("biblio")
 			
 		};
 		
-
+		
         $scope.tri = function(colonne){
             $scope.maVarDeTrie = colonne;
             /*console.log("variable tri" + $scope.maVarDeTrie);*/
@@ -33,7 +33,7 @@ angular.module("biblio")
 			      controller: 'ModalRechercheMediaCtrl',
 			      resolve: {
 				        param: {
-				        	id : id
+				        	id : parseInt(id)
 				        }
 				      }
 			    });

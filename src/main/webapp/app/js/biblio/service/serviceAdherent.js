@@ -6,6 +6,10 @@ angular.module('biblio')
 		var PATH_NAME_SEARCH_NAME = "resource/adherent.recherche";
 		var METHOD_POST = "POST";
 
+		var serveur = 'localhost';
+		var port = '8080';
+		var application = 'bib/rest';
+		
 		return {
 
 			searchAdherent : function(val){	

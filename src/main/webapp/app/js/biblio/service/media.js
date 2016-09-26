@@ -11,7 +11,7 @@ angular.module('biblio').factory('media',function($http, $timeout){
 			  });		 
 		},
 		getMedia : function(id){			
-			  return $http.get("http://"+serveur+":"+port+"/"+application+"/media/:id", {params:{id:id}}).then(function (response) {				 
+			  return $http.get("http://"+serveur+":"+port+"/"+application+"/media", {params:{id:id}}).then(function (response) {				 
 				  return response.data; 
 			  });		 
 		},
