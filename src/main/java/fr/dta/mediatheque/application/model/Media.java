@@ -17,6 +17,8 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import fr.dta.mediatheque.application.core.Model;
 
 @Entity
@@ -44,6 +46,7 @@ public class Media implements Model {
 	private String author;
 	
 	@OneToMany(fetch=FetchType.EAGER , cascade = CascadeType.ALL, mappedBy="media")
+	@JsonIgnore
 	private List<Emprunt> emprunt;
 	
 	public Media(String title, Type type, String author, List<Emprunt> emprunt) {
