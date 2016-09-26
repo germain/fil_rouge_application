@@ -1,6 +1,6 @@
 angular.module('biblio')
 	.factory('serviceAdherent', function ($http, $q) {
-		var HOST = "http://localhost:8090/";
+		var HOST = 'http://'+serveur+':'+port;
 		var PATH_NAME_ACCESSION = "resource/adherent.accession";
 		var PATH_NAME_MODIFY = "resource/adherent.modification";
 		var PATH_NAME_SEARCH_NAME = "resource/adherent.recherche";
@@ -13,19 +13,16 @@ angular.module('biblio')
 		return {
 
 			searchAdherent : function(val){	
-				var searchUrlNom=	'http://localhost:8080/bib/rest/adherent'; 	  
-			  	return $http.get(searchUrlNom).then(function (response) {
-//				var searchUrlNom=	HOST + PATH_NAME_SEARCH_NAME; 	  
-//			  	return $http.get(searchUrlNom, {params : val}).then(function (response) {
-				  return response.data;
+
+			var searchUrlNom = 'http://' + serveur + ':' + port + '/'+ application + '/adherent';
+					return $http.get(searchUrlNom).then(function(response) {
+					return response.data;
 			  	});		 
 			},
 
 			getAdherent: function(id) {
-				var searchUrlNom=	'http://localhost:8080/bib/rest/adherent/'+id; 	  
+				var searchUrlNom=	'http://'+serveur+':'+port+'/'+application+'/adherent/'+id; 	  
 			  	return $http.get(searchUrlNom).then(function (response) {
-//				var completeUrl = HOST + PATH_NAME_ACCESSION;
-//				return $http.get(completeUrl, {params : {"id":id}}).then(function(response) {
 					console.log(response);
 					return response.data;
 				}, function(error) {
@@ -49,7 +46,7 @@ angular.module('biblio')
 				console.log(nom,prenom,dateN,email,adresse,codeP,ville,dateP,montant);
 				var req = {
 					method : 'POST',
-					url : 'http://localhost:8090/resource/adherent.creation',
+					url : 'http://'+serveur+':'+port+'/resource/adherent.creation',
 					data : {
 						nom : nom,
 						prenom : prenom,
