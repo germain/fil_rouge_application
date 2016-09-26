@@ -1,110 +1,119 @@
 <div class="modal-header">
-            <!-- <h3 class="modal-title" id="modal-title">I'm a modal!</h3> -->
-        </div>
-      	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-		  <div class="panel panel-default">
-		    <div class="panel-heading" role="tab" id="headingOne">
-		      <h4 class="panel-title">
-		        <a role="button" data-toggle="collapse" data-parent="#accordion" href="/#/recherche-adherent/#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-		          Détail Adherent
-		        </a>
-		      </h4>
-		    </div>			    					  
-		    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-				<div class="panel-body">
-					<div class="modal-body">
-				     	<div class="row">
-						  <div class="col-md-8 col-md-offset-2">
-						    <div class="thumbnail">
-						    	<div class="caption">
+	<!-- <h3 class="modal-title" id="modal-title">I'm a modal!</h3> -->
+</div>
+<div class="panel-group" id="accordion" role="tablist"
+	aria-multiselectable="true">
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingOne">
+			<h4 class="panel-title">
+				<a role="button" data-toggle="collapse" data-parent="#accordion"
+					href="/#/recherche-adherent/#collapseOne" aria-expanded="true"
+					aria-controls="collapseOne"> Détail Adherent </a>
+			</h4>
+		</div>
+		<div id="collapseOne" class="panel-collapse collapse in"
+			role="tabpanel" aria-labelledby="headingOne">
+			<div class="panel-body">
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							<div class="thumbnail">
+								<div class="caption">
 									<div>
-										<h3>{{adherentDetails.nom + ' ' + adherentDetails.prenom}} </h3>
+										<h3>{{adherentDetails.nom + ' ' +
+											adherentDetails.prenom}}</h3>
 									</div>
-									<label>Date de naissance: </label> {{adherentDetails.date_naissance}}<br>
-									<label>E-mail: </label> {{adherentDetails.email}}<br>
-									<label>Adresse: </label> {{adherentDetails.adresse.ligne1 + ' ' + adherentDetails.adresse.ligne2}}<br>
-									<label>Date de paiement de la cotisation: </label> {{adherentDetails.cotisation.debut}}<br>
-									<label>Montant la cotisation: </label> {{adherentDetails.cotisation.montant}} 									
-									<p><a href="#/modification-adherent/{{adherentDetails.id}}" class="btn btn-primary" role="button">Modifier</a> <a href="#" class="btn btn-default" role="button">Supprimer</a></p>
-								</div>											
-						      </div>
-						    </div>
-						  </div>
-						</div>
-				    </div>
-				</div>
-  			 </div>
-		  </div>		  
-		<div class="panel panel-default">
-				<div class="panel-heading" role="tab" id="headingTwo">
-				  <h4 class="panel-title">
-				    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="/#/recherche-adherent/#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-				      Liste des emprunts
-				    </a>
-				  </h4>
-				</div>				
-			   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-			     <div class="panel-body">								 
-			     	<div id="table">					
-						<table class="table table-hover">
-							<tr>
-								<td><label>Type de media</label></td>
-								<td><label>Titre</label></td>
-								<td><label>Date de l'emprunt</label></td>
-							</tr>
-							<!-- <tr data-toggle="modal" data-target="#myModal"> -->
-							<tr x-ng-repeat="emprunt in adherentDetails.emprunt">
-								<td>{{emprunt.media.type}}</td>
-								<td>{{emprunt.media.titre}}</td>
-								<td>{{emprunt.retour}}</td>
-							</tr>
-						</table>										
-			     </div>
-			   </div>
-			</div>			
-			<div class="panel panel-default">
-			    <div class="panel-heading" role="tab" id="headingThree">
-			      <h4 class="panel-title">
-			        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="/#/recherche-adherent/#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-			          Ajouter nouveau emprunt de média 
-			        </a>
-			      </h4>
-			    </div>			    
-				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-				    <div class="panel-body">
-						<div class="panel-body">
-							<form name="addEmpruntForm" ng-submit="addEmprunt()">
-								<div class="form-group">
-									<label for="Titre" class="Gras">Type de média</label>
-									<input type="text" class="form-control" id="Titre" placeholder="Titre" required>
+									<label>Date de naissance: </label>
+									{{adherentDetails.date_naissance}}<br> <label>E-mail:
+									</label> {{adherentDetails.email}}<br> <label>Adresse: </label>
+									{{adherentDetails.adresse.ligne1 + ' ' +
+									adherentDetails.adresse.ligne2}}<br> <label>Date
+										de paiement de la cotisation: </label>
+									{{adherentDetails.cotisation.debut}}<br> <label>Montant
+										la cotisation: </label> {{adherentDetails.cotisation.montant}}
+									<p>
+										<a href="#/modification-adherent/{{adherentDetails.id}}"
+											class="btn btn-primary" role="button">Modifier</a> <a
+											href="#" class="btn btn-default" role="button">Supprimer</a>
+									</p>
 								</div>
-								<div class="form-group">
-									<label for="Auteur" class="Gras">Titre</label>
-									<input type="text" class="form-control" id="Auteur" placeholder="Auteur" required>
-								</div>
-								<div class="form-group">
-									<label for="Auteur" class="Gras">Date de l'emprunt</label>
-									<input type="date" class="form-control" id="Auteur" placeholder="Auteur" required>
-								</div>
-								<div class="form-group">
-									<label for="Id" class="Gras">Id du média à emprunter*</label>
-									<input type="text" class="form-control" placeholder="id" x-ng-model="toAddEmprunt.id" required>
-								</div>
-								<div class="form-group">
-									<label for="Auteur" class="Gras">Date de l'emprunteur*</label>
-									<input type="date" placeholder="yyyy-MM-dd" class="form-control" id="Auteur" placeholder="Auteur" x-ng-model="toAddEmprunt.date_emprunt" required>
-								</div>						
-								<div>
-									<button type="submit" class="btn btn-success col-xs-offset-5">Enregistrer</button>
-								</div>													
-							</form>
+							</div>
 						</div>
 					</div>
-				</div>							  
-			</div>											
+				</div>
 			</div>
-		</div> 
-        <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-            <!-- <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button> -->
-        </div>
+		</div>
+	</div>
+</div>
+<div class="panel panel-default">
+	<div class="panel-heading" role="tab" id="headingTwo">
+		<h4 class="panel-title">
+			<a class="collapsed" role="button" data-toggle="collapse"
+				data-parent="#accordion" href="/#/recherche-adherent/#collapseTwo"
+				aria-expanded="false" aria-controls="collapseTwo"> Liste des
+				emprunts </a>
+		</h4>
+	</div>
+	<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+		aria-labelledby="headingTwo">
+		<div class="panel-body">
+			<div id="table">
+				<table class="table table-hover">
+					<tr>
+						<td><label>Type de media</label></td>
+						<td><label>Titre</label></td>
+						<td><label>Date de l'emprunt</label></td>
+					</tr>
+					<!-- <tr data-toggle="modal" data-target="#myModal"> -->
+					<tr x-ng-repeat="emprunt in adherentDetails.emprunt">
+						<td>{{emprunt.media.type}}</td>
+						<td>{{emprunt.media.titre}}</td>
+						<td>{{emprunt.retour}}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingThree">
+			<h4 class="panel-title">
+				<a class="collapsed" role="button" data-toggle="collapse"
+					data-parent="#accordion"
+					href="/#/recherche-adherent/#collapseThree" aria-expanded="false"
+					aria-controls="collapseThree"> Ajouter nouveau emprunt de média
+				</a>
+			</h4>
+		</div>
+		<div id="collapseThree" class="panel-collapse collapse"
+			role="tabpanel" aria-labelledby="headingThree">
+			<div class="panel-body">
+				<div class="panel-body">
+					<form name="addEmpruntForm" x-ng-submit="addEmprunt()">
+						<div class="form-group">
+							<label for="Auteur" class="Gras">Date de l'emprunt</label> <input
+								type="date" class="form-control" id="Auteur"
+								placeholder="Auteur" required x-ng-model="emprunt.date_emprunt">
+						</div>
+						<div class="form-group">
+							<label for="Id" class="Gras">Id du média à emprunter*</label> <input
+								type="text" class="form-control" placeholder="id"
+								x-ng-model="emprunt.id_media" required>
+						</div>
+						<div class="form-group">
+							<label for="Id" class="Gras">Id de l'emprunteur*</label> <input
+								type="text" class="form-control" placeholder="id"
+								x-ng-model="emprunt.id_emprunteur" required>
+						</div>
+						<div>
+							<button type="submit" class="btn btn-success col-xs-offset-5">Enregistrer</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" x-ng-click="ok()">OK</button>
+	<!-- <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button> -->
+</div>
