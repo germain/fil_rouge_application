@@ -8,6 +8,6 @@ import fr.dta.mediatheque.application.model.Adherent;
 
 public interface AdherentRepository extends JpaRepository<Adherent> {
 	public Adherent findByLogin(String login);
-
+	public Adherent findByName(String nom);
 	public List<Adherent> findAllAdherent();
 }

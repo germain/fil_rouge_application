@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -31,9 +32,9 @@ public class Emprunt implements Model {
 	@NotNull
 	private Media media;
 	
-	@ManyToOne
+	@ManyToOne @JoinColumn(name="id_media")
 	@NotNull
-	private fr.dta.mediatheque.application.model.Adherent adherent;
+	private Adherent adherent;
 	
 	@Column
 	@NotNull

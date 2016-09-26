@@ -1,14 +1,12 @@
 package fr.dta.mediatheque.application.controller;
 
-import java.util.Date;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,9 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.dta.mediatheque.application.model.Adherent;
-import fr.dta.mediatheque.application.model.Cotisation;
 import fr.dta.mediatheque.application.service.AdherentService;
-
 
 @RestController
 public class AdherentController {
@@ -32,9 +28,17 @@ public class AdherentController {
 		return new ResponseEntity<Adherent>(adherent, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "adherent", method = RequestMethod.GET)
+	@RequestMapping(value = "/adherent/recherche", method = RequestMethod.GET)
+	public ResponseEntity<Adherent> findAdherentWithName(@RequestParam("nom") String nom) {
+		Adherent adherent = adherentService.findAdherentByName(nom);
+		if (adherent == null)
+			return new ResponseEntity<Adherent>(HttpStatus.NOT_FOUND);
+		return new ResponseEntity<Adherent>(adherent, HttpStatus.OK);
+	}
+	
+	
+	@RequestMapping(value = "/adherent", method = RequestMethod.GET)
 	public List<Adherent> findAllAdherent() {
-		
 		return adherentService.findAllAdherent();
 		/*
 		if (adherent == null)
@@ -43,23 +47,31 @@ public class AdherentController {
 	}	
 	
 	
-//	@RequestMapping(value = "/createAdherent", method = RequestMethod.GET)
-//	//@ResponseStatus(HttpStatus.CREATED)
-//	//public Adherent createAdherent(@RequestParam("label") String label, HttpServletRequest request, Adherent adherent) {
-//	public Adherent createAdh(){		
-//	
-//		Cotisation cot = new Cotisation();
-//		Adherent adherent = new Adherent ("nom", "prenom", new Date("10/03/1999"), "email", "adresse", 75000,"ville", 2, cot);
-//		return adherentService.save(adherent);
-//	}
+	@RequestMapping(value = "/createAdherent", method = RequestMethod.POST)
+	@ResponseStatus(HttpStatus.CREATED)
+	public Adherent createAdh(@RequestBody Adherent adherent){	
+		if(adherent.getId()>0) {
+			System.out.println("user existe deja");
+			return null;
+		}else{
+			return adherentService.save(adherent);
+		}
+		
+	}
 	
-//	@RequestMapping(value = "{id}", method = RequestMethod.PUT)
-//	public Adherent updateAdherent(@PathVariable int id, @RequestBody Adherent adherent){
-//		return adherentService.update(id);
-//	}
-//	
-//	@RequestMapping(value = "{id}", method = RequestMethod.DELETE)
-//	public void deleteAdherent(@PathVariable int id){
-//		adherentService.delete(id);
-//	}
+	@RequestMapping(value = "/adherent/{id}", method = RequestMethod.PUT)
+	public Adherent updateAdherent(@RequestBody Adherent adherent){
+		if(adherent.getId()<=0) {
+			System.out.println("user n'existe pas");
+			return null;
+		}else{
+			return adherentService.save(adherent);
+		}
+	}
+	
+	@RequestMapping(value = "/adherent/{id}", method = RequestMethod.DELETE)
+	public void deleteAdherent(@PathVariable int id){
+		Adherent adherent =adherentService.getById(id);
+		adherentService.remove(adherent);
+	}
 }
