@@ -47,7 +47,7 @@
 				<tr>
 					<td><pre>{{maVarDeTrie|json}}</pre></td>
 				</tr>
- 				<tr data-toggle="modal" data-target="#myModal" ng-click="open()" ng-repeat="obj in list | orderBy:maVarDeTrie">
+ 				<tr data-toggle="modal" data-target="#myModal" ng-click="open(obj.id)" ng-repeat="obj in list | orderBy:['nom' , 'prenom']">
 					<td>{{obj.id}}</td>
 					<td>{{obj.nom}}</td>
 					<td>{{obj.prenom}}</td>
