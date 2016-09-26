@@ -1,6 +1,6 @@
 /.project
 /target/
 /node_modules/
-/app/bower_components/
+/src/main/webapp/app/bower_components/
 /.settings/
 /.classpath
