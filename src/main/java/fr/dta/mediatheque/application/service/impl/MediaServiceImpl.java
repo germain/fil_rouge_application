@@ -67,6 +67,7 @@ public class MediaServiceImpl implements MediaService {
 			 for (Predicate predicate : predicates) {
 		            crit.where(criteriaBuilder.or(predicate), criteriaBuilder.and(predicate));
 		        }
+			 
 			return em.createQuery(crit).getResultList();
 		}
 		
