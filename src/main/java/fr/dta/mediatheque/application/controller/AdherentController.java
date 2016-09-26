@@ -24,7 +24,7 @@ import fr.dta.mediatheque.application.service.AdherentService;
 public class AdherentController {
 	@Autowired private AdherentService adherentService;
 	
-	@RequestMapping(value = "/adherent/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "adherent/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Adherent> findAdherentById(@PathVariable int id) {
 		Adherent adherent = adherentService.getById(id);
 		if (adherent == null)
@@ -32,27 +32,26 @@ public class AdherentController {
 		return new ResponseEntity<Adherent>(adherent, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/adherent", method = RequestMethod.GET)
+	@RequestMapping(value = "adherent", method = RequestMethod.GET)
 	public List<Adherent> findAllAdherent() {
 		
 		return adherentService.findAllAdherent();
 		/*
 		if (adherent == null)
 			return new ResponseEntity<Adherent>(HttpStatus.NOT_FOUND);
-		return new ResponseEntity<Adherent>(adherent, HttpStatus.OK);*/
-		
+		return new ResponseEntity<Adherent>(adherent, HttpStatus.OK);*/		
 	}	
 	
 	
-	@RequestMapping(value = "/createAdherent", method = RequestMethod.GET)
-	//@ResponseStatus(HttpStatus.CREATED)
-	//public Adherent createAdherent(@RequestParam("label") String label, HttpServletRequest request, Adherent adherent) {
-	public Adherent createAdh(){		
-	
-		Cotisation cot = new Cotisation();
-		Adherent adherent = new Adherent ("nom", "prenom", new Date("10/03/1999"), "email", "adresse", 75000,"ville", 2, cot);
-		return adherentService.save(adherent);
-	}
+//	@RequestMapping(value = "/createAdherent", method = RequestMethod.GET)
+//	//@ResponseStatus(HttpStatus.CREATED)
+//	//public Adherent createAdherent(@RequestParam("label") String label, HttpServletRequest request, Adherent adherent) {
+//	public Adherent createAdh(){		
+//	
+//		Cotisation cot = new Cotisation();
+//		Adherent adherent = new Adherent ("nom", "prenom", new Date("10/03/1999"), "email", "adresse", 75000,"ville", 2, cot);
+//		return adherentService.save(adherent);
+//	}
 	
 //	@RequestMapping(value = "{id}", method = RequestMethod.PUT)
 //	public Adherent updateAdherent(@PathVariable int id, @RequestBody Adherent adherent){

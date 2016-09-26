@@ -1,6 +1,9 @@
 angular.module("biblio").controller('rechercheAdherentCtrl',
 		function($scope, $location, $routeParams, $filter, $uibModal, serviceAdherent) {
-	
+		
+		$scope.Adherent = {};
+		$scope.maVarDeTrie = {};
+		
 		$scope.RechercheAhderent = function() {
 			console.log("Controleur recherche adherent " + $scope.Adherent.id + " nom: " + $scope.Adherent.nom);
 

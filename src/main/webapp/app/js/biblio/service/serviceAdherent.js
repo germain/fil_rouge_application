@@ -9,16 +9,16 @@ angular.module('biblio')
 		return {
 
 			searchAdherent : function(val){	
-				var searchUrlNom=	'http://localhost:8080/bib/rest/adherent/2'; 	  
+				var searchUrlNom=	'http://localhost:8080/bib/rest/adherent'; 	  
 			  	return $http.get(searchUrlNom).then(function (response) {
 //				var searchUrlNom=	HOST + PATH_NAME_SEARCH_NAME; 	  
-//			  	return $http.get(searchUrlNom, {params : val}).then(function (response) {		
+//			  	return $http.get(searchUrlNom, {params : val}).then(function (response) {
 				  return response.data;
 			  	});		 
 			},
 
 			getAdherent: function(id) {
-				var searchUrlNom=	'http://localhost:8080/bib/rest/adherent/2'; 	  
+				var searchUrlNom=	'http://localhost:8080/bib/rest/adherent/'+id; 	  
 			  	return $http.get(searchUrlNom).then(function (response) {
 //				var completeUrl = HOST + PATH_NAME_ACCESSION;
 //				return $http.get(completeUrl, {params : {"id":id}}).then(function(response) {

@@ -15,6 +15,7 @@ public abstract class JpaRepositoryImpl<T extends Model> implements JpaRepositor
 	protected Class<T> entityClass;
 	
 	@PersistenceContext protected EntityManager em;
+	
 	@PostConstruct    public void init() {        entityClass = getEntityClass();    }
 	protected abstract Class<T> getEntityClass();
 	
@@ -32,6 +33,11 @@ public abstract class JpaRepositoryImpl<T extends Model> implements JpaRepositor
         return entity;
     }
 	
+    @Transactional
+    public Object findOneAll(Class type, int id) {
+        return em.find(type, id);
+    }
+    
     @Transactional
     public T findOne(int id) {
         return em.find(entityClass, id);
