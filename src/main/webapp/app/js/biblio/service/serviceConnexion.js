@@ -1,5 +1,8 @@
 angular.module('biblio').factory('serviceConnexion',function($http){
 	var isConnected = false;
+	var serveur = 'localhost';
+	var port = '8080';
+	var application = 'bib/rest';
 	return {
 		connexion : function(identifiant, motdepasse){
 			
@@ -11,7 +14,7 @@ angular.module('biblio').factory('serviceConnexion',function($http){
 					'Authorization': 'Basic '+auth
 				}	
 			};			
-			return $http.get('http://localhost:8080/bib/rest/adherent/2', config).then(function(){
+			return $http.get('http://'+serveur+':'+port+'/'+application+'/adherent/2', config).then(function(){
 				$http.defaults.headers.common['Authorization'] = 'Basic '+auth;
 				isConnected = true
 				return true;
